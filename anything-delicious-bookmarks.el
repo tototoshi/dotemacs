@@ -80,13 +80,13 @@
   (interactive "stags: ")
   (cond ((null w3m-current-title) nil)
         (t (shell-command-to-string
-            (print (concat "curl "
+            (concat "curl "
                     (when anything-delicious-bookmarks-use-proxy
                       (anything-delicious-bookmarks-add-proxy-arg))
                     (anything-delicious-bookmarks-add-url-arg)
                     (anything-delicious-bookmarks-add-description-arg)
                     (anything-delicious-bookmarks-add-tag-arg)
-                    anything-delicious-bookmarks-add-url))))))
+                    anything-delicious-bookmarks-add-url)))))
 
 (defun anything-delicious-bookmarks-add-url-arg ()
   (concat " -d url=" w3m-current-url " "))
