@@ -1,119 +1,114 @@
-;;; anything-delicious.el --- del.icio.us anything.el interface
-;; -*- Mode: Emacs-Lisp -*-
-
-;; Copyright (C) 2008 by 101000code/101000LAB
-
-;; This program is free software; you can redistribute it and/or modify
-;; it under the terms of the GNU General Public License as published by
-;; the Free Software Foundation; either version 2 of the License, or
-;; (at your option) any later version.
-
-;; This program is distributed in the hope that it will be useful,
-;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-;; GNU General Public License for more details.
-
-;; You should have received a copy of the GNU General Public License
-;; along with this program; if not, write to the Free Software
-;; Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
-
-;; Version: 1.0.5
-;; Author: k1LoW (Kenichirou Oyama), <k1lowxb [at] gmail [dot] com> <k1low [at] 101000lab [dot] org>
-;; URL: http://code.101000lab.org, http://trac.codecheck.in
-
-;; Thanks to takason for "less" option advice.(1.0.2)
-
-;;; Commentary:
-;; `anything-delicious' is `anything' interface of your del.icio.us.
-;; `anything-c-source-delicious' is a source for your del.icio.us.
-;; `anything-delicious-get-dump' is function to get dump your del.icio.us.
-
-;;; Install
-;; Put this file into load-path'ed directory, and byte compile it if
-;; desired.  And put the following expression into your ~/.emacs.
+;; example:
 ;;
-;; (require 'anything-delicious)
+;; (load "anything-delicious-bookmarks")
+;; (setq anything-delicious-bookmarks-user "your delicious account name")
+;; (setq anything-delicious-bookmarks-passwd "your password")
+;; (setq anything-sources 
+;;       (cons 'anything-c-source-delicious-bookmarks anything-sources))
+;; (anything-delicious-bookmarks-refresh)
 ;;
-;; And, you should execute `anything-delicious-get-dump to reflesh dump file.
 
-;;;Change Log
-;; 1.0.5:require xml.el
-;; 1.0.4:add summary(bookmark comment).add some action.
-;; 1.0.3:need not be initialized `anything-delicious-get-dump'
-;; 1.0.2:use read-passwd. set "less" option.
+(defvar anything-delicious-bookmarks-user nil)
+(defvar anything-delicious-bookmarks-passwd nil)
+(defvar anything-delicious-bookmarks-base-url nil)
+(defvar anything-c-source-delicious-bookmarks nil)
 
-;;; Code:
+(defvar anything-delicious-bookmarks-use-proxy nil)
+(defvar anything-delicious-bookmarks-proxy nil)
+(defvar anything-delicious-bookmarks-raw-data nil)
+(defvar anything-delicious-bookmarks-list nil)
 
-(eval-when-compile (require 'cl))
-(require 'anything)
-(require 'url)
-(require 'xml)
+(defvar anything-delicious-bookmarks-candidats-file nil)
+(defvar anything-delicious-bookmarks-parser nil)
 
-(defvar anything-delicious-file "~/.delicious")
+(defun anything-delicious-bookmarks-init ()
+  (setq anything-delicious-bookmarks-raw-data
+        (expand-file-name "~/.emacs.d/delicious_raw_data.xml"))
+  (setq anything-delicious-bookmarks-list
+        (expand-file-name "~/.emacs.d/delicious.list.el"))
+  (setq anything-delicious-bookmarks-candidates-file
+        (expand-file-name "~/.emacs.d/delicious.list"))
+  (setq anything-delicious-bookmarks-parser
+        (expand-file-name "~/.emacs.d/delicious-parser.rb"))
+  (setq anything-delicious-bookmarks-base-url 
+        (concat "https://"
+                anything-delicious-bookmarks-user
+                ":"
+                anything-delicious-bookmarks-passwd
+                "@api.del.icio.us/v1/posts"))
+  (setq anything-delicious-bookmarks-add-url 
+        (concat anything-delicious-bookmarks-base-url "/add"))
+  (setq anything-delicious-bookmarks-get-url
+        (concat anything-delicious-bookmarks-base-url "/all"))
+  (setq anything-c-source-delicious-bookmarks
+        '((name . "delicious bookmarks")
+          (candidates-file anything-delicious-bookmarks-candidates-file updating)
+          (requires-pattern . 3)
+          (candidate-number-limit . 50)
+          (type . delicious))))
 
-(defun anything-delicious-get-dump ()
-  "Get del.icio.us dump file."
+(defun anything-delicious-bookmarks-action-w3m (description)
+  (let ((browse-url-browser-function 'w3m-browse-url))
+    (browse-url (cdr (assoc description anything-delicious-bookmarks-data)))))
+
+(defun anything-delicious-bookmarks-action-firefox (description)
+  (browse-url-firefox (cdr (assoc description anything-delicious-bookmarks-data))))
+
+(define-anything-type-attribute 'delicious
+  '((action ("browse-url-firefox" . anything-delicious-bookmarks-action-firefox)
+            ("browse-url-w3m" . anything-delicious-bookmarks-action-w3m))))
+
+(defun anything-delicious-bookmarks ()
   (interactive)
-  (let
-      ((url "https://api.del.icio.us/posts/all")
-       (entry-list nil)
-       (tag ""))
-    (switch-to-buffer (url-retrieve-synchronously url))
-    (goto-char (point-min))
-    (re-search-forward "^$" nil 'move)
-    (delete-region (point-min) (1+ (point)))
-    (goto-char (point-min))
-    (while (re-search-forward "\n" nil t)
-      (replace-match ""))
-    (goto-char (point-min))
-    (while (re-search-forward "> +<" nil t)
-      (replace-match "><"))
-    (setq entry-list (xml-get-children (car (xml-parse-region (point-min) (point-max))) 'post))
-    (delete-region (point-min) (point-max))
-    (loop for elm in entry-list
-          do (insert
-              (progn
-                (setq tag (xml-get-attribute elm 'tag))
-               (while (string-match " " tag)
-                 (setq tag (replace-match "][" nil nil tag)))
-                (concat
-                 "[" tag "] "
-                 (xml-get-attribute elm 'description)
-                 " [summary:"
-                 (xml-get-attribute elm 'extended)
-                 "][[href:"
-                 (xml-get-attribute elm 'href)
-                 "]\n"))))
-    (write-file anything-delicious-file)
-    (kill-buffer (current-buffer))))
+  (anything 'anything-c-source-delicious-bookmarks nil nil nil nil "anything delicious bookmarks"))
 
-(defvar anything-c-source-delicious
-  '((name . "del.icio.us")
-    (init
-     . (lambda ()
-         (call-process-shell-command
-          (concat "less -f " anything-delicious-file)  nil (anything-candidate-buffer 'global))))
-    (candidates-in-buffer)
-    (action
-     ("Browse URL" . (lambda (candidate)
-                       (string-match "\\[href:\\(.+\\)\\]$" candidate)
-                       (browse-url (match-string 1 candidate))))
-     ("Show URL" . (lambda (candidate)
-                     (string-match "\\[href:\\(.+\\)\\]$" candidate)
-                     (message (match-string 1 candidate))))
-     ("Show Summary" . (lambda (candidate)
-                         (string-match "\\[summary:\\(.+\\)\\]\\[" candidate)
-                         (message (match-string 1 candidate)))))))
-
-(defun anything-delicious ()
-  "Search del.icio.us using `anything'."
+(defun anything-delicious-bookmarks-refresh ()
   (interactive)
-  (unless (file-exists-p anything-delicious-file)
-    (anything-delicious-get-dump))
-  (anything
-   '(anything-c-source-delicious) nil "Find Bookmark: " nil nil))
+  (anything-delicious-bookmarks-init)
+  (shell-command-to-string
+   (concat "curl "
+           (when anything-delicious-bookmarks-use-proxy
+             (anything-delicious-bookmarks-add-proxy-arg))
+           anything-delicious-bookmarks-get-url
+           " > " 
+           anything-delicious-bookmarks-raw-data))
+  (shell-command-to-string anything-delicious-bookmarks-parser)
+  (setq anything-delicious-bookmarks-data nil)
+  (load-file anything-delicious-bookmarks-list))
 
-(provide 'anything-delicious)
+(defun anything-delicious-bookmarks-add-new-bookmark (tags)
+  (interactive "stags: ")
+  (cond ((null w3m-current-title) nil)
+        (t (shell-command-to-string
+            (print (concat "curl "
+                    (when anything-delicious-bookmarks-use-proxy
+                      (anything-delicious-bookmarks-add-proxy-arg))
+                    (anything-delicious-bookmarks-add-url-arg)
+                    (anything-delicious-bookmarks-add-description-arg)
+                    (anything-delicious-bookmarks-add-tag-arg)
+                    anything-delicious-bookmarks-add-url))))))
 
-;;; end
-;;; anything-delicious.el ends here"))))
+(defun anything-delicious-bookmarks-add-url-arg ()
+  (concat " -d url=" w3m-current-url " "))
+
+(defun anything-delicious-bookmarks-add-description-arg ()
+  (concat " -d description=" (urlencode (concat "\"" w3m-current-title "\" "))))
+
+(defun anything-delicious-bookmarks-add-tag-arg ()
+  (concat (cond ((string= "" tags) "")
+                (t (concat " -d tags=" (urlencode (concat "'" tags "'")) " ")))))
+
+(defun anything-delicious-bookmarks-add-proxy-arg ()
+  (concat "-k -x " anything-delicious-bookmarks-proxy " "))
+
+(defun urlencode (arg)
+  (let ((command nil)
+        (command-output nil))
+    (current-time-string)
+    (setq command 
+          "ruby -e \"require 'uri'\; require 'kconv'\; puts URI.encode ARGV[0].toutf8\"")
+    (setq command-output (shell-command-to-string (concat command " '" arg "'")))
+    (chomp command-output)))
+
+(define-key w3m-mode-map "a" 'anything-delicious-bookmarks-add-new-bookmark)
+(global-set-key "\C-xb" 'anything-delicious-bookmarks)
