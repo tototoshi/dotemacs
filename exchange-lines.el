@@ -4,8 +4,10 @@
     (line-number-at-pos)))
 
 (defun push-mark-at-line (num)
-  (save-excursion
-    (push-mark)))
+  (let ((p (point)))
+    (goto-line num)
+    (push-mark)
+    (goto-char p)))
 
 (defun exchange-lines-up ()
   (interactive)
