@@ -1,19 +1,11 @@
 (defun line-number-at-mark ()
-  (let ((p (point))
-        (result nil)
-        (m nil))
-    (setq m (mark))
-    (cond ((null m) nil)
-          (t (goto-char m)
-             (setq result (line-number-at-pos))
-             (goto-char p)
-             result))))
+  (save-excursion
+    (exchange-point-and-mark)
+    (line-number-at-pos)))
 
-(defun push-mark-line (num)
-  (let ((p (point)))
-    (goto-line num)
-    (push-mark)
-    (goto-char p)))
+(defun push-mark-at-line (num)
+  (save-excursion
+    (push-mark)))
 
 (defun exchange-lines-up ()
   (interactive)
@@ -38,7 +30,7 @@
              (dotimes (i (- lm lp -1))
                (exchange-lines-down))
              (goto-line (1- lp))
-             (push-mark-line (1- lm))))))
+             (push-mark-at-line (1- lm))))))
 
 (defun move-region-down ()
   (interactive)
@@ -50,7 +42,7 @@
     (dotimes (i (- lp lm -1))
       (exchange-lines-up))
     (goto-line (1+ lp))
-    (push-mark-line (1+ lm))))
+    (push-mark-at-line (1+ lm))))
 
 (global-set-key [(meta up)] 'exchange-lines-up)
 (global-set-key [(meta down)] 'exchange-lines-down)
