@@ -7,6 +7,7 @@
              (define-key dired-mode-map "n" 'dired-advertised-find-file)
              (define-key dired-mode-map "j" 'dired-next-line)
              (define-key dired-mode-map "k" 'dired-previous-line)))
+
 (defun dired-open-eshell ()
   (interactive)  
   (let ((current-dir dired-directory))
@@ -14,3 +15,7 @@
     (eshell-kill-input)
     (cd current-dir)
     (eshell-send-input)))
+
+(defun dired-open-current-directory ()
+  (interactive)
+  (dired "."))
