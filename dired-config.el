@@ -6,7 +6,8 @@
              (define-key dired-mode-map "p" 'dired-up-directory)
              (define-key dired-mode-map "n" 'dired-advertised-find-file)
              (define-key dired-mode-map "j" 'dired-next-line)
-             (define-key dired-mode-map "k" 'dired-previous-line)))
+             (define-key dired-mode-map "k" 'dired-previous-line)
+             (define-key dired-mode-map "v" 'dired-open-with-evince)))
 
 (defun dired-open-eshell ()
   (interactive)  
@@ -19,3 +20,7 @@
 (defun dired-open-current-directory ()
   (interactive)
   (dired "."))
+
+(defun dired-open-with-evince ()
+  (interactive)
+  (dired-do-shell-command evince))
