@@ -23,4 +23,4 @@
 
 (defun dired-open-with-evince ()
   (interactive)
-  (dired-do-shell-command evince))
+  (dired-do-async-shell-command "evince" t (dired-get-marked-files t nil) ))
