@@ -7,6 +7,7 @@
              (define-key dired-mode-map "n" 'dired-advertised-find-file)
              (define-key dired-mode-map "j" 'dired-next-line)
              (define-key dired-mode-map "k" 'dired-previous-line)
+	     (define-key dired-mode-map "o" 'dired-open-file)
              (define-key dired-mode-map "v" 'dired-open-with-evince)))
 
 (defun dired-open-eshell ()
@@ -24,3 +25,12 @@
 (defun dired-open-with-evince ()
   (interactive)
   (dired-do-async-shell-command "evince" t (dired-get-marked-files t nil) ))
+
+(defun dired-open-file ()
+  "In dired, open the file named on this line."
+  (interactive)
+  (let* ((file (dired-get-filename)))
+    (message "Opening %s..." file)
+    (call-process "gnome-open" nil 0 nil file)
+    (message "Opening %s done" file)
+))
