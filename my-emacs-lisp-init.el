@@ -2,3 +2,4 @@
 (load "window-config.el")
 (load "dired-config.el")
 (load "exchange-lines.el")
+(load "tvvitter-config.el")
