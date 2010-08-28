@@ -1,3 +1,7 @@
+(tool-bar-mode 0)
+(menu-bar-mode 0)
+(scroll-bar-mode 0)
+
 ;;http://d.hatena.ne.jp/rubikitch/20100210/emacs
 (defun other-window-or-split ()
   (interactive)
