@@ -35,7 +35,6 @@
   (interactive "sFUNCTION: ")
   (myphp-browse-manual func))
 
-
 ;; anythingから使うために
 
 (setq anything-c-source-myphp-manual
