@@ -9,3 +9,4 @@
 (load "w3m-config.el")
 (load "scroll-by-single-line.el")
 (load "shell-config.el")
+(load "save-scratch.el")
