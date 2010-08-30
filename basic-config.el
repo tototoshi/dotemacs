@@ -1,3 +1,6 @@
+(global-set-key "\C-h" 'delete-backward-char)
+(global-set-key "\M-h" 'help)
+
 ;; 終了時に確認を求める
 (setq confirm-kill-emacs 'y-or-n-p)
 
