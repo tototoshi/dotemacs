@@ -6,8 +6,8 @@
              (define-key 'eshell-ode-map ?\C-a 'eshell-bol)))
 
 ;; multi-term
-(require 'multi-term)
-(setq multi-term-program "/usr/local/bin/zsh")
+;; (require 'multi-term)
+;; (setq multi-term-program "/usr/local/bin/zsh")
 
 ;; term-char-mode, term-line-modeの切り替え
 (defun my-term-switch-line-char ()
@@ -79,3 +79,15 @@
                              ;;                   (lookup-key (current-global-map) "\C-z"))))
                              ))
 
+;; [eshell] bash の C-u 相当のコマンドを作成CommentsAdd Star
+;; http://d.hatena.ne.jp/kitokitoki/20100529/p7
+(defun my-eshell-kill-line0 ()
+  "カーソル位置からプロンプトまでを削除"
+  (interactive)
+  (save-restriction
+    (narrow-to-region (point) (eshell-bol))
+    (kill-line 1)))
+
+(add-hook 'eshell-mode-hook
+  (lambda()
+    (define-key eshell-mode-map (kbd "C-c k") 'my-eshell-kill-line0)))
