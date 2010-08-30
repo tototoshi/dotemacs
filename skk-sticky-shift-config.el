@@ -26,8 +26,12 @@
 
 (add-hook 'skk-mode-hook
           '(lambda ()
-             (define-key skk-j-mode-map sticky-key sticky-map)
-             (define-key skk-jisx0208-latin-mode-map sticky-key sticky-map)
-             (define-key skk-abbrev-mode-map sticky-key sticky-map)))
+             (eval-after-load "skk"
+               '(progn
+                  (define-key skk-j-mode-map sticky-key sticky-map)
+                  (define-key skk-jisx0208-latin-mode-map sticky-key sticky-map)
+                  (define-key skk-abbrev-mode-map sticky-key sticky-map)))
+             (eval-after-load "skk-isearch"
+               '(define-key skk-isearch-mode-map sticky-key sticky-map))))
 
 
