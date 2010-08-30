@@ -8,3 +8,4 @@
 (load "tvvitter-config.el")
 (load "w3m-config.el")
 (load "scroll-by-single-line.el")
+(load "shell-config.el")
