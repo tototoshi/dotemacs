@@ -28,3 +28,10 @@
 (defadvice kill-new (before ys:no-kill-new-duplicates activate)
   (setq kill-ring (delete (ad-get-arg 0) kill-ring)))
 
+;; スクリプト保存時、自動的にchmod +x
+(add-hook 'after-save-hook
+          'executable-make-buffer-file-executable-if-script-p)
+
+;; スクリプト保存時、自動的に行末の空白を削除する。
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
