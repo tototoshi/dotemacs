@@ -35,3 +35,6 @@
                '(define-key skk-isearch-mode-map sticky-key sticky-map))))
 
 
+(add-hook 'minibuffer-mode-hook
+  (lambda()
+    (skk-mode)))
