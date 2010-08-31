@@ -14,6 +14,10 @@
                 (with-current-buffer scratch-name
                   (write-file scratch-file)))))
 
+(defun switch-to-scratch ()
+  (interactive)
+  (switch-to-buffer "*scratch*"))
+
 (defun scratch ()
   (interactive)
   (unless (get-buffer scratch-name)
@@ -26,3 +30,5 @@
   (with-current-buffer scratch-name
     (insert-file-contents scratch-file))
   (setq scratch-initp t))
+
+(global-set-key [f12] 'scratch)
