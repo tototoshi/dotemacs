@@ -35,6 +35,7 @@
                '(define-key skk-isearch-mode-map sticky-key sticky-map))))
 
 
+;; minibufferでもSKKが使えるように。
 (add-hook 'minibuffer-mode-hook
   (lambda()
     (skk-mode)))
