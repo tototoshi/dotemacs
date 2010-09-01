@@ -10,12 +10,24 @@
     (setq this-command 'next-line)
     ()))
 
+(defun sane-forward-line (arg)
+  "Goto next line by ARG steps with scrolling sanely if needed."
+  (interactive "p")
+  ;;(let ((newpt (save-excursion (line-move arg) (point))))
+  (let ((newpt (save-excursion (forward-line arg) (point))))
+    (while (null (pos-visible-in-window-p newpt))
+      (if (< arg 0) (scroll-down 1) (scroll-up 1)))
+    (goto-char newpt)
+    (setq this-command 'next-line)
+    ()))
+
 (defun sane-previous-line (arg)
   "Goto previous line by ARG steps with scrolling back sanely if needed."
   (interactive "p")
   (sane-next-line (- arg))
   (setq this-command 'previous-line)
   ())
+
 
 (defun sane-newline (arg)
   "Put newline\(s\) by ARG with scrolling sanely if needed."

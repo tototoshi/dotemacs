@@ -1,3 +1,5 @@
+(load "scroll-by-single-line.el")
+
 (require 'wdired)
 (add-hook 'dired-mode-hook
           '(lambda ()
@@ -13,7 +15,7 @@
              (define-key dired-mode-map "v" 'dired-open-with-evince)))
 
 (defun dired-open-eshell ()
-  (interactive)  
+  (interactive)
   (let ((current-dir dired-directory))
     (eshell)
     (eshell-kill-input)
@@ -34,5 +36,16 @@
   (let* ((file (dired-get-filename)))
     (message "Opening %s..." file)
     (call-process "gnome-open" nil 0 nil file)
-    (message "Opening %s done" file)
-))
+    (message "Opening %s done" file)))
+
+(defun dired-next-line (arg)
+  (interactive "p")
+  (sane-forward-line arg)
+  (dired-move-to-filename))
+
+(defun dired-previous-line (arg)
+  "Move up lines then position at filename.
+Optional prefix ARG says how many lines to move; default is one line."
+  (interactive "p")
+  (sane-forward-line (- arg))
+  (dired-move-to-filename))
