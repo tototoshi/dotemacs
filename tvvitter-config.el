@@ -2,7 +2,8 @@
 ;; リスト機能を使うための設定
 (setq tvvitter-list-candidates-alist
       '(("tototoshi" . "abbey")
-	("tototoshi" . "hde")))
+        ("myuhe" . "skk")
+        ("tototoshi" . "hde")))
 
 ;; こうやると *tvvitter* バッファへCtrl+c tでジャンプできる。
 (defun switch-to-tvvitter ()
