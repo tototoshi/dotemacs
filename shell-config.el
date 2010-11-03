@@ -73,7 +73,6 @@
                              (define-key term-raw-map "\C-h" 'term-send-backspace)
                              (define-key term-raw-map "\C-k" 'term-send-kill-line)
                              (define-key term-raw-map "\C-r" 'term-send-reverse-search-history)
-                             (define-key term-raw-map "\C-cp" 'term-send-yatsuhashi)
                              (define-key term-raw-map "\M-h" 'help)
                              ;; (define-key term-raw-map "\C-z"
                              ;; (lookup-key (current-global-map) "\C-z"))))
