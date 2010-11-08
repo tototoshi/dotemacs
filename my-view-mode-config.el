@@ -11,21 +11,22 @@
           ,@forms
           (view-mode)))
 
+(defun my-view-mode-fn-name (key-name)
+  (intern (concat my-view-mode-prefix key-name)))
+
 (defmacro my-make-view-mode-command (key key-name fn)
-  (let* ((view-mode-fn-name (concat my-view-mode-prefix key-name)))
-    `(progn (defun ,(intern view-mode-fn-name) ()
+    `(progn (defun ,(my-view-mode-fn-name key-name) ()
               (interactive)
               (in-view-mode
                (funcall ,fn)))
-            (define-key view-mode-map ,key (quote ,(intern view-mode-fn-name))))))
+            (define-key view-mode-map ,key (quote ,(my-view-mode-fn-name key-name)))))
 
 (defmacro my-make-view-mode-out-command (key key-name fn)
-  (let* ((view-mode-fn-name (concat my-view-mode-prefix key-name)))
-    `(progn (defun ,(intern view-mode-fn-name) ()
+    `(progn (defun ,(my-view-mode-fn-name key-name) ()
               (interactive)
               (view-mode)
 	      (funcall ,fn))
-            (define-key view-mode-map ,key (quote ,(intern view-mode-fn-name))))))
+            (define-key view-mode-map ,key (quote ,(my-view-mode-fn-name key-name)))))
 
 (defun my-view-mode-r (new-char)
   (interactive "sChar: ")
