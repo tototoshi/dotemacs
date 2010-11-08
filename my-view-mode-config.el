@@ -34,6 +34,11 @@
   (view-mode)
   (forward-char))
 
+(defun my-view-mode-A ()
+  (interactive)
+  (view-mode)
+  (move-end-of-line 1))
+
 (defun my-view-mode-C-d ()
   (interactive)
   (view-mode)
@@ -52,6 +57,7 @@
                              (define-key view-mode-map "\C-d" 'my-view-mode-C-d)
                              (define-key view-mode-map "i" 'view-mode)
                              (define-key view-mode-map "a" 'my-view-mode-a)
+                             (define-key view-mode-map "A" 'my-view-mode-A)
                              (define-key view-mode-map "b" 'backward-word)
                              (define-key view-mode-map "w" 'forward-word)
                              (define-key view-mode-map "h" 'backward-char)
