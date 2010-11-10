@@ -4,6 +4,7 @@
 (add-hook 'dired-mode-hook
           '(lambda ()
              (define-key dired-mode-map [tab] 'dired-hide-subdir)
+             (define-key dired-mode-map "\M-o" 'gtags-find-file)
              (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
              (define-key dired-mode-map "q" 'kill-buffer)
              (define-key dired-mode-map "e" 'dired-open-eshell)
