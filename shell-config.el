@@ -1,14 +1,6 @@
 ;;====================================
 ;;; ansi-term
 ;;====================================
-(add-hook 'eshell-mode-hook
-          '(lambda ()
-             (define-key 'eshell-ode-map ?\C-a 'eshell-bol)))
-
-;; multi-term
- (require 'multi-term)
-;; (setq multi-term-program "/usr/local/bin/zsh")
-
 ;; term-char-mode, term-line-modeの切り替え
 (defun my-term-switch-line-char ()
   "Switch `term-in-line-mode' and `term-in-char-mode' in `ansi-term'"
@@ -76,15 +68,20 @@
                              (define-key term-raw-map "\M-h" 'help)
                              ;; (define-key term-raw-map "\C-z"
                              ;; (lookup-key (current-global-map) "\C-z"))))
-                             (when window-system
-                               (setq
-                                term-default-fg-color "White"
-                                term-default-bg-color "Black"
-                                ansi-term-color-vector
-                                [unspecified "black" "#ff5555" "#55ff55" "#ffff55"
-                                             "#5555ff" "#ff55ff" "#55ffff" "white"]))
+
+;;                           背景黒、文字白にするときの設定
+;;                             (when window-system
+;;                               (setq
+;;                                term-default-fg-color "White"
+;;                                term-default-bg-color "Black"
+;;                                ansi-term-color-vector
+;;                                [unspecified "black" "#ff5555" "#55ff55" "#ffff55"
+;;                                             "#5555ff" "#ff55ff" "#55ffff" "white"]))
                              ))
 
+;;;;;;;;;;;;
+;; eshell ;;
+;;;;;;;;;;;;
 ;; [eshell] bash の C-u 相当のコマンドを作成CommentsAdd Star
 ;; http://d.hatena.ne.jp/kitokitoki/20100529/p7
 (defun my-eshell-kill-line0 ()
@@ -96,4 +93,5 @@
 
 (add-hook 'eshell-mode-hook
   (lambda()
+    (define-key 'eshell-ode-map ?\C-a 'eshell-bol)
     (define-key eshell-mode-map (kbd "C-c k") 'my-eshell-kill-line0)))
