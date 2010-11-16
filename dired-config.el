@@ -15,21 +15,18 @@
 	     (define-key dired-mode-map "o" 'dired-open-file)
              (define-key dired-mode-map "v" 'dired-open-with-evince)))
 
+(defun my-eshell-move-to-dir (dir)
+  "Change directory in eshell"
+  (eshell-kill-input)
+  (cd dir)
+  (eshell-send-input))
+
 (defun dired-open-eshell ()
+  "Open eshell"
   (interactive)
   (let ((current-dir dired-directory))
     (eshell)
-    (eshell-kill-input)
-    (cd current-dir)
-    (eshell-send-input)))
-
-(defun dired-open-current-directory ()
-  (interactive)
-  (dired "."))
-
-(defun dired-open-with-evince ()
-  (interactive)
-  (dired-do-async-shell-command "evince" t (dired-get-marked-files t nil) ))
+    (my-eshell-move-to-dir current-dir)))
 
 (defun dired-open-file ()
   "In dired, open the file named on this line."
