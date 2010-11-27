@@ -10,11 +10,15 @@
 (add-to-list 'ac-modes 'shell-script-mode)
 (add-to-list 'ac-modes 'fundamental-mode)
 (add-to-list 'ac-modes 'lisp-interaction-mode)
+(add-to-list 'ac-modes 'perl-mode)
 (add-to-list 'ac-modes 'php-mode)
+(add-to-list 'ac-modes 'html-mode)
 (add-to-list 'ac-modes 'python-mode)
 
 ;; 大文字・小文字を区別する
 (setq ac-ignore-case nil)
+
+(setq ac-cursor-color "White")
 
 (setq ac-auto-start nil)
 (ac-set-trigger-key "TAB")
