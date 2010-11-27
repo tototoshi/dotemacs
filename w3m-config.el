@@ -1,3 +1,5 @@
 (require 'w3m)
 (setq w3m-use-cookies t)
 (global-set-key "\C-xg" 'w3m-search)
+(define-key w3m-mode-map [down] 'next-line)
+(define-key w3m-mode-map [up] 'previous-line)
