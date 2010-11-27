@@ -1,6 +1,9 @@
 ;;====================================
 ;;; ansi-term
 ;;====================================
+;; term-send-reverse-search-history などはmulti-termの中に入っている
+(require 'multi-term)
+
 ;; term-char-mode, term-line-modeの切り替え
 (defun my-term-switch-line-char ()
   "Switch `term-in-line-mode' and `term-in-char-mode' in `ansi-term'"
