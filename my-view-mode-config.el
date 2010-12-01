@@ -1,3 +1,4 @@
+
 ;;;;;;;;;;;;;;;
 ;; view-mode ;;
 ;;;;;;;;;;;;;;;
@@ -14,7 +15,7 @@
 (defun my-view-mode-fn-name (key-name)
   (intern (concat my-view-mode-prefix key-name)))
 
-(defmacro my-make-view-mode-command (key key-name fn)
+(defmacro my-make-view-mode-in-command (key key-name fn)
     `(progn (defun ,(my-view-mode-fn-name key-name) ()
               (interactive)
               (in-view-mode
@@ -38,13 +39,13 @@
 (my-make-view-mode-out-command "a" "a" #'forward-char)
 (my-make-view-mode-out-command "A" "A" #'(lambda () (move-end-of-line 1)))
 (my-make-view-mode-out-command "\C-d" "delete-char" #'(lambda () (delete-char 1)))
-(my-make-view-mode-command "x" "x" #'(lambda () (delete-char 1)))
-(my-make-view-mode-command "X" "X" #'(lambda () (delete-backward-char 1)))
-(my-make-view-mode-command " " "space" #'(lambda () nil))
-(my-make-view-mode-command "u" "u" #'undo)
-(my-make-view-mode-command "0" "0" #'(lambda () (move-beginning-of-line 1)))
-(my-make-view-mode-command "$" "$" #'(lambda () (move-end-of-line 1)))
-(my-make-view-mode-command [backspace] "bs" #'delete-backward-char)
+(my-make-view-mode-in-command "x" "x" #'(lambda () (delete-char 1)))
+(my-make-view-mode-in-command "X" "X" #'(lambda () (delete-backward-char 1)))
+(my-make-view-mode-in-command " " "space" #'(lambda () nil))
+(my-make-view-mode-in-command "u" "u" #'undo)
+(my-make-view-mode-in-command "0" "0" #'(lambda () (move-beginning-of-line 1)))
+(my-make-view-mode-in-command "$" "$" #'(lambda () (move-end-of-line 1)))
+(my-make-view-mode-in-command [backspace] "bs" #'delete-backward-char)
 
 (add-hook 'view-mode-hook '(lambda ()
                              (setq view-read-only t)

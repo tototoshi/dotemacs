@@ -39,7 +39,6 @@
   ;;(ansi-term "/usr/local/bin/zsh"))
   (ansi-term "/bin/bash"))
 
-
 (defun term-send-delete-line ()
   (interactive)
   (let ((a 0)
