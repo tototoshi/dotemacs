@@ -12,7 +12,7 @@
              (define-key dired-mode-map "n" 'dired-advertised-find-file)
              (define-key dired-mode-map "j" 'dired-next-line)
              (define-key dired-mode-map "k" 'dired-previous-line)
-	     (define-key dired-mode-map "o" 'dired-open-file)
+             (define-key dired-mode-map "o" 'dired-open-file)
              (define-key dired-mode-map "v" 'dired-open-with-evince)))
 
 (defun my-eshell-move-to-dir (dir)

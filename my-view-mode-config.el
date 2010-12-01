@@ -3,7 +3,7 @@
 ;; view-mode ;;
 ;;;;;;;;;;;;;;;
 (require 'view)
-(global-set-key (kbd "C-j") 'view-mode)
+(global-set-key (kbd "M-j") 'view-mode)
 
 (defvar my-view-mode-prefix "my-view-mode-")
 
