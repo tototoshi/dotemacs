@@ -81,6 +81,13 @@
 ;;                                             "#5555ff" "#ff55ff" "#55ffff" "white"]))
                              ))
 
+(defadvice ansi-term (around check-ansi-term-buffer-already-exists)
+  (let ((ansi-term-buf-name "*ansi-term*"))
+    (cond ((find (get-buffer ansi-term-buf-name) (buffer-list))
+           (switch-to-buffer ansi-term-buf-name))
+          (t ad-do-it))))
+(ad-activate 'ansi-term)
+
 ;;;;;;;;;;;;
 ;; eshell ;;
 ;;;;;;;;;;;;
