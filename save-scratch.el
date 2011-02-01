@@ -24,7 +24,8 @@
     (get-buffer-create scratch-name)
     (with-current-buffer scratch-name
       (insert-file-contents scratch-file)))
-  (switch-to-buffer scratch-name))
+  (switch-to-buffer scratch-name)
+  (lisp-interaction-mode))
 
 (unless scratch-initp
   (with-current-buffer scratch-name
