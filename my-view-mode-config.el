@@ -1,9 +1,11 @@
-
 ;;;;;;;;;;;;;;;
 ;; view-mode ;;
 ;;;;;;;;;;;;;;;
 (require 'view)
-(global-set-key (kbd "M-j") 'view-mode)
+(global-set-key (kbd "M-i") 'view-mode)
+
+(defadvice find-file (after read-only activate)
+  (toggle-read-only t))
 
 (defvar my-view-mode-prefix "my-view-mode-")
 
@@ -49,15 +51,16 @@
 
 (add-hook 'view-mode-hook '(lambda ()
                              (setq view-read-only t)
-                             (define-key view-mode-map "\C-j" 'view-mode)
                              (define-key view-mode-map "i" 'view-mode)
-                             (define-key view-mode-map "b" 'backward-word)
                              (define-key view-mode-map "w" 'forward-word)
+                             (define-key view-mode-map "b" 'backward--word)
                              (define-key view-mode-map "h" 'backward-char)
                              (define-key view-mode-map "j" 'next-line)
                              (define-key view-mode-map "J" 'forward-paragraph)
                              (define-key view-mode-map "k" 'previous-line)
                              (define-key view-mode-map "K" 'backward-paragraph)
                              (define-key view-mode-map "l" 'forward-char)
+                             (define-key view-mode-map "?" 'isearch-backward)
+                             (define-key view-mode-map "/" 'isearch-forward)
                              (define-key view-mode-map "r" 'my-view-mode-r)))
 
