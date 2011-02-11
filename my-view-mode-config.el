@@ -4,8 +4,8 @@
 (require 'view)
 (global-set-key (kbd "M-i") 'view-mode)
 
-(defadvice find-file (after read-only activate)
-  (toggle-read-only t))
+;(defadvice find-file (after read-only activate)
+;  (toggle-read-only t))
 
 (defvar my-view-mode-prefix "my-view-mode-")
 
