@@ -4,6 +4,9 @@
 ;; 終了時に確認を求める
 (setq confirm-kill-emacs 'y-or-n-p)
 
+;; "yes or no"を"y or n"に
+(fset 'yes-or-no-p 'y-or-n-p)
+
 ;; buffer-nameをuniqueで識別しやすくなるよう設定する
 ;; http://d.hatena.ne.jp/sugyan/20100515/1273909863
 (require 'uniquify)
