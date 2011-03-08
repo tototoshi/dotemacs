@@ -32,4 +32,3 @@
     (insert-file-contents scratch-file))
   (setq scratch-initp t))
 
-(global-set-key [f12] 'scratch)
