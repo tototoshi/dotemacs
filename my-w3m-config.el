@@ -1,4 +1,6 @@
 (require 'w3m)
+
+(setq w3m-home-page "http://www.google.co.jp/")
 (setq w3m-use-cookies t)
 (global-set-key "\C-xg" 'w3m-search)
 (define-key w3m-mode-map [down] 'next-line)
