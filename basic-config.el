@@ -43,3 +43,6 @@
 
 ;; 括弧をハイライト
 (show-paren-mode t)
+
+;; タブを使わずに空白で
+(setq-default indent-tabs-mode nil)
