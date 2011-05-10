@@ -41,3 +41,5 @@
 ;; スクリプト保存時、自動的に行末の空白を削除する。
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+;; 括弧をハイライト
+(show-paren-mode t)
