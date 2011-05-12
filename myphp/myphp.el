@@ -5,7 +5,7 @@
 
 (defun myphp-format-func-name (func-name)
   (shell-command-to-string
-   (format "echo -n '%s'| sed -f %s | tr [:upper:] [:lower:]" func-name myphp-sed-script)))
+   (format "echo -n '%s'| sed -f %s | tr '[:upper:]' '[:lower:]'" func-name myphp-sed-script)))
 
 (defun myphp-add-php-extension (string)
   (concat string ".php"))
