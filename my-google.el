@@ -6,4 +6,4 @@
    (format "http://www.google.co.jp/search?q=%s"
            (http-url-encode word 'utf-8))))
 
-(provide 'google)
+(provide 'my-google)
