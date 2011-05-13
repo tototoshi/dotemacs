@@ -1,3 +1,5 @@
+(require 'string)
+
 (defun my-file-path-join (&rest paths)
   (reduce #'(lambda (x y) (concat (file-name-as-directory x) y)) paths))
 
@@ -7,7 +9,7 @@
     (insert-file-contents filePath)
     (buffer-string)))
 
-(defun read-lines (filePath)
+(defun my-read-lines (filePath)
   "Return a list of lines of a file at FILEPATH."
   (with-temp-buffer
     (insert-file-contents filePath)
@@ -19,3 +21,5 @@
     (erase-buffer)
     (insert string)
     (write-region (point-min) (point-max) file-path)))
+
+(provide 'my-fileutils)
