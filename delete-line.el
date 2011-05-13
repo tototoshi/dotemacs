@@ -7,6 +7,7 @@
     (setq beg (point))
     (end-of-line)
     (setq end (point))
-    (delete-region beg (1+ end))))
+    (delete-region beg (min (1+ end) (point-max)))))
 
 (global-set-key "\M-k" 'delete-line)
+
