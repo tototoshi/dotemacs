@@ -36,8 +36,9 @@
 
 (defun sh ()
   (interactive)
-  ;;(ansi-term "/usr/local/bin/zsh"))
-  (ansi-term "/bin/bash"))
+  (let ((zsh "/usr/bin/zsh"))
+    (ansi-term (cond ((file-executable-p zsh) zsh)
+                   (t (ansi-term "/bin/bash"))))))
 
 (defun term-send-delete-line ()
   (interactive)
