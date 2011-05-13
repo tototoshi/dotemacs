@@ -1,4 +1,5 @@
 (require 'directory-utils)
+(require 'string-utils)
 
 (defun find-git-management-dir (directory)
   (file-exists-p (concat (file-name-as-directory directory) ".git")))

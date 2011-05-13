@@ -12,3 +12,4 @@
             (setq s (replace-match "" t nil s))))
         s))
 
+(provide 'string-utils)
