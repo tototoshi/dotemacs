@@ -10,7 +10,8 @@
      (slime-setup '(slime-fancy
                     slime-repl
                     slime-asdf
-                    anything-slime))))
+;;                  anything-slime
+                    ))))
 
 ;; (add-hook
 ;;  'anything-slime-init-hook
