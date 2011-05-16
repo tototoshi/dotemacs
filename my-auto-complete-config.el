@@ -14,6 +14,7 @@
 (add-to-list 'ac-modes 'php-mode)
 (add-to-list 'ac-modes 'html-mode)
 (add-to-list 'ac-modes 'python-mode)
+(add-to-list 'ac-modes 'slime-mode)
 
 ;; 大文字・小文字を区別する
 (setq ac-ignore-case nil)
