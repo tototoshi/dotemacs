@@ -22,4 +22,4 @@
     (insert string)
     (write-region (point-min) (point-max) file-path)))
 
-(provide 'my-fileutils)
+(provide 'file-utils)
