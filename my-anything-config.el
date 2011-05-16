@@ -6,6 +6,7 @@
 (require 'anything-config)
 (require 'anything-match-plugin)
 (require 'anything-gtags)
+(require 'anything-project)
 
 ;; on にするといろいろすごい
 ;; (anything-read-string-mode nil)
