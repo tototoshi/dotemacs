@@ -18,6 +18,7 @@
 (my-global-set-key "\C-x\C-d" 'anything-current-dir)
 (my-global-set-key "\C-x\C-i" 'anything-imenu)
 (my-global-set-key "\C-x\C-b" 'anything-buffers+)
+(my-global-set-key "\C-xp" 'anything-project)
 (my-global-set-key (kbd "M-s o") 'occur-by-moccur)
 (my-global-set-key (kbd "C-c v") 'svn-status)
 (my-global-set-key "\C-cd" 'flymake-display-err-menu-for-current-line)
