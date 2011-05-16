@@ -2,8 +2,9 @@
 
 (defun wiki (title)
   (interactive "sTitle: ")
-  (browse-url (format "%s/%s?action=edit&editor=text"
-                      my-moinmoin-url
-                      (http-url-encode title 'utf-8))))
+  (cond (my-moinmoin-url (browse-url (format "%s/%s?action=edit&editor=text"
+                                             my-moinmoin-url
+                                             (http-url-encode title 'utf-8))))
+        (t (message "Please specify my-moinmoin-url"))))
 
 (provide 'my-moinmoin)
