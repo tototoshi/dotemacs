@@ -20,6 +20,14 @@
   (cond ((<= n 0) lst)
         (t (drop (1- n) (cdr lst)))))
 
+(defun take-while (fn lst)
+  (cond ((or (null lst) (not (funcall fn (car lst)))) nil)
+        (t (cons (car lst) (take-while fn (cdr lst))))))
+
+(defun drop-while (fn lst)
+  (cond ((not (funcall fn (car lst))) lst)
+        (t (drop-while fn (cdr lst)))))
+
 (defun split-at (n lst)
   (list (take n lst) (drop n lst)))
 
