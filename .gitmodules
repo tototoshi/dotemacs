@@ -4,3 +4,6 @@
 [submodule "auto-highlight-symbol-mode"]
 	path = auto-highlight-symbol-mode
 	url = git://github.com/mitsuo-saito/auto-highlight-symbol-mode.git
+[submodule "twittering-mode"]
+	path = twittering-mode
+	url = git://github.com/hayamiz/twittering-mode.git
