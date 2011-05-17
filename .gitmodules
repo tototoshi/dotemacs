@@ -10,3 +10,6 @@
 [submodule "navi2ch"]
 	path = navi2ch
 	url = git://github.com/naota/navi2ch.git
+[submodule "magit"]
+	path = magit
+	url = git://github.com/magit/magit.git
