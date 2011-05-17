@@ -16,3 +16,6 @@
 [submodule "org-mode"]
 	path = org-mode
 	url = git://orgmode.org/org-mode.git
+[submodule "zencoding"]
+	path = zencoding
+	url = https://github.com/rooney/zencoding.git
