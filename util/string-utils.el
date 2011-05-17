@@ -1,4 +1,4 @@
-B(defun string-left-trim (character-bag string)
+(defun string-left-trim (character-bag string)
   (let ((c-list (string-to-char-list string))
         (bag-list (string-to-char-list character-bag)))
     (apply #'concat
