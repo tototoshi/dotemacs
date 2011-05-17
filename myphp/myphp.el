@@ -1,3 +1,5 @@
+(require 'file-utils)
+
 (defvar myphp-dir "~/.emacs.d/my-emacs-lisp/myphp")
 (defvar myphp-candidates-file `,(concat myphp-dir "/myphp_func_list"))
 (defvar myphp-sed-script `,(concat myphp-dir "/myphp-sed-script"))
@@ -52,6 +54,27 @@
   (anything 'anything-c-source-myphp-manual))
 
 (define-key php-mode-map [f1] 'anything-myphp-manual)
+
+(defun ac-php-func-candidates ()
+  (my-read-lines "~/.emacs.d/my-emacs-lisp/myphp/myphp_func_list"))
+
+(defvar ac-php-func-source
+  '((candidates . ac-php-func-candidates)))
+
+(add-hook 'php-mode-hook
+          '(lambda ()
+             (setq php-mode-force-pear t)
+             (flymake-mode t)
+             (c-set-style "stroustrup")
+             (c-set-offset 'comment-intro 0)
+             (setq tab-width 2)
+             (setq-default tab-width 2)
+             (setq c-tab-width 2)
+             (setq c-basic-offset 2)
+             (hs-minor-mode t)
+             (add-to-list 'ac-sources 'ac-php-func-source)
+             ))
+
 
 ;(and
 ; (string= (myphp-format-func-name "abs()") "abs")
