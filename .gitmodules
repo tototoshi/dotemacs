@@ -49,3 +49,6 @@
 [submodule "emacs-skype"]
 	path = emacs-skype
 	url = git://github.com/kiwanami/emacs-skype.git
+[submodule "ipa"]
+	path = ipa
+	url = https://github.com/emacsmirror/ipa.git
