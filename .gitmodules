@@ -19,3 +19,6 @@
 [submodule "zencoding"]
 	path = zencoding
 	url = https://github.com/rooney/zencoding.git
+[submodule "jaunte"]
+	path = jaunte
+	url = git://github.com/kawaguchi/jaunte.el.git
