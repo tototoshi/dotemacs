@@ -34,3 +34,6 @@
 [submodule "slime"]
 	path = slime
 	url = https://github.com/emacsmirror/slime.git
+[submodule "bm"]
+	path = bm
+	url = git://github.com/emacsmirror/bm.git
