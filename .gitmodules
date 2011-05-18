@@ -25,3 +25,6 @@
 [submodule "rainbow-delimiters"]
 	path = rainbow-delimiters
 	url = https://github.com/emacsmirror/rainbow-delimiters.git
+[submodule "auto-complete"]
+	path = auto-complete
+	url = git://github.com/m2ym/auto-complete.git
