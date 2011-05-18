@@ -31,3 +31,6 @@
 [submodule "yasnippet"]
 	path = yasnippet
 	url = git://github.com/emacsmirror/yasnippet.git
+[submodule "slime"]
+	path = slime
+	url = https://github.com/emacsmirror/slime.git
