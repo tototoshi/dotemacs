@@ -30,4 +30,11 @@
             (setq s (replace-match "" t nil s))))
         s))
 
+(setq xs '("a" "bc" "def"))
+
+(defun string-list-to-string (s lst)
+  (reduce
+   #'(lambda (x y) (concat x s y))
+   lst))
+
 (provide 'string-utils)
