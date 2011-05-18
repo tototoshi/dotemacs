@@ -28,3 +28,6 @@
 [submodule "auto-complete"]
 	path = auto-complete
 	url = git://github.com/m2ym/auto-complete.git
+[submodule "yasnippet"]
+	path = yasnippet
+	url = git://github.com/emacsmirror/yasnippet.git
