@@ -19,7 +19,7 @@
   (split-string (shell-command-to-string
                  (format "%s %s" my-moin-parse-command my-moinmoin-url)) "\n"))
 
-(setq anything-c-source-my-moin-page
+(defvar anything-c-source-my-moin-page
       '((name . "Page list")
         (candidates . anything-my-moin-page-list)
         (action
