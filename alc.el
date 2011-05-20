@@ -26,6 +26,3 @@
   (browse-url (alc-make-url
                (cond ((string= arg "") (or (current-word) ""))
                      (t arg)))))
-
-(global-set-key "\C-c\C-w" 'alc)
-
