@@ -15,6 +15,10 @@
     (insert-file-contents filePath)
     (split-string (buffer-string) "\n" t)))
 
+(defun my-write-lines (file lst)
+  "Write string list to a file"
+  (my-file-put-contents file (string-list-to-string "\n" lst)))
+
 (defun my-file-put-contents (file-path string)
   "put content to FILEPATH's file."
   (with-temp-buffer
