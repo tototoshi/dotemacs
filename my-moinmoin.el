@@ -1,3 +1,5 @@
+(require 'http-get)
+
 (defvar my-moinmoin-url nil)
 (defvar my-moin-parse-command nil)
 

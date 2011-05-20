@@ -20,6 +20,4 @@
     (cond ((eq 'git vcs) (magit-status (file-name-as-directory (current-directory))))
           ((eq 'svn vcs) (psvn (current-directory))))))
 
-(global-set-key (kbd "C-c v") 'vcs)
-
 (provide 'vcs)

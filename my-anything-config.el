@@ -23,5 +23,5 @@
   (interactive)
   (anything '(anything-c-source-files-in-current-dir+)))
 
-(global-set-key (kbd "C-x r l") 'anything-bookmarks)
+
 

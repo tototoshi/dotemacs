@@ -52,3 +52,6 @@
 [submodule "ipa"]
 	path = ipa
 	url = https://github.com/emacsmirror/ipa.git
+[submodule "anything"]
+	path = anything
+	url = https://github.com/emacsmirror/anything.git

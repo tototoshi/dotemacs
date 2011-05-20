@@ -37,4 +37,12 @@
    #'(lambda (x y) (concat x s y))
    lst))
 
+(defun string-starts-with (string start)
+  (string= start (substring-no-properties string 0 (length start))))
+
+(defun string-ends-with (string end)
+  (string= end (substring-no-properties string
+                                    (- (length string) (length end))
+                                    (length string))))
+
 (provide 'string-utils)
