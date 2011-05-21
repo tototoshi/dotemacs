@@ -1,5 +1,27 @@
 (when (require 'scala-mode-auto nil t)
   (require 'auto-highlight-symbol)
+  (setq scala-interpreter "scala -Xnojline")
+
+  ;; http://www.callcc.net/diary/20101106.html ;;;;;;;
+  (defadvice scala-block-indentation (around improve-indentation-after-brace activate)
+    (if (eq (char-before) ?\{)
+        (setq ad-return-value (+ (current-indentation) scala-mode-indent:step))
+      ad-do-it))
+
+  (defun scala-newline-and-indent ()
+    (interactive)
+    (delete-horizontal-space)
+    (let ((last-command nil))
+      (newline-and-indent))
+    (when (scala-in-multi-line-comment-p)
+      (insert "* ")))
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+  (add-hook 'scala-mode-hook
+            (lambda ()
+              (define-key scala-mode-map (kbd "RET") 'scala-newline-and-indent)))
+
   (add-to-list 'auto-mode-alist '("\\.scala$" . scala-mode))
   (add-hook 'scala-mode-hook
             (lambda ()
@@ -26,3 +48,4 @@
   (defadvice scala-eval-buffer (after pop-after-scala-eval-buffer activate)
     (pop-to-buffer scala-inf-buffer-name)
     (goto-char (point-max))))
+
