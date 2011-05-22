@@ -26,4 +26,7 @@
     (insert string)
     (write-region (point-min) (point-max) file-path)))
 
+(defun my-remove-extension (filename)
+  (string-replace-match "\\.\\([0-9a-zA-Z]*\\)$" filename ""))
+
 (provide 'file-utils)
