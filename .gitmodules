@@ -55,3 +55,6 @@
 [submodule "anything"]
 	path = anything
 	url = https://github.com/emacsmirror/anything.git
+[submodule "elib"]
+	path = elib
+	url = https://github.com/emacsmirror/elib.git
