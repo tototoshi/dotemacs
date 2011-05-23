@@ -17,8 +17,12 @@
                (setq unread-command-events
                      (cons ,(string-to-char (cdr pair)) unread-command-events)))))
         sticky-list)
-(define-key sticky-map sticky-key '(lambda ()(interactive)(insert sticky-key)))
 
+(defun insert-sticky-key ()
+  (interactive)
+  (insert sticky-key))
+
+(define-key sticky-map sticky-key 'insert-sticky-key)
 
 
 (load "skk")
