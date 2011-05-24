@@ -38,3 +38,5 @@
 (global-set-key (kbd "C-S-q") 'bury-buffer)
 (global-set-key (kbd "C-c v") 'vcs)
 (global-set-key (kbd "C-c C-w") 'alc)
+(global-set-key (kbd "C-c r") 'org-capture)
+
