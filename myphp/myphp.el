@@ -45,10 +45,7 @@
         (candidates-file  ,myphp-candidates-file updating)
         (requires-pattern . 0)
         (candidate-number-limit . 100)
-        (type . myphp-manual )))
-
-(define-anything-type-attribute 'myphp-manual
-  '((action ("browse-url-w3m" . myphp-browse-manual))))
+        ((action . ("browse-url-w3m" . myphp-browse-manual)))))
 
 (defun anything-myphp-manual ()
   (interactive)
