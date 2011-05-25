@@ -61,3 +61,9 @@
 [submodule "emms"]
 	path = emms
 	url = git://github.com/emacsmirror/emms.git
+[submodule "snippets-ext/nekop/java-mode"]
+	path = snippets-ext/nekop/java-mode
+	url = git://github.com/nekop/yasnippet-java-mode.git
+[submodule "snippets-ext/chuwb"]
+	path = snippets-ext/chuwb
+	url = git://github.com/chuwb/yasnippet-java-topcoder.git
