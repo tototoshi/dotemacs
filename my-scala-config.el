@@ -20,6 +20,7 @@
 
   (add-hook 'scala-mode-hook
             (lambda ()
+              (yas/minor-mode-on)
               (define-key scala-mode-map (kbd "RET") 'scala-newline-and-indent)))
 
   (add-to-list 'auto-mode-alist '("\\.scala$" . scala-mode))
