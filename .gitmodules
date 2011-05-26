@@ -67,3 +67,6 @@
 [submodule "snippets-ext/chuwb"]
 	path = snippets-ext/chuwb
 	url = git://github.com/chuwb/yasnippet-java-topcoder.git
+[submodule "snippets-ext/AndreaCrotti"]
+	path = snippets-ext/AndreaCrotti
+	url = git://github.com/AndreaCrotti/yasnippet-snippets.git
