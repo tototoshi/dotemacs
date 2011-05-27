@@ -1,0 +1,32 @@
+# This was cloned from a TextMate bundle for yasnippet.
+# --
+;(function(\$) {
+${2:// ${3:What does the $1 plugin do?}}
+\$.fn.${1:pluginName} = function(options) {
+  var opts = \$.extend({}, \$.fn.$1.defaults, options);
+
+  return this.each(function() {
+    var \$this = \$(this);
+
+  ${5:  ${6:// Support for the Metadata Plugin.}
+    var o = \$.meta ? \$.extend({\}, opts, \$this.data()) : opts;
+  }
+
+  });
+
+  // private function for debugging
+  function debug(\$obj) {
+    if (window.console && window.console.log) {
+      window.console.log(\$obj);
+    }
+  }
+};
+
+// default options
+\$.fn.$1.defaults = {
+  ${4:defaultOne:true,
+  defaultTwo:false,
+  defaultThree:'yay!'}
+};
+
+})(jQuery);
