@@ -29,6 +29,8 @@
 
 (unless scratch-initp
   (with-current-buffer scratch-name
-    (insert-file-contents scratch-file))
+    (if (file-exists-p scratch-file)
+        (insert-file-contents scratch-file)
+      (shell-command-to-string (format "touch %s" scratch-file))))
   (setq scratch-initp t))
 
