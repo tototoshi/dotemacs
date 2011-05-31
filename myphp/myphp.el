@@ -45,16 +45,11 @@
         (candidates-file  ,myphp-candidates-file updating)
         (requires-pattern . 0)
         (candidate-number-limit . 100)
-        (type . myphp-manual )))
-
-(define-anything-type-attribute 'myphp-manual
-  '((action ("browse-url-w3m" . myphp-browse-manual))))
+        ((action . ("browse-url-w3m" . myphp-browse-manual)))))
 
 (defun anything-myphp-manual ()
   (interactive)
   (anything 'anything-c-source-myphp-manual))
-
-(define-key php-mode-map [f1] 'anything-myphp-manual)
 
 (defun ac-php-func-candidates ()
   (my-read-lines "~/.emacs.d/dotemacs/myphp/myphp_func_list"))
@@ -74,6 +69,7 @@
              (setq c-basic-offset 2)
              (hs-minor-mode t)
              (add-to-list 'ac-sources 'ac-php-func-source)
+             (define-key php-mode-map [f1] 'anything-myphp-manual)
              ))
 
 

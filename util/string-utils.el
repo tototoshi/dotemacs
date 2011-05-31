@@ -1,3 +1,9 @@
+(defun str-head  (str)
+  (substring str 0 1))
+
+(defun str-tail (str)
+  (substring str 1))
+
 (defun string-left-trim (character-bag string)
   (let ((c-list (string-to-char-list string))
         (bag-list (string-to-char-list character-bag)))
@@ -46,3 +52,4 @@
                                     (length string))))
 
 (provide 'string-utils)
+
