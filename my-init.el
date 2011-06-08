@@ -20,7 +20,6 @@
 (load "my-scala-config.el")
 (require 'string)
 (require 'my-google)
-(require 'unius)
 (require 'ack)
 (load "my-ack.el")
 (require 'my-moinmoin)
