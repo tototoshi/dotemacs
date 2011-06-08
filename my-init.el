@@ -35,4 +35,5 @@
 (load "my-yasnippet-config.el")
 (load "my-memo.el")
 (load "my-c++-config.el")
+(load "my-c-config.el")
 (load "my-rpm-spec-mode-config.el")
