@@ -48,5 +48,9 @@
 
   (defadvice scala-eval-buffer (after pop-after-scala-eval-buffer activate)
     (pop-to-buffer scala-inf-buffer-name)
-    (goto-char (point-max))))
+    (goto-char (point-max)))
+
+  (when (require 'ensime nil t)
+    (add-hook 'scala-mode-hook 'ensime-scala-mode-hook))
+  )
 
