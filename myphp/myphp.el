@@ -1,4 +1,4 @@
-
+(require 'php-mode)
 (require 'file-utils)
 
 (defvar myphp-dir "~/.emacs.d/dotemacs/myphp")
