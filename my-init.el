@@ -35,4 +35,7 @@
 (load "my-memo.el")
 (load "my-c++-config.el")
 (load "my-c-config.el")
+(load "my-java-config.el")
 (load "my-rpm-spec-mode-config.el")
+
+(autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")
