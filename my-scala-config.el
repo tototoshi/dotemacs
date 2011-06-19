@@ -18,20 +18,23 @@
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
+  (add-to-list 'auto-mode-alist '("\\.scala$" . scala-mode))
+
   (add-hook 'scala-mode-hook
             (lambda ()
               (yas/minor-mode-on)
-              (define-key scala-mode-map (kbd "RET") 'scala-newline-and-indent)))
-
-  (add-to-list 'auto-mode-alist '("\\.scala$" . scala-mode))
-  (add-hook 'scala-mode-hook
-            (lambda ()
+              (define-key scala-mode-map (kbd "RET") 'scala-newline-and-indent)
               (scala-electric-mode)
+              (hs-minor-mode t)
+              (define-key scala-mode-map (kbd "C-<tab>") 'hs-toggle-hiding)
+              (define-key scala-mode-map (kbd "S-<tab>") 'scala-undent-line)
+              (speedbar-add-supported-extension "\\.scala")
               (setq imenu-generic-expression
                     '(
                       ("var" "\\(var +\\)\\([^(): ]+\\)" 2)
                       ("val" "\\(val +\\)\\([^(): ]+\\)" 2)
                       ("override def" "^[ \\t]*\\(override\\) +\\(def +\\)\\([^(): ]+\\)" 3)
+                      ("private def" "^[ \\t]*\\(private\\) +\\(def +\\)\\([^(): ]+\\)" 3)
                       ("implicit def" "^[ \\t]*\\(implicit\\) +\\(def +\\)\\([^(): ]+\\)" 3)
                       ("def" "^[ \\t]*\\(def +\\)\\([^(): ]+\\)" 2)
                       ("trait" "\\(trait +\\)\\([^(): ]+\\)" 2)

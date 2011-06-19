@@ -9,7 +9,6 @@
 (load "delete-line.el")
 (load "dired-config.el")
 (load "my-twittering-mode.el")
-(load "my-conkeror.el")
 (load "alc.el")
 (load "my-zencoding-mode-config.el")
 (load "my-shell-config.el")
