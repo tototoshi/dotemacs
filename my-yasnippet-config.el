@@ -3,7 +3,8 @@
 (yas/initialize)
 ;; Develop in ~/emacs.d/mysnippets, but also
 ;; try out snippets in ~/Downloads/interesting-snippets
-(setq yas/root-directory '("~/.emacs.d/dotemacs/snippets-ext/nekop/"
+(setq yas/root-directory '("~/.emacs.d/dotemacs/snippets/"
+                           "~/.emacs.d/dotemacs/snippets-ext/nekop/"
                            "~/.emacs.d/dotemacs/snippets-ext/chuwb/"
                            "~/.emacs.d/dotemacs/snippets-jquery/"
                            "~/.emacs.d/dotemacs/snippets-ext/AndreaCrotti/"
