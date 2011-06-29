@@ -68,6 +68,7 @@
              (setq c-tab-width 2)
              (setq c-basic-offset 2)
              (hs-minor-mode t)
+             (setq php-manual-url myphp-manual-url)
              (add-to-list 'ac-sources 'ac-php-func-source)
              (define-key php-mode-map [f1] 'anything-myphp-manual)
              ))
