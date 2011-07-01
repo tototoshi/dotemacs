@@ -46,3 +46,6 @@
 
 ;; タブを使わずに空白で
 (setq-default indent-tabs-mode nil)
+
+;; auto-revert
+(global-auto-revert-mode t)
