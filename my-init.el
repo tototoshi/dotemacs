@@ -36,5 +36,6 @@
 (load "my-c-config.el")
 (load "my-java-config.el")
 (load "my-rpm-spec-mode-config.el")
+(load "my-stumpwmrc.el")
 
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")
