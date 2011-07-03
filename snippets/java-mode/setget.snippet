@@ -1,0 +1,10 @@
+#name: setter/getter
+#name: setget
+# --
+public void set${2:$(capitalize text)}(${1:Type} ${2:obj}) {
+       this.$2 = $2;
+}
+
+public $1 get${2:$(capitalize text)}() {
+       return $2;
+}
