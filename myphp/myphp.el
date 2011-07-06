@@ -17,6 +17,14 @@
   (cond ((myphp-include-dot-p string) string)
         (t (concat "function." string))))
 
+(defun myphp-super-semicolon ()
+  (interactive)
+  (insert ";")
+  (beginning-of-line)
+  (indent-for-tab-command)
+  (insert "$ = ");
+  (backward-char 3))
+
 (defun myphp-include-dot-p (string)
   (with-temp-buffer
     (insert string)
@@ -71,6 +79,7 @@
              (setq php-manual-url myphp-manual-url)
              (add-to-list 'ac-sources 'ac-php-func-source)
              (define-key php-mode-map [f1] 'anything-myphp-manual)
+             (define-key php-mode-map (kbd "C-;") 'myphp-super-semicolon)
              ))
 
 
