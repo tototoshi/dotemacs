@@ -38,5 +38,6 @@
 (load "my-rpm-spec-mode-config.el")
 (load "my-stumpwmrc.el")
 (require 'htmlize)
+(load "myphp.el")
 
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")
