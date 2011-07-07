@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: os.walk
+# key: walk
+# --
+for root,dir,files in os.walk(${1:srcdir}):
+    for f in files:
+        fullpath = os.path.join(root,f)
+        ${2:do_something}(fullpath)

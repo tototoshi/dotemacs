@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: subprocess.Popen
+# key: popen
+# --
+${1:output}, ${2:error} = subprocess.Popen(${3:command}, stdout = subprocess.PIPE, stderr = subprocess.PIPE).communicate()
