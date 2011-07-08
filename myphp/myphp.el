@@ -25,6 +25,24 @@
   (insert "$ = ");
   (backward-char 3))
 
+(defun myphp-toggle-var-dump ()
+  (interactive)
+  (save-excursion
+    (beginning-of-line)
+    (cond ((re-search-forward "var_dump" (point-at-eol) t)
+           (indent-for-tab-command)
+           (delete-backward-char 8)
+           (delete-char 1)
+           (end-of-line)
+           (delete-backward-char 2)
+           (insert ";"))
+          (t (indent-for-tab-command)
+             (insert "var_dump(")
+             (end-of-line)
+             (if (= (char-before) ?\;)
+                 (delete-backward-char 1))
+             (insert ");")))))
+
 (defun myphp-include-dot-p (string)
   (with-temp-buffer
     (insert string)
@@ -80,6 +98,7 @@
              (add-to-list 'ac-sources 'ac-php-func-source)
              (define-key php-mode-map [f1] 'anything-myphp-manual)
              (define-key php-mode-map (kbd "C-;") 'myphp-super-semicolon)
+             (define-key php-mode-map (kbd "C-c v") 'myphp-toggle-var-dump)
              ))
 
 
