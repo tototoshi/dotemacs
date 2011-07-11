@@ -39,4 +39,5 @@
 (global-set-key (kbd "C-c v") 'vcs)
 (global-set-key (kbd "C-c C-w") 'alc)
 (global-set-key (kbd "C-c r") 'org-capture)
+(global-set-key (kbd "C-c y") 'anything-yasnippet-2)
 (global-set-key (kbd "<f9>") 'speedbar)

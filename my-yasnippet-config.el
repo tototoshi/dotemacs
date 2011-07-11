@@ -1,5 +1,6 @@
-
 (require 'yasnippet)
+(require 'anything-c-yasnippet-2)
+
 (yas/initialize)
 ;; Develop in ~/emacs.d/mysnippets, but also
 ;; try out snippets in ~/Downloads/interesting-snippets
@@ -16,6 +17,10 @@
 
 (when (require 'dropdown-list nil t)
   (setq yas/prompt-functions '(yas/dropdown-prompt)))
+
+(defun anything-yasnippet-2 ()
+  (interactive)
+  (anything 'anything-c-source-yasnippet-2))
 
 (add-hook 'snippet-mode-hook
           (lambda ()
