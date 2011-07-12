@@ -39,5 +39,7 @@
 (load "my-stumpwmrc.el")
 (require 'htmlize)
 (load "my-php.el")
+(load "my-alias.el")
+(load "my-apache-config.el")
 
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")
