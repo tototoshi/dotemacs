@@ -2,3 +2,4 @@
 (defalias 'fg 'find-grep)
 (defalias 'nf 'new-frame)
 (defalias 'df 'delete-frame)
+(defalias 'mkdir 'make-directory)
