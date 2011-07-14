@@ -1,0 +1,20 @@
+# -*- mode: snippet -*-
+# name: opendir
+# key: opendir
+# --
+// #include <sys/types.h>
+// #include <dirent.h>}
+
+DIR *d;
+struct dirent *ent;
+char *path = ${1:filename};
+
+d = opendir(path);
+if (!d) {
+    perror(path);
+    exit(1);
+}
+while (ent = readdir(d)) {
+    printf("%s\n", ent->d_name);
+}
+closedir(d);

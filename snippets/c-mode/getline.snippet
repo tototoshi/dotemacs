@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: getline
+# key: getline
+# --
+FILE *fp;
+char *line = NULL;
+size_t len = 0;
+ssize_t read;
+
+while ((read = getline(&line, &len, fp)) != -1) {
+    printf("Retrieved line of length %zu :\n", read);
+    printf("%s", line);
+}
+
+free(line);

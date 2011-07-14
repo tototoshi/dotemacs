@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: fopen_or_exit
+# key: fopen
+# --
+FILE *fp;
+fp = fopen(${1:file}, ${2:"r"});
+if (fp == NULL) {
+exit(EXIT_FAILURE);
+}
+
+fclose(fp);
