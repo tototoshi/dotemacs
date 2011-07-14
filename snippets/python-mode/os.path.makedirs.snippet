@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: make directory
+# key: mkdir
+# --
+if not os.path.exists(${1:dir}):
+    os.makedirs($1)
