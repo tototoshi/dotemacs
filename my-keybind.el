@@ -18,7 +18,7 @@
 (global-set-key (kbd "C-x p") 'anything-project)
 (global-set-key (kbd "C-x w") 'anything-my-moin)
 (global-set-key (kbd "M-s o") 'occur-by-moccur)
-(global-set-key (kbd "C-c v") 'svn-status)
+(global-set-key (kbd "C-c v") 'magit-status)
 (global-set-key (kbd "C-c d") 'flymake-display-err-menu-for-current-line)
 (global-set-key (kbd "C-x t") 'twit)
 (global-set-key (kbd "C-x C-t") 'twittering-update-status-interactive)
