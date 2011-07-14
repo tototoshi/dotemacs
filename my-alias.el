@@ -8,3 +8,5 @@
 (defalias 'pm 'php-mode)
 (defalias 'tm 'text-mode)
 (defalias 'ev 'eval-current-buffer)
+(defalias 'yn 'yas/new-snippet)
+(defalias 'yl 'yas/load-directory)
