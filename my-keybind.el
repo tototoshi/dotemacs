@@ -40,3 +40,5 @@
 (global-set-key (kbd "C-c r") 'org-capture)
 (global-set-key (kbd "C-c y") 'anything-yasnippet-2)
 (global-set-key (kbd "<f9>") 'speedbar)
+(global-set-key (kbd "M-U") 'upcase-previous-word)
+(global-set-key (kbd "M-L") 'downcase-previous-word)
