@@ -10,7 +10,7 @@
                            "~/.emacs.d/dotemacs/snippets-jquery/"
                            "~/.emacs.d/dotemacs/snippets-ext/AndreaCrotti/"
                            "~/.emacs.d/dotemacs/snippets-ext/yasnippet-php-mode/"
-                           "~/.emacs.d/dotemacs/yasnippet/snippets/"))
+                           ))
 
 ;; Map `yas/load-directory' to every element
 (mapc 'yas/load-directory yas/root-directory)
