@@ -41,5 +41,6 @@
 (load "my-php.el")
 (load "my-alias.el")
 (load "my-apache-config.el")
+(require 'navi2ch)
 
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")
