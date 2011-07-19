@@ -1,0 +1,44 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import os
+import sys
+
+def do_make_snippet(mode, name, key, snippet):
+    """make a snippet
+    Arguments:
+    - `name`:
+    - `key`:
+    - `snippet`:
+    """
+
+    directory = os.path.join(os.getenv("HOME"), ".emacs.d/dotemacs/snippets/", mode + "-mode")
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
+    filename = os.path.join(directory, name + ".snippet")
+
+    if not os.path.exists(filename):
+        file = open(filename, 'w')
+        file.write("#name: %s\n" % name)
+        file.write("#key: %s\n" % key)
+        file.write("# --\n")
+        file.write("%s\n" % snippet)
+        file.close()
+    else:
+        print "File already exists."
+
+if __name__ == '__main__':
+    mode = raw_input("mode: ")
+    name = raw_input("name: ")
+    key  = raw_input("key: ")
+    print "snippet: "
+    inputs = []
+    while True:
+        input = raw_input("")
+        if input == ".":
+            break
+        else:
+            inputs.append(input)
+    snip = "\n".join(inputs)
+    do_make_snippet(mode, name, key, snip)
