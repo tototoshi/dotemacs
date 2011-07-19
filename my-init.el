@@ -42,7 +42,5 @@
 (load "my-alias.el")
 (load "my-apache-config.el")
 (require 'navi2ch)
-(require 'screen-lines)
-(require 'moinmoin-mode)
-
+(load "my-moinmoin.el")
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")

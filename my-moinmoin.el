@@ -33,4 +33,7 @@
   (interactive)
   (anything '(anything-c-source-my-moin-page)))
 
-(provide 'my-moinmoin)
+(require 'screen-lines)
+(require 'moinmoin-mode)
+(add-hook 'moinmoin-mode-hook
+          (transient-mark-mode 1))
