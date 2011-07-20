@@ -23,7 +23,7 @@ def do_make_snippet(mode, name, key, snippet):
         file.write("#name: %s\n" % name)
         file.write("#key: %s\n" % key)
         file.write("# --\n")
-        file.write("%s\n" % snippet)
+        file.write("%s" % snippet)
         file.close()
     else:
         print "File already exists."
