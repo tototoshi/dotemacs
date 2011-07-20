@@ -73,3 +73,6 @@
 [submodule "snippets-ext/polypus74/haskell-mode"]
 	path = snippets-ext/polypus74/haskell-mode
 	url = git://github.com/polypus74/HSnippets.git
+[submodule "c-eldoc"]
+	path = c-eldoc
+	url = https://github.com/emacsmirror/c-eldoc.git
