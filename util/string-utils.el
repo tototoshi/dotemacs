@@ -5,15 +5,15 @@
   (substring str 1))
 
 (defun string-left-trim (character-bag string)
-  (let ((c-list (string-to-char-list string))
-        (bag-list (string-to-char-list character-bag)))
+  (let ((c-list (string-to-list string))
+        (bag-list (string-to-list character-bag)))
     (apply #'concat
            (mapcar #'char-to-string
                    (drop-while #'(lambda (c) (find c bag-list)) c-list)))))
 
 (defun string-right-trim (character-bag string)
-  (let ((c-list (reverse (string-to-char-list string)))
-        (bag-list (string-to-char-list character-bag)))
+  (let ((c-list (reverse (string-to-list string)))
+        (bag-list (string-to-list character-bag)))
     (apply #'concat
            (mapcar #'char-to-string
                    (reverse (drop-while #'(lambda (c) (find c bag-list)) c-list))))))
