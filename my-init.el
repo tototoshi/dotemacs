@@ -21,7 +21,6 @@
 (require 'my-google)
 (require 'ack)
 (load "my-ack.el")
-(require 'my-moinmoin)
 (load "my-w3m-config.el")
 (require 'my-auto-highlight-symbol-mode-config)
 (require 'zlc)
