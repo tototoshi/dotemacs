@@ -1,0 +1,9 @@
+#name: malloc
+#key: malloc
+# --
+${1: pointer-type} *${2:pointer-name};
+$2 = ($1 *)malloc(${3:size});
+if (!$2) {
+perror("malloc");
+exit(1);
+}$0
