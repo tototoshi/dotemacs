@@ -76,3 +76,6 @@
 [submodule "c-eldoc"]
 	path = c-eldoc
 	url = https://github.com/emacsmirror/c-eldoc.git
+[submodule "django-mode"]
+	path = django-mode
+	url = https://github.com/myfreeweb/django-mode.git
