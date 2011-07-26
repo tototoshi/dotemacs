@@ -8,7 +8,7 @@
                            "~/.emacs.d/dotemacs/snippets-ext/nekop/"
                            "~/.emacs.d/dotemacs/snippets-ext/chuwb/"
                            "~/.emacs.d/dotemacs/snippets-jquery/"
-                           "~/.emacs.d/dotemacs/snippets-ext/AndreaCrotti/"
+;;                           "~/.emacs.d/dotemacs/snippets-ext/AndreaCrotti/"
                            "~/.emacs.d/dotemacs/snippets-ext/yasnippet-php-mode/"
                            ))
 
