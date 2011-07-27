@@ -1,0 +1,21 @@
+# -*- mode: snippet -*-
+# name: urlopen_and_read_with_Header
+# key: urlopen
+# --
+`(save-excursion
+  (goto-char (point-min))
+  (unless (re-search-forward "^import urllib$" (point-max) t)
+    (insert "import urllib\n"))
+  (goto-char (point-min))
+  (unless (re-search-forward "^import urllib2$" (point-max) t)
+    (insert "import urllib2\n")))`
+
+url = ${'http://www.someserver.com/cgi-bin/register.cgi'}
+user_agent = 'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)'
+values = {}
+headers = {}
+
+data = urllib.urlencode(values)
+req = urllib2.Request(url, data, headers)
+response = urllib2.urlopen(req)
+the_page = response.read()

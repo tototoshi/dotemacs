@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: urlopen_and_read_with_Request
+# key: urlopen
+# --
+`(save-excursion
+  (goto-char (point-min))
+  (unless (re-search-forward "^import urllib2$" (point-max) t)
+    (insert "import urllib2\n")))`
+
+req = urllib2.Request(${'http://www.voidspace.org.uk'})
+response = urllib2.urlopen(req)
+the_page = response.read()

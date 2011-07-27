@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: urlopen_and_read
+# key: urlopen
+# --
+`(save-excursion
+  (goto-char (point-min))
+  (unless (re-search-forward "^import urllib2$" (point-max) t)
+    (insert "import urllib2\n")))`
+response = urllib2.urlopen(${'http://python.org/'})
+html = response.read()

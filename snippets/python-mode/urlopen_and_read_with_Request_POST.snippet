@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# name: urlopen_and_read_with_Request_POST
+# key: urlopen
+# --
+`(save-excursion
+  (goto-char (point-min))
+  (unless (re-search-forward "^import urllib$" (point-max) t)
+    (insert "import urllib\n"))
+  (goto-char (point-min))
+  (unless (re-search-forward "^import urllib2$" (point-max) t)
+    (insert "import urllib2\n")))`
+
+url = ${'http://www.someserver.com/cgi-bin/register.cgi'}
+values = {}
+data = urllib.urlencode(values)
+req = urllib2.Request(url, data)
+response = urllib2.urlopen(req)
+the_page = response.read()

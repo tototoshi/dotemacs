@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: urlopen_and_read_with_Proxy
+# key: urlopen
+# --
+`(save-excursion
+  (goto-char (point-min))
+  (unless (re-search-forward "^import urllib2$" (point-max) t)
+    (insert "import urllib2\n")))`
+
+proxy_support = urllib2.ProxyHandler({"${1:http}" : "$1://${2:proxy.host}:${3:9000}"})
+opener = urllib2.build_opener(proxy_support)
+urllib2.install_opener(opener)
