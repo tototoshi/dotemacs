@@ -7,6 +7,7 @@
 (require 'anything-match-plugin)
 (require 'anything-gtags)
 (require 'anything-project)
+(require 'anything-font-families)
 
 ;; on にするといろいろすごい
 ;; (anything-read-string-mode nil)
@@ -22,6 +23,4 @@
 (defun anything-current-dir ()
   (interactive)
   (anything '(anything-c-source-files-in-current-dir+)))
-
-
 
