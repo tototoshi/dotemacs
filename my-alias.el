@@ -12,3 +12,4 @@
 (defalias 'ev 'eval-current-buffer)
 (defalias 'yn 'yas/new-snippet)
 (defalias 'yl 'yas/load-directory)
+(defalias 'momomo 'moinmoin-mode)
