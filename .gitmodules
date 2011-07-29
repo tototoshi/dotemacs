@@ -82,3 +82,6 @@
 [submodule "Pymacs"]
 	path = Pymacs
 	url = git://github.com/pinard/Pymacs.git
+[submodule "python-mode"]
+	path = python-mode
+	url = git://github.com/emacsmirror/python-mode.git
