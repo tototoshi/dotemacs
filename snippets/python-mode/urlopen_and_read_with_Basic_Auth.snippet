@@ -1,0 +1,23 @@
+# -*- mode: snippet -*-
+# name: urlopen_and_read_with_Basic_Auth
+# key: urlopen
+# --
+`(save-excursion
+   (goto-char (point-min))
+   (unless (re-search-forward "^import urllib2$" (point-max) t)
+     (insert"import urllib2\n")))`
+
+theurl = ${'http://www.someserver.com/toplevelurl/somepage.htm'}
+
+username = ${'johnny'}
+password = ${'XXXXXX'}
+
+passman = urllib2.HTTPPasswordMgrWithDefaultRealm()
+passman.add_password(None, theurl, username, password)
+
+authhandler = urllib2.HTTPBasicAuthHandler(passman)
+opener = urllib2.build_opener(authhandler)
+
+urllib2.install_opener(opener)
+response = urllib2.urlopen(theurl)
+the_page = response.read()

@@ -1,0 +1,6 @@
+# name : python_import
+# key : import
+# --
+(goto-char (point-min))
+  (unless (re-search-forward "^import $1$" (point-max) t)
+    (insert "import $1\n"))

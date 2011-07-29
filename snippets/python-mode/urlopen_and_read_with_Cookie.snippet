@@ -1,0 +1,27 @@
+# -*- mode: snippet -*-
+# name: urlopen_and_read_with_Cookie
+# key: urlopen
+# --
+`(save-excursion
+  (goto-char (point-min))
+  (unless (re-search-forward "^import cookielib$" (point-max) t)
+    (insert "import cookielib\n"))
+  (goto-char (point-min))
+  (unless (re-search-forward "^import urllib$" (point-max) t)
+    (insert "import urllib\n"))
+  (goto-char (point-min))
+  (unless (re-search-forward "^import urllib2$" (point-max) t)
+    (insert "import urllib2\n")))`
+
+url = ${'http://www.someserver.com/cgi-bin/register.cgi'}
+user_agent = 'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)'
+values = {}
+headers = {}
+
+data = urllib.urlencode(values)
+req = urllib2.Request(url, data, headers)
+cj = cookielib.CookieJar()
+opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))
+
+response = opener.open(req)
+the_page = response.read()

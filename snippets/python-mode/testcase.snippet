@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: testcase
+# key: test
+# --
+class ${1:name}(unittest.TestCase):
+
+    def setUp(self):
+        pass
+
+    def tearDown(self):
+        pass
+
+    def suite():
+        return unittest.TestLoader().loadTestsFromTestCase($1)
+
+
