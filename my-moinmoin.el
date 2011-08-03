@@ -16,10 +16,7 @@
     (erase-buffer)
     (insert
      (shell-command-to-string
-             (format "python %s %s" my-moinmoin-script title)))
-    (goto-char (point-min))
-    (replace-regexp "&lt;" "<")
-    (replace-regexp "&gt;" ">")
+      (format "python %s %s" my-moinmoin-script title)))
     (goto-char (point-min))
     (moinmoin-mode)))
 
@@ -69,4 +66,5 @@
 (require 'screen-lines)
 (require 'moinmoin-mode)
 (add-hook 'moinmoin-mode-hook
+          (define-key moinmoin-mode-map (kbd "C-c C-c") 'my-moinmoin-save)
           (transient-mark-mode 1))
