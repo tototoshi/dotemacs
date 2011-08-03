@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: unicode write
+# key: write
+# binding: direct-keybinding
+# expand-env: ((some-var some-value))
+# type: command
+# --
+import codecs
+f = codecs.open("result", "w", "utf-8")
+f.write(text)
+f.close()
