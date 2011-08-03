@@ -42,6 +42,12 @@
 ;; auto-revert
 (global-auto-revert-mode t)
 
+;; highlight line
+(global-hl-line-mode 1)
+
+;; make text-mode default
+(setq default-major-mode 'text-mode)
+
 ;; create parent directory before save if it doesn't exist.
 (add-hook 'before-save-hook
           (lambda ()
