@@ -42,4 +42,5 @@
 (load "my-apache-config.el")
 (require 'navi2ch)
 (load "my-moinmoin.el")
+(load "my-python-config.el")
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")
