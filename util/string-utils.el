@@ -51,5 +51,8 @@
                                     (- (length string) (length end))
                                     (length string))))
 
+(defun string-to-lines (string)
+    (split-string string "\n"))
+
 (provide 'string-utils)
 
