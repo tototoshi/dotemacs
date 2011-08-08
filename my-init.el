@@ -45,4 +45,6 @@
 (load "my-python-config.el")
 (load "my-django-config.el")
 (load "my-speedbar-config.el")
+(load "my-phrase.el")
+
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")

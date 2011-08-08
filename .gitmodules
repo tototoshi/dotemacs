@@ -85,3 +85,6 @@
 [submodule "python-mode"]
 	path = python-mode
 	url = git://github.com/emacsmirror/python-mode.git
+[submodule "gist.el"]
+	path = gist.el
+	url = git://github.com/defunkt/gist.el

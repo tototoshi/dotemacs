@@ -15,4 +15,3 @@
  sr-speedbar-right-side nil
  sr-speedbar-width 40)
 
-
