@@ -1,4 +1,4 @@
-(defalias 'o 'occur-by-moccur)
+(defalias 'o 'occur)
 (defalias 'fg 'find-grep)
 (defalias 'nf 'new-frame)
 (defalias 'df 'delete-frame)
