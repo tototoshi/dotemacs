@@ -43,4 +43,6 @@
 (require 'navi2ch)
 (load "my-moinmoin.el")
 (load "my-python-config.el")
+(load "my-phrase.el")
+
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")
