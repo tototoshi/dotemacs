@@ -88,3 +88,6 @@
 [submodule "gist.el"]
 	path = gist.el
 	url = git://github.com/defunkt/gist.el
+[submodule "emacs-window-manager"]
+	path = emacs-window-manager
+	url = git://github.com/kiwanami/emacs-window-manager.git
