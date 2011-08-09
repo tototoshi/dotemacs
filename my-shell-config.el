@@ -72,14 +72,14 @@
                              ;; (define-key term-raw-map "\C-z"
                              ;; (lookup-key (current-global-map) "\C-z"))))
 
-;;                           背景黒、文字白にするときの設定
-;;                             (when window-system
-;;                               (setq
-;;                                term-default-fg-color "White"
-;;                                term-default-bg-color "Black"
-;;                                ansi-term-color-vector
-;;                                [unspecified "black" "#ff5555" "#55ff55" "#ffff55"
-;;                                             "#5555ff" "#ff55ff" "#55ffff" "white"]))
+                             ;; 背景黒、文字白にするときの設定
+;;                              (when window-system
+;;                                (setq
+;;                                 term-default-fg-color "White"
+;;                                 term-default-bg-color "Black"
+;;                                 ansi-term-color-vector
+;;                                 [unspecified "black" "#ff5555" "#55ff55" "#ffff55"
+;;                                              "#5555ff" "#ff55ff" "#55ffff" "white"]))
                              ))
 
 (defadvice ansi-term (around check-ansi-term-buffer-already-exists)
@@ -105,3 +105,10 @@
   (lambda()
     (define-key 'eshell-ode-map ?\C-a 'eshell-bol)
     (define-key eshell-mode-map (kbd "C-c k") 'my-eshell-kill-line0)))
+
+;;;;;;;;;;;;;;;
+;; shell-pop ;;
+;;;;;;;;;;;;;;;
+(require 'shell-pop)
+(shell-pop-set-internal-mode "ansi-term")
+;(shell-pop-set-internal-mode-shell "/bin/zsh")
