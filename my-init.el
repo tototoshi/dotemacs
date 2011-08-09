@@ -46,5 +46,8 @@
 (load "my-django-config.el")
 (load "my-speedbar-config.el")
 (load "my-phrase.el")
+(load "gist.el")
+(load "anything-gist.el")
+(load "my-e2wm-config.el")
 
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")
