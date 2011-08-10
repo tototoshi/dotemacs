@@ -15,12 +15,6 @@
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 (add-to-list 'interpreter-mode-alist '("python" . python-mode))
 
-(defun electric-pair ()
-  "Insert character pair without sournding spaces"
-  (interactive)
-  (let (parens-require-spaces)
-    (insert-pair)))
-
 (add-hook 'python-mode-hook
            (lambda ()
              (define-key py-mode-map "\"" 'electric-pair)

@@ -1,7 +1,7 @@
 (global-set-key (kbd "C-x r l") 'anything-bookmarks)
 (global-set-key (kbd "<f12>") 'shell-pop)
 (global-set-key (kbd "M-k") 'delete-line)
-(global-set-key (kbd "C-h") 'delete-backward-char)
+(global-set-key (kbd "C-h") 'my-delete-backward-char)
 (global-set-key (kbd "M-h") 'help)
 (global-set-key (kbd "<up>") 'sane-previous-line)
 (global-set-key (kbd "<down>") 'sane-next-line)
@@ -43,4 +43,8 @@
 (global-set-key (kbd "<f9>") 'speedbar)
 (global-set-key (kbd "M-U") 'upcase-previous-word)
 (global-set-key (kbd "M-L") 'downcase-previous-word)
+(global-set-key (kbd "「") 'electric-pair)
+(global-set-key (kbd "【") 'electric-pair)
+(global-set-key (kbd "『") 'electric-pair)
+
 

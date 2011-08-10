@@ -7,3 +7,10 @@
             (hs-minor-mode t)
             (hideshowvis-enable)
             ))
+
+(add-hook 'java-mode-common-hook
+  '(lambda ()
+    (font-lock-add-keywords major-mode '(
+      ("\\<if\\>"
+       ("[^<>=]\\(=\\)[^=]" nil nil (1 font-lock-warning-face))
+       )))))

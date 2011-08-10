@@ -56,5 +56,9 @@
             (c-turn-on-eldoc-mode)
             (local-set-key (kbd "C-c o") 'ff-find-other-file)))
 
-
-
+(add-hook 'c-mode-common-hook
+  '(lambda ()
+    (font-lock-add-keywords major-mode '(
+      ("\\<if\\>"
+       ("[^<>=]\\(=\\)[^=]" nil nil (1 font-lock-warning-face))
+       )))))

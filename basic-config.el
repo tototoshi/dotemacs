@@ -56,3 +56,24 @@
                 (when (and (not (file-exists-p dir))
                            (y-or-n-p (format "Directory %s does not exist. Create it?" dir)))
                   (make-directory dir t))))))
+
+;; 「」【】『』
+(add-to-list 'insert-pair-alist '(12300 12301))
+(add-to-list 'insert-pair-alist '(12302 12303))
+(add-to-list 'insert-pair-alist '(12304 12305))
+
+;; 開き括弧を入力したら自動で閉じ括弧も入力する
+(defun electric-pair ()
+  "Insert character pair without sournding spaces"
+  (interactive)
+  (let (parens-require-spaces)
+    (insert-pair)))
+
+;; 賢いdelete-backward-char
+(defun my-delete-backward-char ()
+  (interactive)
+  (let ((deleted-char (char-before)))
+    (delete-backward-char 1)
+    (when (= (char-after)
+             (or (cadr (assoc deleted-char insert-pair-alist)) 0))
+      (delete-char 1))))
