@@ -15,8 +15,25 @@
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 (add-to-list 'interpreter-mode-alist '("python" . python-mode))
 
+(defvar my-py-docs-python-org-url "http://docs.python.org")
+
+(defun my-py-search-documentation-interactive (word)
+  (interactive "sSEARCH: ")
+  (my-py-search-documentation word))
+
+(defun my-py-search-documentation-at-point ()
+  (interactive)
+  (let ((word (current-word)))
+    (when word
+      (my-py-search-documentation word))))
+
+(defun my-py-search-documentation (word)
+  (browse-url (format "%s/search.html?q=%s" my-py-docs-python-org-url word)))
+
 (add-hook 'python-mode-hook
            (lambda ()
+             (define-key py-mode-map (kbd "C-c C-f") 'my-py-search-documentation-at-point)
+             (define-key py-mode-map (kbd "<f1>") 'my-py-search-documentation-interactive)
              (define-key py-mode-map "\"" 'electric-pair)
              (define-key py-mode-map "\'" 'electric-pair)
              (define-key py-mode-map "(" 'electric-pair)
