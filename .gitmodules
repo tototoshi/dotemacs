@@ -94,3 +94,6 @@
 [submodule "emacs-window-layout"]
 	path = emacs-window-layout
 	url = git://github.com/kiwanami/emacs-window-layout.git
+[submodule "e-sink"]
+	path = e-sink
+	url = git://github.com/lewang/e-sink.git
