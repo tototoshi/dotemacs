@@ -50,5 +50,6 @@
 (load "anything-gist.el")
 (load "my-e2wm-config.el")
 (load "my-e-sink-config.el")
+(require 'markdown-mode )
 
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")

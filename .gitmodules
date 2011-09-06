@@ -97,3 +97,6 @@
 [submodule "e-sink"]
 	path = e-sink
 	url = git://github.com/lewang/e-sink.git
+[submodule "markdown-mode"]
+	path = markdown-mode
+	url = git://github.com/defunkt/markdown-mode.git
