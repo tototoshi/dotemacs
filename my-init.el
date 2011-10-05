@@ -52,5 +52,6 @@
 (load "my-e-sink-config.el")
 (load "my-markdown-mode-config.el")
 (load "my-display-time-config.el")
+(load "my-hatena-config.el")
 
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")
