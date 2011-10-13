@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: insert
+# key: insert
+# --
+INSERT INTO $0 () VALUES ();

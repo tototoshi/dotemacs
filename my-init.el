@@ -53,5 +53,6 @@
 (load "my-markdown-mode-config.el")
 (load "my-display-time-config.el")
 (load "my-hatena-config.el")
-
+(load "my-haskell-mode-config.el")
+(load "my-sql-mode-config.el")
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")

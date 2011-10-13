@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: select
+# key: select
+# --
+SELECT $0
