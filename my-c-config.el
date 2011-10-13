@@ -50,6 +50,11 @@
 
 (add-hook 'c-mode-hook
           (lambda()
+            (define-key c-mode-map "\"" 'electric-pair)
+            (define-key c-mode-map "\'" 'electric-pair)
+            (define-key c-mode-map "(" 'electric-pair)
+            (define-key c-mode-map "[" 'electric-pair)
+            (define-key c-mode-map "{" 'electric-pair)
             (define-key c-mode-map (kbd "C-c i") 'my-anything-c-insert-header)
             (setq c-default-style "linux"
                   c-basic-offset 4)
