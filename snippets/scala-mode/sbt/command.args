@@ -1,0 +1,7 @@
+# name: command.args
+# key: command
+# --
+def ${1:command} = Command.args("${2:commandName}", "<args>") { (state, args) =>
+  $0
+  state
+}
