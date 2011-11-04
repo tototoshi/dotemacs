@@ -3,6 +3,7 @@
                "\n"))
   (add-to-list 'load-path dir))
 
+(load "my-mac-swap-option-and-command.el")
 (load "my-window-config.el")
 (load "my-java-config.el")
 (load "basic-config.el")
