@@ -37,9 +37,6 @@
 [submodule "bm"]
 	path = bm
 	url = git://github.com/emacsmirror/bm.git
-[submodule "Emacs-wgrep"]
-	path = Emacs-wgrep
-	url = git://github.com/mhayashi1120/Emacs-wgrep.git
 [submodule "haskell-mode"]
 	path = haskell-mode
 	url = git://github.com/jwiegley/haskell-mode.git
