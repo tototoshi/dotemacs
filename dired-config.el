@@ -28,12 +28,16 @@
     (eshell)
     (my-eshell-move-to-dir current-dir)))
 
+(defun dired-open-command ()
+  (cond ((eq window-system 'ns) "open")
+        ((eq system-type 'gnu/linux) "xdg-open")))
+
 (defun dired-open-file ()
   "In dired, open the file named on this line."
   (interactive)
   (let* ((file (dired-get-filename nil t)))
     (message "Opening %s..." file)
-    (call-process "xdg-open" nil 0 nil file)
+    (call-process (dired-open-command) nil 0 nil file)
     (message "Opening %s done" file)))
 
 (defun dired-next-line (arg)
