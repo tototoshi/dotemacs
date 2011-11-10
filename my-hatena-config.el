@@ -15,7 +15,7 @@
     (save-restriction
       (narrow-to-region begin end)
       (goto-char (point-min))
-      (insert (format ">>\n" lang))
+      (insert ">>\n")
       (goto-char (point-max))
       (insert "<<\n"))))
 
