@@ -54,5 +54,8 @@
 (defun string-to-lines (string)
     (split-string string "\n"))
 
+(defun string-join (lst &optional separator)
+  (mapconcat 'identity lst separator))
+
 (provide 'string-utils)
 
