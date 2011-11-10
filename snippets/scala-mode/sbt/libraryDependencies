@@ -1,0 +1,6 @@
+# name: libraryDependencies
+# key: dep
+# --
+libraryDependencies ++= Seq(
+  $0
+)

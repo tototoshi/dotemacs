@@ -1,0 +1,5 @@
+# name: scalaz
+# key: scalaz
+# --
+import scalaz._
+import Scalaz._

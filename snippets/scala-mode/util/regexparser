@@ -1,0 +1,9 @@
+# name: regexparser
+# key: parser
+# --
+import scala.util.parsing.combinator._
+
+object ${1:MyParser} extends RegexParsers {
+  def ${2:lines} = $0
+  def parse(in: String) = parseAll($2, in)
+}
