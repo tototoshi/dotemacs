@@ -1,10 +1,10 @@
 (require 'http-get)
 
 (defvar my-moinmoin-url nil)
-(defvar my-moin-parse-command nil)
-
-(defvar my-moinmoin-script "~/work/moin/moin.py")
-(defvar my-moinmoin-save-script "~/work/moin/moin-save.py")
+(defvar my-moinmoin-directory "~/.emacs.d/dotemacs/moinmoin/")
+(defvar my-moin-parse-command (concat my-moinmoin-directory "moin.sh"))
+(defvar my-moinmoin-script (concat my-moinmoin-directory "moin.py"))
+(defvar my-moinmoin-save-script (concat my-moinmoin-directory "moin-save.py"))
 
 (defvar my-moinmoin-buffer-prefix "moinmoin-")
 
