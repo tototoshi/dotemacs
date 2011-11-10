@@ -39,4 +39,8 @@
   (cond ((or (<= n 0) (null lst)) nil)
         (t (cons (take n lst) (grouped n (drop n lst))))))
 
+(defun init (lst)
+  (reverse (cdr (reverse lst))))
+
+
 (provide 'list-utils)
