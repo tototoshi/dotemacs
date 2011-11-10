@@ -1,0 +1,14 @@
+# name: writeLines
+# key: write
+# --
+import java.io.PrintWriter
+
+val lines = ${List()}
+val out = new PrintWriter(${filename})
+
+try {
+  lines.foreach(out.println)
+} finally {
+  out.close()
+}
+

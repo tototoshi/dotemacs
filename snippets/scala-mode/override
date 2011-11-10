@@ -1,0 +1,4 @@
+# name: override
+# key: ov
+# --
+override $0
