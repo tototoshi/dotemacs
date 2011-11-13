@@ -1,11 +1,25 @@
+(defvar anything-c-source-my-java-imports-java-class-list
+  "~/.emacs.d/dotemacs/data/java.classes")
+
+(defvar anything-c-source-my-java-imports
+   '((name . "Java Imports")
+    (requires-pattern . 0)
+    (candidates-file anything-c-source-my-java-imports-java-class-list updating)
+    (action . (("insert". (lambda (x) (insert (format "import %s;\n" x))))))))
+
+(defun anything-my-java-imports ()
+  (interactive)
+  (anything '(anything-c-source-my-java-imports)))
+
 (add-hook 'java-mode-hook
           (lambda ()
+            (define-key java-mode-map (kbd "C-S-o") 'anything-my-java-imports)
+
             (define-key java-mode-map "\"" 'electric-pair)
             (define-key java-mode-map "\'" 'electric-pair)
             (define-key java-mode-map "(" 'electric-pair)
             (define-key java-mode-map "{" 'electric-pair)
 
-            ;;                           
             ;; http://stackoverflow.com/questions/7619399/emacs-fix-the-indentation-of-the-java-mode
             (c-set-offset 'inexpr-class 0)
 
