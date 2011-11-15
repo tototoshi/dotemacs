@@ -19,6 +19,7 @@
             (define-key java-mode-map "\'" 'electric-pair)
             (define-key java-mode-map "(" 'electric-pair)
             (define-key java-mode-map "{" 'electric-pair)
+            (define-key java-mode-map "[" 'electric-pair)
 
             ;; http://stackoverflow.com/questions/7619399/emacs-fix-the-indentation-of-the-java-mode
             (c-set-offset 'inexpr-class 0)
