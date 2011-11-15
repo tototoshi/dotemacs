@@ -29,6 +29,7 @@
 
             ;; http://stackoverflow.com/questions/7619399/emacs-fix-the-indentation-of-the-java-mode
             (c-set-offset 'inexpr-class 0)
+            (c-set-offset 'arglist-close 0)
 
             (when (require 'java-mode-indent-annotations nil t)
               (java-mode-indent-annotations-setup))
