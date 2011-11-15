@@ -11,6 +11,11 @@
   (interactive)
   (anything '(anything-c-source-my-java-imports)))
 
+(defun my-java-semicolon ()
+  (interactive)
+  (end-of-line)
+  (insert ";"))
+
 (add-hook 'java-mode-hook
           (lambda ()
             (define-key java-mode-map (kbd "C-S-o") 'anything-my-java-imports)
@@ -20,6 +25,7 @@
             (define-key java-mode-map "(" 'electric-pair)
             (define-key java-mode-map "{" 'electric-pair)
             (define-key java-mode-map "[" 'electric-pair)
+            (define-key java-mode-map (kbd "C-;") 'my-java-semicolon)
 
             ;; http://stackoverflow.com/questions/7619399/emacs-fix-the-indentation-of-the-java-mode
             (c-set-offset 'inexpr-class 0)
