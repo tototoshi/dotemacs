@@ -1,10 +1,10 @@
 #name: setter/getter
 #name: setget
 # --
-public void set${2:$(capitalize text)}(${1:Type} ${2:obj}) {
+public void set${2:$(concat (capitalize (substring text 0 1)) (substring text 1))}(${1:Type} ${2:obj}) {
        this.$2 = $2;
 }
 
-public $1 get${2:$(capitalize text)}() {
+public $1 get${2:$(concat (capitalize (substring text 0 1)) (substring text 1))}() {
        return $2;
 }
