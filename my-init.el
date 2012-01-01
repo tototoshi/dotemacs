@@ -24,7 +24,7 @@
 (load "my-ack.el")
 (load "my-w3m-config.el")
 (require 'my-auto-highlight-symbol-mode-config)
-(require 'zlc)
+(load "my-zlc-config.el")
 (load "my-bm-config.el")
 (load "my-jaunte-config.el")
 (require 'ipa)
