@@ -1,4 +1,7 @@
-#Author : Jonas Bonèr <jonas@jonasboner.com>
 #name : package ..
 # --
-package $0
+package ${`(string-join
+           (drop 1
+  (drop-while
+   #'(lambda (x) (not (string= x "scala")))
+   (init (split-string (buffer-file-name) "/")))) ".")`}$0

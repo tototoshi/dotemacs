@@ -1,0 +1,17 @@
+#name: spec
+# --
+import org.scalatest.spec
+
+class ${1:`(substring (first (reverse (split-string (buffer-file-name) "/"))) 0 -6) `} extends Spec {
+  def fixture = new {
+
+  }
+
+  describe("$1") {
+
+    it("$0") {
+
+    }
+
+  }
+}

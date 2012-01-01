@@ -1,0 +1,6 @@
+# name: catching.opt
+# key: catching
+# --
+catching(classOf[$1]).opt {
+  $0
+}

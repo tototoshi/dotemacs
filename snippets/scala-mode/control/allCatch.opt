@@ -1,0 +1,4 @@
+# name: allCatch.opt
+# key: allCatch
+# --
+allCatch.opt { $0 }

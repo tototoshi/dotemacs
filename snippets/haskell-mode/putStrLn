@@ -1,0 +1,5 @@
+# name: putStrLn
+# key: p
+# --
+putStrLn $0
+

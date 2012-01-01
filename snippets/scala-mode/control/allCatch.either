@@ -1,0 +1,4 @@
+# name: allCatch.either
+# key: allCatch
+# --
+allCatch.either { $0 }

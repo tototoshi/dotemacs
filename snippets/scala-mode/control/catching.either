@@ -1,0 +1,6 @@
+# name: catching.either
+# key: catching
+# --
+catching(classOf[$1]).either {
+  $0
+}
