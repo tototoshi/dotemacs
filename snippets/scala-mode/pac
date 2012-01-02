@@ -1,7 +1,9 @@
 #name : package ..
 # --
 package ${`(string-join
-           (drop 1
-  (drop-while
-   #'(lambda (x) (not (string= x "scala")))
-   (init (split-string (buffer-file-name) "/")))) ".")`}$0
+ (reverse
+  (drop 1
+   (take-while
+    #'(lambda (x) (not (string= x "scala")))
+    (reverse (split-string (buffer-file-name) "/")))))
+ ".")`}$0

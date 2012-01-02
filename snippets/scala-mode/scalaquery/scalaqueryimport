@@ -1,0 +1,7 @@
+#name: scalaqueryimport
+# --
+import org.scalaquery._
+import session.{ Database, Session }
+import ql._
+import basic.BasicDriver.Implicit._
+import basic.{ BasicTable => Table }
