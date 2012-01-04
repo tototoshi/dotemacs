@@ -51,6 +51,14 @@
                                     (- (length string) (length end))
                                     (length string))))
 
+(defun string-to-string-list (str)
+  (mapcar #'char-to-string (string-to-list str)))
+
+(defun string-contains (str substr)
+  (cond ((< (length str) (length substr)) nil)
+        ((string-starts-with str substr) t)
+        ((string-contains (apply #'concat (rest (string-to-string-list str))) substr))))
+
 (defun string-to-lines (string)
     (split-string string "\n"))
 
