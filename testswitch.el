@@ -24,7 +24,6 @@
 
 ;;; Code:
 
-(require 'list-utils)
 (require 'string-utils)
 
 (defun testswitch-current-file-or-directory ()
@@ -38,15 +37,15 @@
 (defun testswitch-test-p (path)
   (string-contains path "/test/"))
 
+(defun testswitch-get-directory-from-path (path)
+  (replace-regexp-in-string
+   "/\\\([^/]*\\\)\\.\\\(java\\\|scala\\\)" "" path))
+
 (defun testswitch-main-to-test ()
   (let ((test-dir (testswitch-get-directory-from-path
                    (replace-regexp-in-string
                     "/main/" "/test/" (testswitch-current-file-or-directory)))))
     (testswitch-find-directory test-dir)))
-
-(defun testswitch-get-directory-from-path (path)
-  (replace-regexp-in-string
-   "/\\\([^/]*\\\)\\.\\\(java\\\|scala\\\)" "" path))
 
 (defun testswitch-test-to-main ()
   (let ((main-dir (testswitch-get-directory-from-path
