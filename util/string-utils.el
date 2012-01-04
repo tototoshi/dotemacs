@@ -1,3 +1,5 @@
+(require 'list-utils)
+
 (defun str-head  (str)
   (substring str 0 1))
 
@@ -36,20 +38,18 @@
             (setq s (replace-match "" t nil s))))
         s))
 
-(setq xs '("a" "bc" "def"))
-
 (defun string-list-to-string (s lst)
   (reduce
    #'(lambda (x y) (concat x s y))
    lst))
 
 (defun string-starts-with (string start)
-  (string= start (substring-no-properties string 0 (length start))))
+  (string= start (substring string 0 (length start))))
 
 (defun string-ends-with (string end)
-  (string= end (substring-no-properties string
-                                    (- (length string) (length end))
-                                    (length string))))
+  (string= end (substring string
+                          (- (length string) (length end))
+                          (length string))))
 
 (defun string-to-string-list (str)
   (mapcar #'char-to-string (string-to-list str)))
