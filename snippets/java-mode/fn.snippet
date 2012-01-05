@@ -1,7 +1,14 @@
 # name: fn
 # key: fn
 # --
-${1:$$(yas/choose-value '("public" "private" "protected"))} ${2:void} ${3:methodName}($0) {
+${4:$(if (string= yas/text "") "/**\n* @param\n" (format "/**\n*\n*\n%s"
+        (apply #'concat
+               (mapcar #'(lambda (x) (format " * @param %s\n" x))
+                       (mapcar #'(lambda (x) (second (split-string x " ")))
+                               (mapcar #'(lambda (x) (string-trim " " x)) (split-string yas/text ",")))))))
+                               }${2:$(cond ((string= yas/text "void") "*/")
+             (t "* @return\n*/"))}
+${1:public$(yas/choose-value '("public" "private" "protected"))} ${2:void} ${3:methodName}($4) {
     ${2:$(cond ((string= yas/text "void") "")
                ((string= yas/text "int") "return 0;")
                ((string= yas/text "long") "return 0L;")
