@@ -1,0 +1,4 @@
+# name: ann
+# --
+${1:Type} $2 = ${3:null};
+assertNonNull(${2:actual});
