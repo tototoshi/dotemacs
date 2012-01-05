@@ -56,4 +56,5 @@
 (load "my-hatena-config.el")
 (load "my-haskell-mode-config.el")
 (load "my-sql-mode-config.el")
+(require 'open-junk-file)
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")
