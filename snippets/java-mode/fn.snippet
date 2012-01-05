@@ -1,6 +1,10 @@
 # name: fn
 # key: fn
 # --
-${1:public} ${2:void} ${3:methodName}($0) {
-
+${1:$$(yas/choose-value '("public" "private" "protected"))} ${2:void} ${3:methodName}($0) {
+    ${2:$(cond ((string= yas/text "void") "")
+               ((string= yas/text "int") "return 0;")
+               ((string= yas/text "long") "return 0L;")
+               ((string= yas/text "String") "return \"\";")
+               (t "return null;"))}
 }
