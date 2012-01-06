@@ -46,5 +46,5 @@
 (global-set-key (kbd "「") 'electric-pair)
 (global-set-key (kbd "【") 'electric-pair)
 (global-set-key (kbd "『") 'electric-pair)
-
+(global-set-key (kbd "C-c t") 'testswitch)
 
