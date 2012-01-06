@@ -13,3 +13,4 @@
 (defalias 'yn 'yas/new-snippet)
 (defalias 'yl 'yas/load-directory)
 (defalias 'momomo 'moinmoin-mode)
+(defalias 'fnd 'find-name-dired)
