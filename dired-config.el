@@ -51,3 +51,15 @@ Optional prefix ARG says how many lines to move; default is one line."
   (interactive "p")
   (sane-forward-line (- arg))
   (dired-move-to-filename))
+
+(defun dired-clean ()
+  "Delete temporary files in current directory"
+  (interactive)
+  (dolist (f (remove-if-not '(lambda (x)
+                    (and
+                     (file-regular-p x)
+                     (string-ends-with x "~")))
+                 (directory-files (dired-current-directory))))
+    (delete-file f)))
+
+
