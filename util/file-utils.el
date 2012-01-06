@@ -1,5 +1,9 @@
 (require 'string)
 
+(defun my-file-basename (filename)
+  (char-list-to-string (reverse (take-while #'(lambda (x) (/= ?/ x))
+                       (reverse (string-to-list filename))))))
+
 (defun my-file-path-join (&rest paths)
   (reduce #'(lambda (x y) (concat (file-name-as-directory x) y)) paths))
 
