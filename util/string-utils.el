@@ -54,6 +54,9 @@
 (defun string-to-string-list (str)
   (mapcar #'char-to-string (string-to-list str)))
 
+(defun char-list-to-string (cs)
+  (apply #'concat (mapcar #'char-to-string cs)))
+
 (defun string-contains (str substr)
   (cond ((< (length str) (length substr)) nil)
         ((string-starts-with str substr) t)
