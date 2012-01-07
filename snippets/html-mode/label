@@ -1,0 +1,3 @@
+# name: label
+# --
+<label id="$1"></label>
