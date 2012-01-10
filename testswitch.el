@@ -61,12 +61,32 @@
   (unless (file-exists-p directory)
     (make-directory directory t)))
 
-(defun testswitch ()
+(defun testswitch-directory ()
   (interactive)
   (let ((buf (testswitch-current-file-or-directory)))
     (cond ((testswitch-test-p buf) (testswitch-test-to-main))
           ((testswitch-main-p buf) (testswitch-main-to-test))
           (t nil))))
+
+(defun testswitch-basename (path)
+  (car (last (split-string path "/"))))
+
+(defun testswitch-find-associated-file (filename)
+  (cond ((string-contains filename "Test")
+         (replace-regexp-in-string "Test" "" filename))
+        (t
+         (replace-regexp-in-string ".java" "Test.java" filename))))
+
+(defun testswitch ()
+  (interactive)
+  (cond ((buffer-file-name)
+         (let ((filename (testswitch-basename (buffer-file-name))))
+           (testswitch-directory)
+           (let ((associated-file (find (testswitch-find-associated-file filename) (directory-files ".") :test #'string=)))
+             (when associated-file
+               (find-file associated-file)))))
+        (t (testswitch-directory))))
+
 
 (provide 'testswitch)
 ;;; testswitch.el ends here
