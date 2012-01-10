@@ -1,0 +1,5 @@
+# name: logger
+# key: logger
+# --
+import org.apache.log4j.Logger;
+private static final Logger logger = Logger.getLogger(${1:`(replace-regexp-in-string ".java" "" (car (last (split-string (buffer-file-name) "/"))))`}.class);

@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: aa
+# --
+addAttribute("${1:attrName}", ${2:attribute});

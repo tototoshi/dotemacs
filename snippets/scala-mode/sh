@@ -1,0 +1,5 @@
+#name: shebang
+# --
+#!
+exec scala "\$0" "$@"
+!#

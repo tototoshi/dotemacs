@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Override
+# key: @o
+# --
+@Override$0

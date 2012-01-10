@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: createQuery
+# key: cq
+# --
+createQuery(${1:query}, ${2:Class}.class)$0
