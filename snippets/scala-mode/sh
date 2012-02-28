@@ -1,5 +1,5 @@
 #name: shebang
 # --
-#!
+#!/bin/sh
 exec scala "\$0" "$@"
 !#

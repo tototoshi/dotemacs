@@ -1,0 +1,11 @@
+#name: flatspec
+# --
+import org.scalatest.FlatSpec
+import org.scalatest.matchers.ShouldMatchers
+
+class ${1:`(substring (first (reverse (split-string (buffer-file-name) "/"))) 0 -6) `} extends FlatSpec with ShouldMatchers {
+
+  it should "" in {
+     assert(true)
+  }
+}
