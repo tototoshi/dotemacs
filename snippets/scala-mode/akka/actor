@@ -1,0 +1,9 @@
+#name: actor
+# --
+class ${1:MyActor$(progn (my-scala-insert-import "akka.actor") text)} extends Actor {
+
+  def receive = {
+    case $0 =>
+  }
+
+}
