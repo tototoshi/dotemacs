@@ -18,6 +18,7 @@
 (add-to-list 'ac-modes 'python-mode)
 (add-to-list 'ac-modes 'slime-mode)
 (add-to-list 'ac-modes 'scala-mode)
+(add-to-list 'ac-modes 'sql-mode)
 
 ;; 大文字・小文字を区別する
 (setq ac-ignore-case nil)

@@ -68,5 +68,8 @@
 (defun string-join (lst &optional separator)
   (mapconcat 'identity lst separator))
 
+(defun string-index-of (c s)
+  (position c (string-to-list s)))
+
 (provide 'string-utils)
 

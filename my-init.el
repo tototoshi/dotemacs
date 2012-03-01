@@ -61,4 +61,6 @@
 (require 'anything-find-files-in-project)
 ;;(load "my-auto-insert-config.el")
 (require 'testswitch)
+(require 'my-ruby-config)
+(require 'psvn )
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")

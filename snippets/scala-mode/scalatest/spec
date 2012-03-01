@@ -1,7 +1,7 @@
 #name: spec
 # --
 import org.scalatest.FunSpec
-import org.scalatest.matchers.ShouldMatchers
+import org.scalatest.matchers._
 
 class ${1:`(substring (first (reverse (split-string (buffer-file-name) "/"))) 0 -6) `} extends FunSpec with ShouldMatchers {
   def fixture = new {

@@ -14,3 +14,4 @@
 (defalias 'yl 'yas/load-directory)
 (defalias 'momomo 'moinmoin-mode)
 (defalias 'fnd 'find-name-dired)
+(defalias 'j 'jaunte)

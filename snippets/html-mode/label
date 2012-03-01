@@ -1,3 +1,3 @@
 # name: label
 # --
-<label id="$1"></label>
+<label for="$1">$0</label>
