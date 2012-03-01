@@ -58,6 +58,7 @@
 (load "my-sql-mode-config.el")
 (require 'open-junk-file)
 (load "my-html-mode-config.el")
-(load "my-auto-insert-config.el")
+(require 'anything-find-files-in-project)
+;;(load "my-auto-insert-config.el")
 (require 'testswitch)
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")

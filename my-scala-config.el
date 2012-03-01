@@ -55,6 +55,8 @@
     (goto-char (point-max)))
 
   (when (require 'ensime nil t)
-    (add-hook 'scala-mode-hook 'ensime-scala-mode-hook))
+    nil
+    ;;     (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+    )
   )
 

@@ -47,4 +47,5 @@
 (global-set-key (kbd "【") 'electric-pair)
 (global-set-key (kbd "『") 'electric-pair)
 (global-set-key (kbd "C-c t") 'testswitch)
+(global-set-key (kbd "C-x D") 'anything-find-files-in-project)
 
