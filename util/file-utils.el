@@ -30,7 +30,8 @@
     (insert string)
     (write-region (point-min) (point-max) file-path)))
 
-(defun my-remove-extension (filename)
-  (string-replace-match "\\.\\([0-9a-zA-Z]*\\)$" filename ""))
+(defun tt:remove-extension (filename)
+  (cond ((string-replace-match "\\.\\([0-9a-zA-Z]*\\)$" filename ""))
+        (t filename)))
 
 (provide 'file-utils)
