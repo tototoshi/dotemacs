@@ -1,0 +1,8 @@
+# name: readonly
+# key: readonly
+# --
+using($1) { conn =>
+  new DB(conn) readOnly { session =>
+    session.$0
+  }
+}

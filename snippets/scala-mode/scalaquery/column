@@ -1,0 +1,4 @@
+# name: column
+# key: col
+# --
+column[$1]("$2")

@@ -1,0 +1,4 @@
+#name: queryNA
+#key: q
+# --
+queryNA[${2:type}](${3:write sql here})

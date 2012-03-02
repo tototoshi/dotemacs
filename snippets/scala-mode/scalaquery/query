@@ -1,0 +1,4 @@
+#name: query
+#key: q
+# --
+query[${1:type of param}, ${2:type of result}](${3:write sql here})

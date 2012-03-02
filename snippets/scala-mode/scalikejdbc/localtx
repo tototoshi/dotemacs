@@ -1,0 +1,8 @@
+# name: localtx
+# key: localtx
+# --
+using($1) { conn =>
+  new DB(conn) localTx { session =>
+    session.$0
+  }
+}
