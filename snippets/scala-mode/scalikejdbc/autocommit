@@ -2,7 +2,7 @@
 # key: autocommit
 # --
 using($1) { conn =>
-  new DB(conn) autocommit { session =>
+  new DB(conn) autoCommit { session =>
     session.$0
   }
 }
