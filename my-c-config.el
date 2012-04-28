@@ -1,6 +1,5 @@
 (require 'list-utils)
 (require 'string-utils)
-(require 'c-eldoc)
 
 (defun my-anything-collect-c-header-files ()
   (split-string
@@ -29,25 +28,6 @@
   (anything 'anything-c-source-c-header-files))
 
 
-(defvar my-c-eldoc-default-includes
-      (concat
-       "-I/usr/include "
-       "-I./ "
-       "-I../ "
-       ))
-
-(defun my-c-eldoc-add-includes (include-path)
-  (interactive "sPATH: ")
-  (setq c-eldoc-includes (concat " " include-path " " c-eldoc-includes))
-  (load "c-eldoc"))
-
-(defun my-c-eldoc-includes-reset ()
-  (interactive)
-  (setq c-eldoc-includes my-c-eldoc-default-includes)
-  (load "c-eldoc"))
-
-(my-c-eldoc-includes-reset)
-
 (add-hook 'c-mode-hook
           (lambda()
             (define-key c-mode-map "\"" 'electric-pair)
@@ -58,7 +38,6 @@
             (define-key c-mode-map (kbd "C-c i") 'my-anything-c-insert-header)
             (setq c-default-style "linux"
                   c-basic-offset 4)
-            (c-turn-on-eldoc-mode)
             (local-set-key (kbd "C-c o") 'ff-find-other-file)))
 
 (add-hook 'c-mode-common-hook

@@ -1,5 +1,4 @@
 (require 'yasnippet)
-(require 'anything-c-yasnippet-2)
 
 (yas/initialize)
 ;; Develop in ~/emacs.d/mysnippets, but also
@@ -17,10 +16,6 @@
 
 (when (require 'dropdown-list nil t)
   (setq yas/prompt-functions '(yas/dropdown-prompt)))
-
-(defun anything-yasnippet-2 ()
-  (interactive)
-  (anything 'anything-c-source-yasnippet-2))
 
 ;; 2011-07-29 yasnippet. Make the “yas/minor-mode”'s expansion behavior to take input word including hyphen.
 ; default is '("w" "w_" "w_." "^ ") as of 2011-07-29
