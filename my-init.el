@@ -1,3 +1,8 @@
+;; Requirement:
+;;  yasnippet
+;;  elib
+;;  helm
+
 (dolist (dir (split-string
                (shell-command-to-string "find ~/.emacs.d/ -type d")
                "\n"))
