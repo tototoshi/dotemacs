@@ -6,8 +6,6 @@
 (global-auto-complete-mode t)
 (add-to-list 'ac-modes 'org-mode)
 (add-to-list 'ac-modes 'python-mode)
-(add-to-list 'ac-modes 'django-mode)
-(add-to-list 'ac-modes 'django-html-mode)
 (add-to-list 'ac-modes 'text-mode)
 (add-to-list 'ac-modes 'shell-script-mode)
 (add-to-list 'ac-modes 'fundamental-mode)

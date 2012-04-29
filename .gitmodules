@@ -55,9 +55,6 @@
 [submodule "snippets-ext/polypus74/haskell-mode"]
 	path = snippets-ext/polypus74/haskell-mode
 	url = git://github.com/polypus74/HSnippets.git
-[submodule "django-mode"]
-	path = django-mode
-	url = https://github.com/myfreeweb/django-mode.git
 [submodule "Pymacs"]
 	path = Pymacs
 	url = git://github.com/pinard/Pymacs.git
