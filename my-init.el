@@ -61,6 +61,7 @@
 (load "my-sql-mode-config.el")
 (require 'open-junk-file)
 (load "my-html-mode-config.el")
+(require 'my-sh-mode-config)
 ;; (require 'anything-find-files-in-project)
 ;;(load "my-auto-insert-config.el")
 (require 'testswitch)

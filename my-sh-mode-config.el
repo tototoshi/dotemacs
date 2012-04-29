@@ -7,3 +7,5 @@
              (define-key sh-mode-map "(" 'electric-pair)
              (define-key sh-mode-map "[" 'electric-pair)
              (define-key sh-mode-map "{" 'electric-pair)))
+
+(provide 'my-sh-mode-config)
