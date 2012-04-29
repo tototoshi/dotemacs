@@ -1,0 +1,5 @@
+# name: running.FakeApplication
+# key: run
+# --
+running (FakeApplication()) {
+}

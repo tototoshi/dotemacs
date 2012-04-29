@@ -1,0 +1,15 @@
+#name: specs2m
+# --
+import org.specs2.mutable._
+
+class ${1:`(substring (first (reverse (split-string (buffer-file-name) "/"))) 0 -6) `} extends Specification {
+
+  "$1" should {
+
+    "" in {
+
+    }
+
+  }
+
+}
