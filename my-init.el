@@ -2,6 +2,7 @@
 ;;  yasnippet
 ;;  elib
 ;;  helm
+;;  helm-find-files-in-project
 
 (dolist (dir (split-string
                (shell-command-to-string "find ~/.emacs.d/ -type d")
@@ -62,7 +63,7 @@
 (require 'open-junk-file)
 (load "my-html-mode-config.el")
 (require 'my-sh-mode-config)
-;; (require 'anything-find-files-in-project)
+(require 'helm-find-files-in-project)
 ;;(load "my-auto-insert-config.el")
 (require 'testswitch)
 ;;(require 'my-ruby-config)
