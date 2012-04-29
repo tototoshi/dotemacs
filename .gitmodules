@@ -43,9 +43,6 @@
 [submodule "ipa"]
 	path = ipa
 	url = https://github.com/emacsmirror/ipa.git
-[submodule "emms"]
-	path = emms
-	url = git://github.com/emacsmirror/emms.git
 [submodule "snippets-ext/nekop/java-mode"]
 	path = snippets-ext/nekop/java-mode
 	url = git://github.com/nekop/yasnippet-java-mode.git
