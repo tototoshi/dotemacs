@@ -1,0 +1,8 @@
+# name: sql.multiline
+# key: sql
+# --
+SQL(
+  """
+    $0
+  """
+)

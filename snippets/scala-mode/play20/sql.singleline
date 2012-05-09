@@ -1,0 +1,4 @@
+# name: sql
+# key: sql
+# --
+SQL("$0")

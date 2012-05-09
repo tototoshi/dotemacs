@@ -1,0 +1,6 @@
+# nama: db.using
+# key: db
+# --
+using($1) { implicit connection =>
+  $0
+}

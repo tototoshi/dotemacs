@@ -1,0 +1,6 @@
+# nama: db.withConnection
+# key: db
+# --
+DB.withConnection { implicit connection =>
+  $0
+}
