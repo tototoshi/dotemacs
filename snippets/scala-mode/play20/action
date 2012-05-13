@@ -1,0 +1,5 @@
+# name: action
+# --
+Action { implicit request =>
+  $0
+}

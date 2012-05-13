@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: bind
+# --
+$1.bindFromRequest.fold({
+  formWithErrors => BadRequest$0
+}, {
+  form => Ok
+})
