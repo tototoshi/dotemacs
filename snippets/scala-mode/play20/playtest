@@ -1,0 +1,18 @@
+#name: playtest
+# --
+
+import play.api.test._
+import play.api.test.Helpers._
+import org.specs2.mutable._
+
+class ${1:`(substring (first (reverse (split-string (buffer-file-name) "/"))) 0 -6) `} extends Specification {
+
+  "$1" should {
+
+    "" in {
+
+    }
+
+  }
+
+}
