@@ -2,6 +2,7 @@
 ;; helm ;;
 ;;;;;;;;;;;;;;
 (require 'helm-config)
+(require 'helm-files)
 (require 'helm-match-plugin)
 
 (defun helm-current-dir ()
