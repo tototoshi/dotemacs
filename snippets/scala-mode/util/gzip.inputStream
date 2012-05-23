@@ -1,0 +1,5 @@
+# name: gzip.inputStream
+# key: gzip
+# --
+new GZIPInputStream(new BufferedInputStream(new FileInputStream($1)))
+

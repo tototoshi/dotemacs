@@ -1,0 +1,27 @@
+# name: getopt
+# --
+while getopts xy: OPT
+do
+    case $OPT in
+        "x" )
+            FLAG_X="TRUE"
+            ;;
+        "y" )
+            FLAG_Y="TRUE"
+            VALUE_Y=$OPTARG
+            ;;
+    esac
+done
+
+if [ "$FLAG_X" = "TRUE" ]; then
+    echo "Option -x specified."
+fi
+
+if [ "$FLAG_Y" = "TRUE" ]; then
+    echo "Option -y $VALUE_Y specified."
+fi
+
+shift $(expr $OPTIND - 1)
+if [ -n "\$1" ]; then
+    echo "Argument \$1 specified."
+fi

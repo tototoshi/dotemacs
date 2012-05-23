@@ -1,0 +1,11 @@
+# name: launchconfig
+# --
+[app]
+  version: ${1:0.1-SNAPSHOT}
+  org: ${2:com.github.tototoshi}
+  name: ${3:application_name}
+  class: ${4:EntryPoint}
+[scala]
+  version: ${5:2.9.1}
+[repositories]
+  local

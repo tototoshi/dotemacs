@@ -1,4 +1,4 @@
-#name: def main(args: Array[String]) = { ... }
+#name: main
 # --
 def main(args: Array[String]): Unit = {
   $0

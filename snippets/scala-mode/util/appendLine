@@ -1,0 +1,10 @@
+# name: appendLine
+# --
+def appendToFile(file: File, line: String): Unit = {
+  val fw = new FileWriter(file, true)
+  try {
+    fw.write(line + "\n")
+  } finally {
+    fw.close()
+  }
+}

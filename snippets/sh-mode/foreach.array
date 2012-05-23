@@ -1,0 +1,7 @@
+# name: foreach.array
+# key: foreach
+# --
+for (( i = 0; i < \${#${1:array}[@]}; ++i ))
+do
+  $1
+done

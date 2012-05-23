@@ -1,0 +1,8 @@
+# name: gzip
+# --
+import java.io.{ BufferedInputStream,FileInputStream}
+import java.util.zip.GZIPInputStream
+
+def fromGzip(file: String, enc:String = "UTF-8" ): scala.io.BufferedSource = {
+  io.Source.fromInputStream(new GZIPInputStream(new BufferedInputStream(new FileInputStream(file))),enc)
+}

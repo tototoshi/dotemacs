@@ -1,0 +1,4 @@
+# name: array.push
+# key: push
+# --
+${1:array}=("\${$1[@]}" ${2:data})

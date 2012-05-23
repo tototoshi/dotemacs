@@ -1,0 +1,12 @@
+# name: xsbti.AppMain
+# key: main
+# --
+class $1 extends xsbti.AppMain {
+
+  def run(config: xsbti.AppConfiguration): Exit =
+    new Exit($1.run(config.arguments))
+
+}
+
+class Exit(val code: Int) extends xsbti.Exit
+

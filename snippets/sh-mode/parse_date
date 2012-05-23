@@ -1,0 +1,10 @@
+#name: parse_date
+# --
+date_input_format=%Y%m%d
+parsed_date=$(date -jf $date_input_format \$1 +'%Y %m %d' 2> /dev/null)
+if [ $? -ne 0 ]; then
+    echo error
+    exit 1
+fi
+
+read year month day <<< $parsed_date

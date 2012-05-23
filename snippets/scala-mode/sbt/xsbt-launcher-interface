@@ -1,0 +1,4 @@
+# name: xsbt-launcher-interface
+# key: build
+# --
+"org.scala-sbt" %% "launcher-interface" % "0.11.3" % "provided"
