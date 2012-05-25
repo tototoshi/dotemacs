@@ -1,0 +1,4 @@
+# name: create unique index
+# key: create
+# --
+CREATE UNIQUE INDEX "${1:index_name}" ON ${2:table} (${3:column});

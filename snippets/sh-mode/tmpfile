@@ -1,0 +1,4 @@
+# name: tmpfile
+# --
+tmpfile=$(mktemp /tmp/$(basename $0).XXXXXX) || exit 1
+trap "rm -fv $tmpfile" EXIT
