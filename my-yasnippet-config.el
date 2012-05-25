@@ -26,4 +26,5 @@
             (yas/minor-mode-on)))
 
 (add-to-list 'auto-mode-alist '("\\.snippet$" . snippet-mode))
+(add-to-list 'auto-mode-alist '("\\.emacs.d/dotemacs/snippets/" . snippet-mode))
 
