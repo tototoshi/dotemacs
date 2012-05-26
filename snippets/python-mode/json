@@ -1,0 +1,4 @@
+# name: json.loads
+# key: json
+# --
+${1:j} = json.loads(${2:json_data})
