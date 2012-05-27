@@ -49,9 +49,6 @@
 [submodule "snippets-ext/polypus74/haskell-mode"]
 	path = snippets-ext/polypus74/haskell-mode
 	url = git://github.com/polypus74/HSnippets.git
-[submodule "Pymacs"]
-	path = Pymacs
-	url = git://github.com/pinard/Pymacs.git
 [submodule "python-mode"]
 	path = python-mode
 	url = git://github.com/emacsmirror/python-mode.git
