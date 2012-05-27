@@ -22,9 +22,6 @@
 [submodule "auto-complete"]
 	path = auto-complete
 	url = git://github.com/m2ym/auto-complete.git
-[submodule "slime"]
-	path = slime
-	url = https://github.com/emacsmirror/slime.git
 [submodule "bm"]
 	path = bm
 	url = git://github.com/emacsmirror/bm.git
