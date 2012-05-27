@@ -7,9 +7,6 @@
 [submodule "twittering-mode"]
 	path = twittering-mode
 	url = git://github.com/hayamiz/twittering-mode.git
-[submodule "navi2ch"]
-	path = navi2ch
-	url = git://github.com/naota/navi2ch.git
 [submodule "magit"]
 	path = magit
 	url = git://github.com/magit/magit.git
