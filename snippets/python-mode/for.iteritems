@@ -1,0 +1,5 @@
+# name: for.iteritems()
+# key: for
+# --
+for k, v in iteritems():
+    $0
