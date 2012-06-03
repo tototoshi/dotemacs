@@ -1,3 +1,5 @@
+(add-to-list 'auto-mode-alist '("\\.java$" . java-mode))
+
 (setq anything-c-source-my-java-imports-java-class-list
       "~/.emacs.d/dotemacs/data/imports")
 
