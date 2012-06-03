@@ -57,6 +57,7 @@
 (load "my-hatena-config.el")
 (load "my-haskell-mode-config.el")
 (load "my-sql-mode-config.el")
+(require 'my-occur-config)
 (require 'open-junk-file)
 (load "my-html-mode-config.el")
 (require 'my-sh-mode-config)

@@ -46,5 +46,5 @@
 (global-set-key (kbd "『") 'electric-pair)
 (global-set-key (kbd "C-c t") 'testswitch)
 (global-set-key (kbd "C-x D") 'helm-find-files-in-project)
-
+(global-set-key (kbd "C-c o") 'occur-current-word)
 (provide 'my-keybind)
