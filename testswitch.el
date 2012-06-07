@@ -72,10 +72,14 @@
   (car (last (split-string path "/"))))
 
 (defun testswitch-find-associated-file (filename)
-  (cond ((string-contains filename "Test\\|Spec")
-         (replace-regexp-in-string "Test\\|Spec" "" filename))
-        (t
-         (replace-regexp-in-string "\\.java\\|\\.scala" "Test.java" filename))))
+  (cond ((string-contains filename "Test")
+         (replace-regexp-in-string "Test" "" filename))
+        ((string-contains filename "Spec")
+         (replace-regexp-in-string "Spec" "" filename))
+        ((string-contains filename ".java")
+         (replace-regexp-in-string "\\.java" "Test.java" filename))
+        ((string-contains filename ".scala")
+         (replace-regexp-in-string "\\.scala" "Spec.scala" filename))))
 
 (defun testswitch ()
   (interactive)
