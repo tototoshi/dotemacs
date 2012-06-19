@@ -11,7 +11,6 @@
 
 (load "my-mac-swap-option-and-command.el")
 (load "my-window-config.el")
-(load "my-java-config.el")
 (load "basic-config.el")
 (load "delete-line.el")
 (load "dired-config.el")
@@ -63,6 +62,7 @@
 (require 'my-sh-mode-config)
 (require 'helm-find-files-in-project)
 ;;(load "my-auto-insert-config.el")
+(require 'my-java-config)
 (require 'testswitch)
 ;;(require 'my-ruby-config)
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")

@@ -203,7 +203,7 @@
 (defalias 'n2a 'my-java-native-to-ascii)
 (defalias 'a2n 'my-java-ascii-to-native)
 
-
+(provide 'my-java-config)
 
 
 
