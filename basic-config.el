@@ -81,4 +81,19 @@
 
 ;; https://twitter.com/#!/higepon/status/201804128425480193
 (require 'grep)
-(grep-apply-setting 'grep-find-command "ack --nocolor --nogroup ")
+(grep-apply-setting 'grep-find-command "~/bin/ack --nocolor --nogroup ")
+
+;; 現在のディレクトリ以下のバッファをすべて閉じる
+(require 'tt-directory)
+(require 'tt-buffer)
+
+(defun my-close-buffers-under-current-directory ()
+  (interactive)
+  (mapc
+   #'kill-buffer
+   (remove-if-not
+    #'(lambda (x)
+        (tt:string-starts-with (tt:buffer-file-name-or-directory x)
+                               (tt:dirname (tt:buffer-file-name-or-directory (current-buffer)))))
+    (remove-if-not #'(lambda (x) (tt:buffer-file-name-or-directory x)) (buffer-list)))))
+
