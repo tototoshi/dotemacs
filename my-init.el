@@ -65,4 +65,5 @@
 (require 'my-java-config)
 (require 'testswitch)
 ;;(require 'my-ruby-config)
+;; (require 'my-ruby-config)
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")
