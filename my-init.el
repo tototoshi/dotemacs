@@ -66,4 +66,5 @@
 (require 'testswitch)
 ;;(require 'my-ruby-config)
 ;; (require 'my-ruby-config)
+(require 'my-iedit-config)
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")
