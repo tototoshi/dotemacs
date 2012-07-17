@@ -21,7 +21,7 @@
 (require 'my-helm-config)
 (require 'magit)
 (require 'my-slime-config)
-(load "my-auto-complete-config.el")
+(require 'my-auto-complete-config)
 (load "my-scala-config.el")
 (require 'string)
 (require 'my-google)

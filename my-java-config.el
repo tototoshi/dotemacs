@@ -38,7 +38,7 @@
           (lambda ()
             (define-key java-mode-map (kbd "C-S-o") 'anything-my-java-imports)
             (define-key java-mode-map (kbd "C-S-a") 'anything-my-java-annotations)
-
+            (define-key java-mode-map (kbd "C-:") 'iedit-mode)
             (define-key java-mode-map "\"" 'electric-pair)
             (define-key java-mode-map "\'" 'electric-pair)
             (define-key java-mode-map "(" 'electric-pair)
