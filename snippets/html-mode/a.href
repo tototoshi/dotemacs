@@ -1,0 +1,4 @@
+# name: a.href
+# key: a
+# --
+<a href="$0">$1</a>

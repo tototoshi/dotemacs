@@ -1,0 +1,5 @@
+# name: scalikejdbc.def
+# key: defslj
+# --
+def $1()(implicit session: DBSession = AutoSession): $2 = {
+}
