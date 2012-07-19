@@ -34,7 +34,7 @@
 (load "my-jaunte-config.el")
 (load "my-emacs-lisp-mode-config.el")
 (load "my-yasnippet-config.el")
-(load "my-memo.el")
+(require 'my-memo)
 (load "my-c++-config.el")
 (load "my-c-config.el")
 (load "my-java-config.el")
