@@ -92,7 +92,7 @@
           (message "No pom.xml found")
         (compile
          (read-from-minibuffer "Command: "
-                               (concat "mvn -f " dir "/pom.xml install -Dmaven.test.skip=true")
+                               (concat "mvn -f " dir "/pom.xml compile -Dmaven.test.skip=true")
                                nil nil 'mvn-command-history))))))
 ;; String pattern for locating errors in maven output.
 ;;  This assumes a Windows drive letter at the beginning
