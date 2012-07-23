@@ -97,3 +97,5 @@
                                (tt:dirname (tt:buffer-file-name-or-directory (current-buffer)))))
     (remove-if-not #'(lambda (x) (tt:buffer-file-name-or-directory x)) (buffer-list)))))
 
+;; backup file を作成しない
+(setq backup-inhibited t)
