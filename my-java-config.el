@@ -1,33 +1,35 @@
 (add-to-list 'auto-mode-alist '("\\.java$" . java-mode))
 
-(setq anything-c-source-my-java-imports-java-class-list
+(setq helm-c-source-my-java-imports-java-class-list
       "~/.emacs.d/dotemacs/data/imports")
 
-(setq anything-c-source-my-java-imports-java-annotations-list
+(setq helm-c-source-my-java-imports-java-annotations-list
       "~/.emacs.d/dotemacs/data/annotaions")
 
-(defvar anything-c-source-my-java-imports
+(defvar helm-c-source-my-java-imports
   '((name . "Java Imports")
     (requires-pattern . 0)
-    (candidates-file anything-c-source-my-java-imports-java-class-list updating)
+    (candidates-file helm-c-source-my-java-imports-java-class-list updating)
     (action . (("insert". (lambda (x)
-                            (insert (format "import %s;\n" x))
-                            (my-java-sort-import-lines)
-                            ))))))
+                            (save-excursion
+                              (goto-line 3)
+                              (insert (format "import %s;\n" x))
+                              (my-java-sort-import-lines)
+                            )))))))
 
-(defvar anything-c-source-my-java-annotations
+(defvar helm-c-source-my-java-annotations
   '((name . "Java annotations")
     (requires-pattern . 0)
-    (candidates-file anything-c-source-my-java-imports-java-annotations-list updating)
+    (candidates-file helm-c-source-my-java-imports-java-annotations-list updating)
     (action . (("insert". (lambda (x) (insert x)))))))
 
-(defun anything-my-java-imports ()
+(defun helm-my-java-imports ()
   (interactive)
-  (anything '(anything-c-source-my-java-imports)))
+  (helm '(helm-c-source-my-java-imports)))
 
-(defun anything-my-java-annotations ()
+(defun helm-my-java-annotations ()
   (interactive)
-  (anything '(anything-c-source-my-java-annotations)))
+  (helm '(helm-c-source-my-java-annotations)))
 
 (defun my-java-semicolon ()
   (interactive)
@@ -36,8 +38,8 @@
 
 (add-hook 'java-mode-hook
           (lambda ()
-            (define-key java-mode-map (kbd "C-S-o") 'anything-my-java-imports)
-            (define-key java-mode-map (kbd "C-S-a") 'anything-my-java-annotations)
+            (define-key java-mode-map (kbd "C-S-o") 'helm-my-java-imports)
+            (define-key java-mode-map (kbd "C-S-a") 'helm-my-java-annotations)
             (define-key java-mode-map (kbd "C-:") 'iedit-mode)
             (define-key java-mode-map "\"" 'electric-pair)
             (define-key java-mode-map "\'" 'electric-pair)
