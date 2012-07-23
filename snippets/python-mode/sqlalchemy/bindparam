@@ -1,0 +1,4 @@
+# name: bindparam
+# key: bi
+# --
+bindparam('$1', $1)

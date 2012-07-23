@@ -1,0 +1,4 @@
+# name: date.parse
+# key: date
+# --
+datetime.datetime.strptime(u"${1:date_string}", u"${2:%Y-%m-%d %H:%M:%S}")

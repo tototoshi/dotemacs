@@ -1,6 +1,6 @@
 #name: fwrite
 #key: fwrite
 # --
-file = open(${filename}, ${'w'})
-file.write($0)
-file.close()
+f = open(${filename}, ${'w'})
+f.write($0)
+f.close()

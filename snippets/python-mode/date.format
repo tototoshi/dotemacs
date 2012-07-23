@@ -1,0 +1,4 @@
+# name: date.format
+# key: date
+# --
+${1:datetime}.strftime("${2:%Y-%m-%d %H:%M:%S}")$0

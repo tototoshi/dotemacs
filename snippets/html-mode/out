@@ -1,0 +1,4 @@
+# name: out
+# key: out
+# --
+<c:out value="$0" />

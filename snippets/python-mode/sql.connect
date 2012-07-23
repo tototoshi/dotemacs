@@ -1,0 +1,14 @@
+# name: sql.connect
+# key: sql
+# --
+# -*- coding: utf-8 -*-
+
+from sqlalchemy import create_engine
+from sqlalchemy.sql import bindparam, text
+
+_engine = create_engine("${1:postgres}://${2:user}:${3:password}@${4:localhost}:${5:5432}/${6:dbname}")
+
+def connect():
+    u"""Return connection to database
+    """
+    return _engine.connect()

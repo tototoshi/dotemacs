@@ -1,0 +1,7 @@
+# name: sql.txt
+# key: sql
+# --
+t = text("${sql}",
+         bindparams=[bindparam('${param_name}', ${param})]
+         )
+rs = conn.execute(t)

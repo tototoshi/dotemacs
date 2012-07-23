@@ -1,0 +1,6 @@
+# name: <c:forEach/>
+# key: foreach
+# --
+<c:forEach var="$1" items="$2">
+  $0
+</c:forEach>

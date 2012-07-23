@@ -1,0 +1,4 @@
+# name: abspath
+# key: abspath
+# --
+os.path.abspath($0)
