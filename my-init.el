@@ -67,4 +67,6 @@
 ;;(require 'my-ruby-config)
 ;; (require 'my-ruby-config)
 (require 'my-iedit-config)
+(require 'run-current-file)
+(require 'my-haxe-mode-config)
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")

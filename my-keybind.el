@@ -47,4 +47,5 @@
 (global-set-key (kbd "C-c t") 'testswitch)
 (global-set-key (kbd "C-x D") 'helm-find-files-in-project)
 (global-set-key (kbd "C-c o") 'occur-current-word)
+(global-set-key (kbd "<f8>") 'run-current-file)
 (provide 'my-keybind)
