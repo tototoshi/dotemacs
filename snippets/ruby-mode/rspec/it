@@ -1,0 +1,4 @@
+# name: it
+# --
+it "$0" do
+end

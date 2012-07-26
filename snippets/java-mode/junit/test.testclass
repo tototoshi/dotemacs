@@ -1,0 +1,17 @@
+# name: test.testclass
+# key: test
+# --
+import org.junit.*;
+import static org.junit.Assert.*;
+
+public class ${1:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`} {
+
+    @Before
+    public void setUp() {
+    }
+
+    @After
+    public void tearDown() {
+    }
+
+}
