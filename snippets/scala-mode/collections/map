@@ -1,0 +1,4 @@
+# name: map { x =>  }
+# key: map
+# --
+map { ${x} => $0 }

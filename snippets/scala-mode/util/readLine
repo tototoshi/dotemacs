@@ -1,0 +1,4 @@
+# name: readLine
+# key: read
+# --
+Source.fromFile(${filename}).getLines

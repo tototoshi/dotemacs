@@ -1,6 +1,6 @@
 # name: writeLines
 # key: write
 # --
-using(new java.io.PrintWriter(new java.io.FileWriter(${filename}))) { writer =>
-  writer.println()
+using(new PrintWriter(new FileWriter(${filename}))) { writer =>
+  writer.println($0)
 }

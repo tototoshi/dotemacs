@@ -1,10 +1,6 @@
 # name: appendLine
+# name: append
 # --
-def appendToFile(file: File, line: String): Unit = {
-  val fw = new FileWriter(file, true)
-  try {
-    fw.write(line + "\n")
-  } finally {
-    fw.close()
-  }
+using(new PrintWriter(new FileWriter(${filename}, true))) { writer =>
+  writer.println($0)
 }

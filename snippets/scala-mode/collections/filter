@@ -1,0 +1,4 @@
+# name: filter { x =>  }
+# key: filter
+# --
+filter { ${x} => $0 }
