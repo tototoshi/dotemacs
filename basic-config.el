@@ -99,3 +99,6 @@
 
 ;; backup file を作成しない
 (setq backup-inhibited t)
+
+;; generic-x
+(require 'generic-x)
