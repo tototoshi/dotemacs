@@ -79,10 +79,6 @@
                   (or (cadr (assoc deleted-char insert-pair-alist)) 0)))
       (delete-char 1))))
 
-;; https://twitter.com/#!/higepon/status/201804128425480193
-(require 'grep)
-(grep-apply-setting 'grep-find-command "~/bin/ack --nocolor --nogroup ")
-
 ;; 現在のディレクトリ以下のバッファをすべて閉じる
 (require 'tt-directory)
 (require 'tt-buffer)

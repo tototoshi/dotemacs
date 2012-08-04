@@ -69,4 +69,5 @@
 (require 'my-iedit-config)
 (require 'run-current-file)
 (require 'my-haxe-mode-config)
+(require 'my-grep-config)
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")
