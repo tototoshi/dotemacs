@@ -1,8 +1,8 @@
 # name: readonly
 # key: readonly
 # --
-using($1) { conn =>
-  new DB(conn) readOnly { session =>
-    session.$0
+using(${1:connection}) { conn =>
+  DB(conn).readOnly { implicit session =>
+    val res = SQL("$0").map(rs => rs.int("id")).single.apply()
   }
 }

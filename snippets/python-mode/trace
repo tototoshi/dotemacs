@@ -1,0 +1,4 @@
+# name: print stacktrace
+# key: trace
+# --
+logging.error(traceback.format_exc(sys.exc_info()[2]))

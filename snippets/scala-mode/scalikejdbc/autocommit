@@ -1,8 +1,8 @@
 # name: autocommit
 # key: autocommit
 # --
-using($1) { conn =>
-  new DB(conn) autoCommit { session =>
-    session.$0
+using(${1:connection}) { conn =>
+  DB(conn).autocommit { implicit session =>
+    val res = SQL("$0").map(rs => rs.int("id")).single.apply()
   }
 }
