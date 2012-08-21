@@ -1,0 +1,5 @@
+# name: open
+# key: open
+# --
+open my \$${1:fh}, '${2:<}', ${3:\$file}
+    or die "Cannot open file \\"$3\\": $!";

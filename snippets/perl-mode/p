@@ -1,3 +1,4 @@
 # name: p
+# key: p
 # --
 print $0
