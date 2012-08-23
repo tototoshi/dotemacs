@@ -38,6 +38,7 @@
 
 (add-hook 'java-mode-hook
           (lambda ()
+            (gtags-mode)
             (define-key java-mode-map (kbd "C-S-o") 'helm-my-java-imports)
             (define-key java-mode-map (kbd "C-S-a") 'helm-my-java-annotations)
             (define-key java-mode-map (kbd "C-:") 'iedit-mode)

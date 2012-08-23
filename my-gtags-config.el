@@ -8,3 +8,4 @@
          (local-set-key "\C-t" 'gtags-pop-stack)
          ))
 
+(provide 'my-gtags-config)

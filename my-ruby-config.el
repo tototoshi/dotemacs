@@ -22,6 +22,7 @@
 
   (add-hook 'ruby-mode-hook
             (lambda ()
+              (gtags-mode)
               (ruby-electric-mode))))
 
 (provide 'my-ruby-config)
