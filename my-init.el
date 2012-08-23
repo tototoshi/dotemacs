@@ -70,4 +70,5 @@
 (require 'run-current-file)
 (require 'my-haxe-mode-config)
 (require 'my-grep-config)
+(require 'my-perl-config)
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")
