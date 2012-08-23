@@ -1,4 +1,6 @@
 (add-to-list 'auto-mode-alist '("\\.java$" . java-mode))
+(add-to-list 'auto-mode-alist '("\\.aj$" . java-mode))
+(add-to-list 'auto-mode-alist '("\\.tag$" . html-mode))
 
 (setq helm-c-source-my-java-imports-java-class-list
       "~/.emacs.d/dotemacs/data/imports")
