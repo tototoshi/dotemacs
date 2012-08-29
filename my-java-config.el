@@ -193,7 +193,7 @@
     (when (and buffer-file-name
                (string-ends-with buffer-file-name  ".properties" ))
       (erase-buffer)
-      (insert (shell-command-to-string (format "native2ascii -reverse '%s'" buffer-file-name)))
+      (insert (shell-command-to-string (format "native2ascii -encoding UTF-8 -reverse '%s'" buffer-file-name)))
       (goto-char p))))
 
 (defun my-java-native-to-ascii ()
@@ -202,7 +202,7 @@
     (when (and buffer-file-name
                (string-ends-with buffer-file-name  ".properties" ))
       (erase-buffer)
-      (insert (shell-command-to-string (format "native2ascii '%s'" buffer-file-name)))
+      (insert (shell-command-to-string (format "native2ascii -encoding UTF-8 '%s'" buffer-file-name)))
       (goto-char p))))
 
 (defalias 'n2a 'my-java-native-to-ascii)
