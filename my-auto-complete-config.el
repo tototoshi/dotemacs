@@ -1,7 +1,7 @@
 ;;====================================
 ;;; auto-complete.el
 ;;====================================
-;; (require 'auto-complete-config)
+(require 'auto-complete-config)
 (require 'auto-complete)
 ;;(ac-config-default)
 (global-auto-complete-mode t)
@@ -20,8 +20,8 @@
 (add-to-list 'ac-modes 'sql-mode)
 (add-to-list 'ac-modes 'java-mode)
 
-;; 大文字・小文字を区別する
-(setq ac-ignore-case nil)
+;; 大文字・小文字を区別しない
+(setq ac-ignore-case t)
 
 (setq ac-cursor-color "White")
 
@@ -30,5 +30,9 @@
 
 (define-key ac-complete-mode-map (kbd "C-p") 'ac-previous)
 (define-key ac-complete-mode-map (kbd "C-n") 'ac-next)
+
+(setq-default ac-sources '(ac-source-gtags
+                           ac-source-words-in-buffer
+                           ac-source-words-in-same-mode-buffers))
 
 (provide 'my-auto-complete-config)
