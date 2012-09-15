@@ -96,5 +96,8 @@
 ;; backup file を作成しない
 (setq backup-inhibited t)
 
+;; 日本語対応
+(set-default-coding-systems 'utf-8)
+
 ;; generic-x
 (require 'generic-x)

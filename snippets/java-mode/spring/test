@@ -1,0 +1,24 @@
+# name: test.spring
+# key: test
+# --
+import org.junit.*;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.annotation.Transactional;
+import static org.junit.Assert.*;
+
+@Transactional
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration({"/app-context.xml"})
+public class ${1:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`} {
+
+    @Before
+    public void setUp() {
+    }
+
+    @After
+    public void tearDown() {
+    }
+
+}

@@ -33,6 +33,9 @@ File suffix is used to determine what program to run."
         (progn
           (message "Running…")
           (shell-command cmdStr "*run-current-file output*" )
+          (when (one-window-p)
+            (split-window))
+          (switch-to-buffer "*run-current-file output*")
           )
         (message "No recognized program file suffix for this file.")
         )
