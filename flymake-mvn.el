@@ -13,6 +13,7 @@
   "Setup keys and flymake error patterns"
   (push '(".+\\.java$" flymake-java-mvn-init) flymake-allowed-file-name-masks)
   (push '("^\\[[A-Z]+\\] \\(.*?\\):\\[\\([0-9]+\\),\\([0-9]+\\)\\] \\(.*?\\)+$" 1 2 3 4) flymake-err-line-patterns)
+  (push '("^\\[[A-Z]+\\] \\(.*?\\):\\([0-9]+\\):\\([0-9]+\\)::[0-9]+ \\(.*?\\)+$" 1 2 3 4) flymake-err-line-patterns)
   (local-set-key (kbd "C-c e") 'flymake-display-err-menu-for-current-line)
   (local-set-key (kbd "C-c n") 'flymake-goto-next-error)
   (local-set-key (kbd "C-c p") 'flymake-goto-prev-error)
