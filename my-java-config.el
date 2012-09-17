@@ -1,3 +1,6 @@
+(require 'flymake)
+(require 'flymake-mvn)
+
 (add-to-list 'auto-mode-alist '("\\.java$" . java-mode))
 (add-to-list 'auto-mode-alist '("\\.aj$" . java-mode))
 (add-to-list 'auto-mode-alist '("\\.tag$" . html-mode))
@@ -59,11 +62,14 @@
             (setq tab-width 4)
             (when (require 'java-mode-indent-annotations nil t)
               (java-mode-indent-annotations-setup))
-
             (setq c-default-style "linux"
                   c-basic-offset 4)
             (hs-minor-mode t)
             (hideshowvis-enable)
+
+            (flymake-java-mvn-mode-hook)
+            (flymake-mode)
+
             ))
 
 (require 'compile)
