@@ -1,0 +1,5 @@
+# name: constructor
+# key: con
+# --
+${1:public$(yas/choose-value '("public" "private" "protected"))} ${2:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`} ($0) {
+}

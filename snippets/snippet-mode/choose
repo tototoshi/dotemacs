@@ -1,0 +1,4 @@
+# name: choose
+# key: choose
+# --
+(yas/choose-value '($0))

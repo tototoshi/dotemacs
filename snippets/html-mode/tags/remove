@@ -1,0 +1,3 @@
+# name: <c:remove />
+# key: remove
+<c:remove var="$0" />
