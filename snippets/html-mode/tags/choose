@@ -1,0 +1,9 @@
+# name: choose
+# key: choose
+# --
+<c:choose>
+    <c:when test="$0">
+    </c:when>
+    <c:otherwise>
+    </c:otherwise>
+</c:choose>

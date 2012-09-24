@@ -1,0 +1,5 @@
+# name: if
+# key: if
+# --
+<c:if test="$0">
+</c:if>

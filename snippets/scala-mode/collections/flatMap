@@ -1,0 +1,4 @@
+# name: flatMap { x =>  }
+# key: fl
+# --
+flatMap { ${x} => $0 }

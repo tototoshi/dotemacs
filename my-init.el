@@ -70,4 +70,6 @@
 (require 'my-haxe-mode-config)
 (require 'my-grep-config)
 (require 'my-perl-config)
+;; (load "~/.emacs.d/nxhtml/autostart")
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")
+

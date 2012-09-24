@@ -1,0 +1,4 @@
+# name: attr
+# key: attr
+# --
+<%@ attribute name="$0" type="" required="true" %>

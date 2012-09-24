@@ -1,0 +1,5 @@
+# name: when
+# key: when
+# --
+<c:when test="$0">
+</c:when>

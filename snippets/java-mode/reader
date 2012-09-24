@@ -1,0 +1,19 @@
+# name: read file
+# key: read
+# --
+BufferedReader reader = null;
+FileInputStream in = null;
+try {
+    in = new FileInputStream(${filename});
+    reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
+    String line = null;
+    while ((line = reader.readLine()) != null) {
+        System.out.println(line);
+    }
+} catch (IOException ex) {
+
+} finally {
+    try {
+        reader.close();
+    } catch (Exception ignore) { }
+}

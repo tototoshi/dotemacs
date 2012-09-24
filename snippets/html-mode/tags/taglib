@@ -1,0 +1,4 @@
+# name: taglib
+# key: taglib
+# --
+<%@ taglib prefix="${1:c}" uri="${2:http://java.sun.com/jstl/core}" %>
