@@ -1,6 +1,7 @@
 (require 'yasnippet)
 
-(yas/initialize)
+(yas-global-mode 1)
+
 ;; Develop in ~/emacs.d/mysnippets, but also
 ;; try out snippets in ~/Downloads/interesting-snippets
 (setq yas/root-directory '("~/.emacs.d/dotemacs/snippets/"

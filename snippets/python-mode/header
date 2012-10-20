@@ -1,0 +1,12 @@
+# name: header
+# key: header
+# --
+# Name:
+#   ${1:`(file-name-nondirectory (buffer-file-name))`}
+# Description:
+#
+# Author:
+#   t-takahashi
+# Usage:
+#
+#
