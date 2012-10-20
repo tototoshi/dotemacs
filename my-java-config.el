@@ -1,3 +1,5 @@
+(require 'java-mode-indent-annotations)
+
 (require 'flymake)
 (require 'flymake-mvn)
 
@@ -58,6 +60,7 @@
             ;; http://stackoverflow.com/questions/7619399/emacs-fix-the-indentation-of-the-java-mode
             (c-set-offset 'inexpr-class 0)
             (c-set-offset 'arglist-close 0)
+            (c-set-offset 'arglist-intro '+)
 
             (setq tab-width 4)
             (when (require 'java-mode-indent-annotations nil t)
