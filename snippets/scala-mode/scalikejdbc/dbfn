@@ -1,0 +1,7 @@
+# name: dbfn
+# key: dbfn
+# --
+def $1($2)(implicit session: DBSession = AutoSession): $3 = {
+  val sql = "$4";
+  SQL(sql).bind(id).map(*).single.apply()
+}

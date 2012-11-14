@@ -1,0 +1,4 @@
+# name: click on linkText("")
+# key: click
+# --
+click on linkText("$0")

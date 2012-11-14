@@ -1,0 +1,5 @@
+# name: test("") { }
+# key: test
+# --
+test ("$0") {
+}

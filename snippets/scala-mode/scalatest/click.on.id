@@ -1,0 +1,4 @@
+# name: click on id("")
+# key: click
+# --
+click on id("$0")
