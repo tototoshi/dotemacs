@@ -1,0 +1,4 @@
+# name: db.scalikejdbc.h2.setup
+# key: db
+# --
+ConnectionPool.add('h2, "jdbc:h2:sample", "sa", "")

@@ -1,0 +1,8 @@
+# name: for...yield
+# key: fory
+# --
+for {
+$0
+} yield {
+
+}

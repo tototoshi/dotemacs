@@ -1,0 +1,4 @@
+# name: css
+# key: css
+# --
+<link type="text/css" rel="stylesheet" media="screen,projection" href="$0">

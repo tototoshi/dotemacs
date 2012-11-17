@@ -1,0 +1,22 @@
+# name: funsuite.selenium
+# key: fun
+# --
+import org.scalatest.{ FunSuite, BeforeAndAfter }
+import org.scalatest.selenium._
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.htmlunit.HtmlUnitDriver
+
+class ${1:`(substring (first (reverse (split-string (buffer-file-name) "/"))) 0 -6) `} extends FunSuite with BeforeAndAfter with WebBrowser {
+
+  implicit val webDriver: WebDriver = new HtmlUnitDriver
+
+  before {
+
+}
+
+after {
+
+}
+
+}
+

@@ -1,0 +1,4 @@
+# name: textArea("").value =
+# key: text
+# --
+textArea("$1").value = "$0"
