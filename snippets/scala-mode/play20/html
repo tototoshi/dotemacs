@@ -1,0 +1,4 @@
+# name: views.html
+# key: html
+# --
+${1:Ok}(views.html.$2($0))
