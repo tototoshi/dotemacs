@@ -2,5 +2,5 @@
 # key: db
 # --
 ${1:DB$(yas/choose-value '("DB" "NamedDB(')"))} ${3:readOnly$(yas/choose-value '("readOnly" "autoCommit"))} { implicit session =>
-  SQL("$0")${4:$$(yas/choose-value '(".bind()" ".bindByName()"))}${5:.map()}${6:$$(yas/choose-value '(".single" ".list" ".execute"))}.apply()
+  SQL("$0")${4:$$(yas/choose-value '(".bind()" ".bindByName()"))}${5:.map()}${6:$$(yas/choose-value '(".single" ".list" ".update" ".execute"))}.apply()
 }

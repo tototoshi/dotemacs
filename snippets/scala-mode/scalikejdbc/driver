@@ -1,0 +1,7 @@
+# name: driver
+# key: driver
+# --
+Class.forName("${1:$$(yas/choose-value '("com.mysql.jdbc.Driver"
+                                        "org.postgresql.Driver"
+                                        "org.sqlite.JDBC"
+))}")
