@@ -1,0 +1,4 @@
+# name: mock
+# key: mock
+# --
+$1 $2 = mock($1.class);

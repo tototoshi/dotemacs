@@ -2,5 +2,5 @@
 # key: test
 # --
 @Test
-public void $1() {
+public void $1() throws Exception {
 }

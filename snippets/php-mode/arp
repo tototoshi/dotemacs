@@ -1,0 +1,4 @@
+# name: array_push
+# key: arp
+# --
+array_push($1, $2);
