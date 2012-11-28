@@ -1,6 +1,6 @@
-#Author : Jonas Bonèr <jonas@jonasboner.com>
-#name : cc match { .. }
+# name: match
+# key: ma
 # --
-${1:cc} match {
-  case ${2:pattern} => $0
+match {
+  $0
 }

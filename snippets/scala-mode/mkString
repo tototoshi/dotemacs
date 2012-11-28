@@ -1,0 +1,4 @@
+# name: mkString
+# key: mk
+# --
+mkString($0)

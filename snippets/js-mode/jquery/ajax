@@ -1,0 +1,14 @@
+# name: ajax
+# key: ajax
+# --
+\$.ajax({
+    url: '${1:url}',
+    type: '${2:$$(yas/choose-value '("GET" "POST"))}',
+    data: {
+    },
+    dataType: '${3:$$(yas/choose-value '("text" "html", "xml", "script", "json"))}',
+    success: function( data, textStatus, jqXHR ) {
+    },
+    error: function( jqXHR, textStatus, errorThrown ) {
+    }
+})

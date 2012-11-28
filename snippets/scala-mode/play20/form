@@ -1,0 +1,9 @@
+# name: form
+# key: form
+# --
+case class ${1:FormMappingClass}()
+
+val ${2:formName} = Form(
+  mapping(
+  )($1.apply)($1.unapply)
+)
