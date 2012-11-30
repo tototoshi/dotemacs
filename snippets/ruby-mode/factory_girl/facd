@@ -1,0 +1,6 @@
+# name: FactoryGirl.define
+# key: facd
+# --
+FactoryGirl.define do
+  $0
+end

@@ -71,6 +71,6 @@
 (require 'my-grep-config)
 (require 'my-perl-config)
 (require 'org-export-as-markdown)
-;; (load "~/.emacs.d/nxhtml/autostart")
+;; (require 'my-nxhtml-mumamo-config)
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")
 

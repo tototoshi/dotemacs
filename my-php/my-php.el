@@ -86,7 +86,7 @@
 (add-hook 'php-mode-hook
           '(lambda ()
              (setq php-mode-force-pear t)
-             (flymake-mode t)
+             ;; (flymake-mode t)
              (c-set-style "stroustrup")
              (c-set-offset 'comment-intro 0)
              (setq tab-width 2)

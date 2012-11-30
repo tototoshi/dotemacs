@@ -1,0 +1,6 @@
+# name: assertEquals
+# key: aeq
+# --
+val ${1:expected} = $0
+val ${2:actual} =
+assert($1 === $2);

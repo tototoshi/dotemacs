@@ -1,6 +1,0 @@
-# name: writeLines
-# key: write
-# --
-using(new PrintWriter(new FileWriter(${filename}))) { writer =>
-  writer.println($0)
-}

@@ -1,0 +1,5 @@
+# name: class
+# key: cl
+# --
+class $0
+end

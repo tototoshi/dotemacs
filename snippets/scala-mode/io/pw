@@ -1,0 +1,6 @@
+# name: writeLines
+# key: pw
+# --
+using(new PrintWriter(${filename})) { writer =>
+  writer.println($0)
+}

@@ -1,0 +1,5 @@
+# name: tmpfile
+# key: tmpfile
+# --
+val ${1:tmpfile}: File = File.createTempFile("${2:xxx}", "${3:xxx}")
+$1.deleteOnExit()

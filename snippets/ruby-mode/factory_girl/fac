@@ -1,0 +1,6 @@
+# name: factory
+# key: fac
+# --
+factory :$1 do
+  $0
+end
