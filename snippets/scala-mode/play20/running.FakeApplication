@@ -2,4 +2,5 @@
 # key: run
 # --
 running (FakeApplication()) {
+$0
 }

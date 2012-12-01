@@ -1,0 +1,7 @@
+# name: running.FakeApplication.inMemoryDatabase
+# key: run
+# --
+val evolutionPluginEnabled = Map("evolutionplugin" -> "enabled", "dbplugin" -> "enabled")
+running (FakeApplication(additionalConfiguration = evolutionPluginEnabled ++ inMemoryDatabase(name = "default"))) {
+$0
+}

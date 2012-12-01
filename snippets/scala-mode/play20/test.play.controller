@@ -1,0 +1,13 @@
+# name: test.play.controller.scalatest
+# key: test
+# --
+val fakeRequest = FakeRequest()
+.${2:$$(yas/choose-value '("withFormUrlEncodedBody()" "withJsonBody(jsValue)"))}
+.withHeaders()
+.withSession()
+val result = controllers.${1:Application.index}(fakeRequest)
+assert(status(result) === OK)
+assert(contentType(result).value === "text/html")
+assert(charset(result).value === "utf-8")
+assert(contentAsString(result).contains(${2:"Hello"}))
+
