@@ -7,6 +7,9 @@
 ;; "yes or no"を"y or n"に
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;; Turn of alarms
+(setq ring-bell-function 'ignore)
+
 ;; buffer-nameをuniqueで識別しやすくなるよう設定する
 ;; http://d.hatena.ne.jp/sugyan/20100515/1273909863
 (require 'uniquify)
