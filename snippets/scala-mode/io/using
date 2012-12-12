@@ -1,0 +1,6 @@
+# name: using (Source.fromFile(..)) {...
+# key: using
+# --
+using (io.Source.fromFile(${1:file})) { src =>
+  val lines = src.getLines
+}

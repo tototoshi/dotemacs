@@ -1,0 +1,4 @@
+# name: puts
+# key: p
+# --
+puts $0
