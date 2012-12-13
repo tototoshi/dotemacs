@@ -1,0 +1,4 @@
+# name : drop table ...
+# key: drop
+# --
+DROP TABLE $0;

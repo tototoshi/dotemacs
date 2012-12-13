@@ -1,0 +1,6 @@
+# name: alter.table.add.column
+# key: alter
+# --
+ALTER TABLE $1 ${2:$$(yas/choose-value '("ADD COLUMN"
+                                         "DROP COLUMN"
+                                         "ALTER"))} $0;

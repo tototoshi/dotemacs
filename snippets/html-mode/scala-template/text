@@ -1,0 +1,4 @@
+# name: text.ScalaTemplate
+# key: text
+# --
+@helper.inputText(${1:myForm}("${2:username}"))

@@ -1,0 +1,6 @@
+# name: form.ScalaTemplate
+# key: form
+# --
+@helper.form(action = ${1:routes}.${2:Application.submit}, 'id -> $3) {
+$0
+}

@@ -1,0 +1,13 @@
+# name: test.play.controller.specs2
+# key: test
+# --
+val fakeRequest = FakeRequest()
+.${2:$$(yas/choose-value '("withFormUrlEncodedBody()" "withJsonBody(jsValue)"))}
+.withHeaders()
+.withSession()
+val result = controllers.${1:Application.index}(fakeRequest)
+status(result) must_== OK
+contentType(result) must beSome("text/html")
+charset(result) must beSome ("utf-8")
+contentAsString(result) must contain (${2:"Hello"})
+

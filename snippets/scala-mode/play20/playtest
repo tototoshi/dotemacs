@@ -4,8 +4,15 @@
 import play.api.test._
 import play.api.test.Helpers._
 import org.specs2.mutable._
+import org.specs2.specification.BeforeAfterExample
 
-class ${1:`(substring (first (reverse (split-string (buffer-file-name) "/"))) 0 -6) `} extends Specification {
+class ${1:`(substring (first (reverse (split-string (buffer-file-name) "/"))) 0 -6) `} extends Specification with BeforeAfterExample {
+
+  def before = {
+  }
+
+  def after = {
+  }
 
   "$1" should {
 

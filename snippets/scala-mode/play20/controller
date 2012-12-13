@@ -1,0 +1,11 @@
+# name: play.controller
+# key: con
+# --
+package controllers
+
+import play.api._
+import play.api.mvc._
+
+object $1 extends Controller {
+  $0
+}

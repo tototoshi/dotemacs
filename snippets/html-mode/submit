@@ -1,0 +1,4 @@
+# name: submit
+# key: submit
+# --
+<input type="submit" name="${1:submit}" value="${2:submit}" />
