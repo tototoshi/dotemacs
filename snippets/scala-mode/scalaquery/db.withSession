@@ -1,0 +1,6 @@
+# name: db.withSession
+# key: db
+# --
+${1:db}.withSession { implicit session: Session =>
+$0
+}

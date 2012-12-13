@@ -1,0 +1,6 @@
+# name: running.FakeApplication.additonalConfiguration
+# key: run
+# --
+running (FakeApplication(additionalConfiguration = Map())) {
+$0
+}

@@ -1,0 +1,7 @@
+# name: fakeRequest
+# key: fake
+# --
+val fakeRequest = FakeRequest()
+.${1:$$(yas/choose-value '("withFormUrlEncodedBody()" "withJsonBody(jsValue)"))}
+.withHeaders()
+.withSession()

@@ -1,0 +1,6 @@
+# name: if.ScalaTemplate
+# key: if
+# --
+@if($1) {
+  $0
+}

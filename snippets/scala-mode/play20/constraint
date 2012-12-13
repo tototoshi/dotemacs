@@ -1,0 +1,10 @@
+# name: constraint
+# key: con
+# --
+Constraint[$1]("${2:constraint.$3}"${4:, }) { o =>
+if ($0) {
+  Valid
+} else {
+  Invalid(ValidationError("error.$3"$4))
+}
+}

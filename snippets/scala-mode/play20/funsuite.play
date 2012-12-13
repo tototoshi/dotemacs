@@ -8,7 +8,8 @@ import play.api.test.Helpers._
 import org.scalatest.{ FunSuite, BeforeAndAfter, OptionValues }
 import org.scalatest.matchers.ShouldMatchers
 
-class ${2:`(substring (first (reverse (split-string (buffer-file-name) "/"))) 0 -6) `} extends FunSuite with BeforeAndAfter with ShouldMatchers with OptionValues {
+class ${2:`(substring (first (reverse (split-string (buffer-file-name) "/"))) 0 -6) `} extends FunSuite
+with BeforeAndAfter with ShouldMatchers with OptionValues {
 
 before {
 

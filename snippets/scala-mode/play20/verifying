@@ -1,0 +1,4 @@
+# name: verifying
+# key: ve
+# --
+verifying($0)
