@@ -48,4 +48,5 @@
 (global-set-key (kbd "C-x D") 'helm-find-files-in-project)
 (global-set-key (kbd "C-c o") 'occur-current-word)
 (global-set-key (kbd "<f8>") 'run-current-file)
+(global-set-key (kbd "M-m") 'memo)
 (provide 'my-keybind)
