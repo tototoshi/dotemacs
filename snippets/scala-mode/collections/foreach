@@ -1,4 +1,4 @@
 # name: foreach
-# key: each
+# key: ea
 # --
 foreach { ${x} => $0 }

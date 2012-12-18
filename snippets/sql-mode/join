@@ -1,0 +1,4 @@
+# name: join
+# key: join
+# --
+$1 as $2 INNER JOIN $3 as $4 on $2.$5 = $4.$6$0

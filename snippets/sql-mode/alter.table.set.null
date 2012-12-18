@@ -1,0 +1,4 @@
+# name: alter [ column ] column_name { set | drop } not null
+# key: alter
+# --
+ALTER TABLE ${1:table} ALTER ${2:column_name} ${3:SET$$(yas/choose-value '("SET" "DROP"))} NOT NULL;$0
