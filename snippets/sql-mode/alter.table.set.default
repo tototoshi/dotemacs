@@ -1,0 +1,4 @@
+# name: alter [ column ] column_name drop default
+# key: alter
+# --
+ALTER TABLE ${1:table} ALTER ${2:column_name} DROP DEFAULT;$0

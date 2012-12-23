@@ -1,0 +1,4 @@
+# name: alter [ column ] column_name set default
+# key: alter
+# --
+ALTER TABLE ${1:table} ALTER ${2:column_name} SET DEFAULT ${3:expression};
