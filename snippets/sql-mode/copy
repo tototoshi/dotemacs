@@ -1,0 +1,4 @@
+# name: copy
+# key: copy
+# --
+COPY ${1:table} (${2:columns}) FROM '${3:file}' CSV;$0

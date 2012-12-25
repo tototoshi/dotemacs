@@ -1,4 +1,4 @@
-# name : create table ...
+# name : create table
 # key: create
 # --
 CREATE TABLE $1 (
