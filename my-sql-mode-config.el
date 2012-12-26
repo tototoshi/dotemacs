@@ -9,3 +9,6 @@
             (setq sql-indent-offset 4)
             (setq sql-indent-maybe-tab nil)
             ))
+
+(eval-after-load "sql"
+  (load-library "sql-indent"))
