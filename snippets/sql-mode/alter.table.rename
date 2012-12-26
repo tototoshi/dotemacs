@@ -1,0 +1,4 @@
+# name: ALTER TABLE table RENAME TO newtable
+# key: alter
+# --
+ALTER TABLE ${1:table} RENAME TO ${2:newtable};

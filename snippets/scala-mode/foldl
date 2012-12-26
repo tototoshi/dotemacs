@@ -1,0 +1,6 @@
+# name: foldLeft
+# key: foldl
+# --
+foldLeft($1) { ($2, $3) =>
+  $0
+}

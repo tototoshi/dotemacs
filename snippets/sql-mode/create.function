@@ -1,0 +1,8 @@
+# name: CREATE FUNCTION
+# key: create
+# --
+CREATE FUNCTION ${1:function_name}(${2:arg} ${3:arg_type}) RETURNS ${4:return_type} AS \$\$
+BEGIN
+    RETURN ${5:return_value};
+END;
+\$\$ LANGUAGE plpgsql;

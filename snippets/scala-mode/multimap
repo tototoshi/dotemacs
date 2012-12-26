@@ -1,0 +1,5 @@
+# name: MultiMap
+# key: multimap
+# --
+import scala.collection.mutable.{ HashMap => MutableHashMap, Set => MutableSet }
+val m = new MutableHashMap[$1, MutableSet[$2]]() with MultiMap[$1, $2]
