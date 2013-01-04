@@ -1,0 +1,4 @@
+# name: alter.table.add.foreign.key
+# key: alter
+# --
+ALTER TABLE ${1:table} ADD CONSTRAINT "${2:fk_name}" FOREIGN KEY (${3:column}) REFERENCES ${4:table}(${5:column});
