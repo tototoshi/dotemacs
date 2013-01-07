@@ -73,3 +73,5 @@
   (message "My JS2 hook"))
 
 (add-hook 'js2-mode-hook 'my-js2-mode-hook)
+
+(provide 'my-js2-mode-config)
