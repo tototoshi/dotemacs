@@ -25,9 +25,6 @@
 [submodule "bm"]
 	path = bm
 	url = git://github.com/emacsmirror/bm.git
-[submodule "haskell-mode"]
-	path = haskell-mode
-	url = git://github.com/jwiegley/haskell-mode.git
 [submodule "emacs-w3m"]
 	path = emacs-w3m
 	url = git://github.com/sjatkinson/emacs-w3m.git
