@@ -31,9 +31,6 @@
 [submodule "snippets-ext/nekop/java-mode"]
 	path = snippets-ext/nekop/java-mode
 	url = git://github.com/nekop/yasnippet-java-mode.git
-[submodule "snippets-ext/chuwb"]
-	path = snippets-ext/chuwb
-	url = git://github.com/chuwb/yasnippet-java-topcoder.git
 [submodule "snippets-ext/AndreaCrotti"]
 	path = snippets-ext/AndreaCrotti
 	url = git://github.com/AndreaCrotti/yasnippet-snippets.git
