@@ -19,9 +19,6 @@
 [submodule "jaunte"]
 	path = jaunte
 	url = git://github.com/kawaguchi/jaunte.el.git
-[submodule "auto-complete"]
-	path = auto-complete
-	url = git://github.com/m2ym/auto-complete.git
 [submodule "bm"]
 	path = bm
 	url = git://github.com/emacsmirror/bm.git
