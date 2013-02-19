@@ -32,6 +32,7 @@
                 )
               (define-key scala-mode-map (kbd "C-<tab>") 'hs-toggle-hiding)
               (define-key scala-mode-map (kbd "S-<tab>") 'scala-undent-line)
+              (define-key scala-mode-map (kbd "C-c t") 'testswitch)
               (speedbar-add-supported-extension "\\.scala")
               (setq imenu-generic-expression
                     '(
