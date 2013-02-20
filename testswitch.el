@@ -32,7 +32,8 @@
     (buffer-file-name)))
 
 (defun testswitch-main-p (path)
-  (string-contains path "/main/"))
+  (or (string-contains path "/main/")
+      (string-contains path "/app/")))
 
 (defun testswitch-test-p (path)
   (string-contains path "/test/"))
@@ -44,13 +45,22 @@
 (defun testswitch-main-to-test ()
   (let ((test-dir (testswitch-get-directory-from-path
                    (replace-regexp-in-string
-                    "/main/" "/test/" (testswitch-current-file-or-directory)))))
+                    "/app/\\\|/main/" "/test/" (testswitch-current-file-or-directory)))))
     (testswitch-find-directory test-dir)))
 
+(defun testswitch-search-main-from-test-dir ()
+  (cond ((file-exists-p (testswitch-get-directory-from-path
+           (replace-regexp-in-string
+            "/test/" "/app/" (testswitch-current-file-or-directory)))
+          (testswitch-get-directory-from-path
+           (replace-regexp-in-string
+            "/test/" "/app/" (testswitch-current-file-or-directory))))
+         (t (testswitch-get-directory-from-path
+             (replace-regexp-in-string
+              "/test/" "/main/" (testswitch-current-file-or-directory)))))))
+
 (defun testswitch-test-to-main ()
-  (let ((main-dir (testswitch-get-directory-from-path
-                   (replace-regexp-in-string
-                    "/test/" "/main/" (testswitch-current-file-or-directory)))))
+  (let ((main-dir (testswitch-search-main-from-test-dir)))
     (testswitch-find-directory main-dir)))
 
 (defun testswitch-find-directory (directory)
