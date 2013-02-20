@@ -42,44 +42,11 @@
   (replace-regexp-in-string
    "/\\\([^/]*\\\)\\.\\\(java\\\|scala\\\)" "" path))
 
-(defun testswitch-main-to-test ()
-  (let ((test-dir (testswitch-get-directory-from-path
-                   (replace-regexp-in-string
-                    "/app/\\\|/main/" "/test/" (testswitch-current-file-or-directory)))))
-    (testswitch-find-directory test-dir)))
-
-(defun testswitch-search-main-from-test-dir ()
-  (cond ((file-exists-p (testswitch-get-directory-from-path
-           (replace-regexp-in-string
-            "/test/" "/app/" (testswitch-current-file-or-directory)))
-          (testswitch-get-directory-from-path
-           (replace-regexp-in-string
-            "/test/" "/app/" (testswitch-current-file-or-directory))))
-         (t (testswitch-get-directory-from-path
-             (replace-regexp-in-string
-              "/test/" "/main/" (testswitch-current-file-or-directory)))))))
-
-(defun testswitch-test-to-main ()
-  (let ((main-dir (testswitch-search-main-from-test-dir)))
-    (testswitch-find-directory main-dir)))
-
-(defun testswitch-find-directory (directory)
-  (testswitch-make-directory-if-not-exists directory)
-  (find-file directory))
-
-(defun testswitch-make-directory-if-not-exists (directory)
-  (unless (file-exists-p directory)
-    (make-directory directory t)))
-
-(defun testswitch-directory ()
-  (interactive)
-  (let ((buf (testswitch-current-file-or-directory)))
-    (cond ((testswitch-test-p buf) (testswitch-test-to-main))
-          ((testswitch-main-p buf) (testswitch-main-to-test))
-          (t nil))))
-
 (defun testswitch-basename (path)
   (car (last (split-string path "/"))))
+
+(defun testswitch-search-test-from-main (path)
+  (replace-regexp-in-string "/app/\\\|/main/" "/test/" path))
 
 (defun testswitch-find-associated-file (filename)
   (cond ((string-contains filename "Test")
@@ -91,15 +58,52 @@
         ((string-contains filename ".scala")
          (replace-regexp-in-string "\\.scala" "Spec.scala" filename))))
 
+(defun testswitch-project-root (dir)
+  (or (locate-dominating-file dir ".git")
+      (locate-dominating-file dir "pom.xml")
+      (locate-dominating-file dir "build.sbt")
+      (locate-dominating-file dir "build.xml")))
+
+(defun testswitch-play-project-p (project-root)
+  (file-exists-p (concat project-root "/conf/application.conf")))
+
+(defun testswitch-search-main-from-test-dir (test-dir)
+  (cond ((testswitch-play-project-p (testswitch-project-root test-dir))
+         (testswitch-get-directory-from-path (replace-regexp-in-string "/test/" "/app/" test-dir)))
+        (t (testswitch-get-directory-from-path (replace-regexp-in-string "/test/" "/main/" test-dir)))))
+
+(defun testswitch-find-directory (directory)
+  (testswitch-make-directory-if-not-exists directory)
+  (find-file directory))
+
+(defun testswitch-make-directory-if-not-exists (directory)
+  (unless (file-exists-p directory)
+    (make-directory directory t)))
+
+(defun testswitch-move-test-to-main (current-file-or-dir)
+  (testswitch-find-directory
+   (testswitch-search-main-from-test-dir current-file-or-dir)))
+
+(defun testswitch-move-main-to-test (current-file-or-dir)
+  (let ((test-dir (testswitch-get-directory-from-path
+                   (testswitch-search-test-from-main current-file-or-dir))))
+    (testswitch-find-directory test-dir)))
+
+(defun testswitch-directory (current-file-or-dir)
+  (interactive)
+  (cond ((testswitch-test-p current-file-or-dir) (testswitch-move-test-to-main current-file-or-dir))
+        ((testswitch-main-p current-file-or-dir) (testswitch-move-main-to-test current-file-or-dir))
+        (t nil)))
+
 (defun testswitch ()
   (interactive)
   (cond ((buffer-file-name)
          (let ((filename (testswitch-basename (buffer-file-name))))
-           (testswitch-directory)
+           (testswitch-directory (testswitch-current-file-or-directory))
            (let ((associated-file (find (testswitch-find-associated-file filename) (directory-files ".") :test #'string=)))
              (when associated-file
                (find-file associated-file)))))
-        (t (testswitch-directory))))
+        (t (testswitch-directory (testswitch-current-file-or-directory)))))
 
 
 (provide 'testswitch)
