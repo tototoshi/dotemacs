@@ -26,8 +26,11 @@
 
 (require 'string-utils)
 
+(defun testswitch-dired-mode-p ()
+  (eq major-mode 'dired-mode))
+
 (defun testswitch-current-file-or-directory ()
-  (if (eq major-mode 'dired-mode)
+  (if (testswitch-dired-mode-p)
       (dired-current-directory)
     (buffer-file-name)))
 
@@ -95,15 +98,19 @@
         ((testswitch-main-p current-file-or-dir) (testswitch-move-main-to-test current-file-or-dir))
         (t nil)))
 
+(defun testswitch-open-associated-file (filename)
+   (let ((associated-file
+             (find (testswitch-find-associated-file filename) (directory-files ".") :test #'string=)))
+        (when associated-file
+          (find-file associated-file))))
+
 (defun testswitch ()
   (interactive)
-  (cond ((buffer-file-name)
+  (cond ((testswitch-dired-mode-p) (testswitch-directory (testswitch-current-file-or-directory)))
+        (t
          (let ((filename (testswitch-basename (buffer-file-name))))
            (testswitch-directory (testswitch-current-file-or-directory))
-           (let ((associated-file (find (testswitch-find-associated-file filename) (directory-files ".") :test #'string=)))
-             (when associated-file
-               (find-file associated-file)))))
-        (t (testswitch-directory (testswitch-current-file-or-directory)))))
+           (testswitch-open-associated-file filename)))))
 
 
 (provide 'testswitch)
