@@ -7,11 +7,32 @@ import Keys._
 object ${1:MyProject} extends Build {
 
   lazy val ${2:root} = Project (
-    id = "${3:my project}",
+    id = "${3:my-project}",
     base = file (${4:"."}),
     settings = Defaults.defaultSettings ++ Seq (
+      name := "$3",
+      organization := "com.github.tototoshi",
+      scalaVersion := "2.10.0",
       libraryDependencies ++= Seq(
-      )
+        "org.scalatest" %% "scalatest" % "1.9.1" % "test"
+      ),
+      scalacOptions <<= scalaVersion.map { sv =>
+        if (sv.startsWith("2.10")) {
+          Seq(
+            "-deprecation",
+            "-language:dynamics",
+            "-language:postfixOps",
+            "-language:reflectiveCalls",
+            "-language:implicitConversions",
+            "-language:higherKinds",
+            "-language:existentials",
+            "-language:reflectiveCalls",
+            "-language:experimental.macros"
+          )
+        } else {
+          Seq("-deprecation")
+        }
+      }
     )
   )
 }
