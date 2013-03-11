@@ -1,0 +1,4 @@
+# name: before {..}
+# key: before
+# --
+before { $0 }

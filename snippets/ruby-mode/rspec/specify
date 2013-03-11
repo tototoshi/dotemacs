@@ -1,0 +1,4 @@
+# name: specify
+# key: spe
+# --
+specify { $0 }

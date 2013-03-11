@@ -1,0 +1,4 @@
+# name: after {..}
+# key: after
+# --
+after { $0 }

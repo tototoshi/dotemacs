@@ -1,0 +1,5 @@
+# name: context
+# key: ctx
+# --
+context "$0" do
+end

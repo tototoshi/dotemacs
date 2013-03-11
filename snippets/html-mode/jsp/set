@@ -1,0 +1,4 @@
+# name: request.setAttribute
+# key: set
+# --
+request.setAttribute("$1", $0);
