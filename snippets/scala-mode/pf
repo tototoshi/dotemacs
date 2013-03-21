@@ -1,0 +1,4 @@
+# name: PartialFunction
+# key: pf
+# --
+val $1: PartialFunction[$2, $3] = { case $4 => $0 }

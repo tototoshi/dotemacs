@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: testcase
+# name: test class
 # key: test
 # --
 class ${1:name}(unittest.TestCase):

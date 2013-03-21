@@ -1,0 +1,7 @@
+# name: getter
+# key: get
+# --
+def _get_$1(self):
+    u"""Returns $1
+    """
+    return self._$1

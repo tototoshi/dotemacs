@@ -1,0 +1,14 @@
+# name: setter/getter
+# key: setget
+# --
+def _set_${1:var}(self, $1):
+    u"""Set $1
+    """
+    self._$1 = $1
+
+def _get_$1(self):
+    u"""Returns $1
+    """
+    return self._$1
+
+$1 = property(_get_$1, _set_$1)

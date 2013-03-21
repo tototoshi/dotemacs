@@ -1,0 +1,7 @@
+# name: setter
+# key: set
+# --
+def _set_$1(self, $1):
+    u"""Set $1
+    """
+    self._$1 = $1

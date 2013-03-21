@@ -1,0 +1,4 @@
+# name: self._var = var
+# key: s=
+# --
+self._$1 = $1
