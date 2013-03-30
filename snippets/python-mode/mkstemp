@@ -1,0 +1,9 @@
+# name: mkstemp
+# key: tempfile
+# --
+fd, tmpfilename = mkstemp()
+try:
+    f = os.fdopen(fd, 'w')
+finally:
+    f.close()
+    os.remove(tmpfilename)
