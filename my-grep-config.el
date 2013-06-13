@@ -6,9 +6,11 @@
 (defun find-grep-in-project ()
   (interactive)
   (let* ((root (or (locate-dominating-file default-directory ".git") ""))
-         (ack "~/bin/ack --nocolor --nogroup")
+         (ggrep "git --no-pager grep -i -n --no-color")
          (command
-          (read-from-minibuffer "COMMAND: " `(,(format "%s '%s' %s" ack (or (current-word) "") root) . ,(+ 3 (length ack))))))
+          (read-from-minibuffer
+           "COMMAND: "
+           `(,(format "%s '%s' %s" ggrep (or (current-word) "") root) . ,(+ 3 (length ggrep))))))
     (grep-find command)))
 (defalias 'fgp 'find-grep-in-project)
 
