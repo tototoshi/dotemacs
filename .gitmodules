@@ -40,3 +40,9 @@
 [submodule "helm"]
 	path = helm
 	url = https://github.com/emacs-helm/helm.git
+[submodule "auto-complete"]
+	path = auto-complete
+	url = https://github.com/auto-complete/auto-complete.git
+[submodule "popup-el"]
+	path = popup-el
+	url = https://github.com/auto-complete/popup-el.git
