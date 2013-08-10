@@ -55,3 +55,6 @@
 [submodule "helm-find-files-in-project"]
 	path = helm-find-files-in-project
 	url = https://github.com/tototoshi/helm-find-files-in-project
+[submodule "iedit"]
+	path = iedit
+	url = https://github.com/tsdh/iedit.git
