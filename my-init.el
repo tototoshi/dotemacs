@@ -22,7 +22,6 @@
 (require 'magit)
 (require 'my-slime-config)
 (require 'my-auto-complete-config)
-(load "my-scala-config.el")
 (require 'string)
 (require 'my-google)
 (require 'ack)
@@ -71,6 +70,8 @@
 (require 'my-grep-config)
 (require 'my-perl-config)
 (require 'my-face)
+(load "my-scala-config.el")
+
 ;; (require 'my-nxhtml-mumamo-config)
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")
 
