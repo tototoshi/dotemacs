@@ -46,3 +46,12 @@
 [submodule "popup-el"]
 	path = popup-el
 	url = https://github.com/auto-complete/popup-el.git
+[submodule "yasnippet"]
+	path = yasnippet
+	url = https://github.com/capitaomorte/yasnippet.git
+[submodule "tt-el"]
+	path = tt-el
+	url = https://github.com/tototoshi/tt-el
+[submodule "helm-find-files-in-project"]
+	path = helm-find-files-in-project
+	url = https://github.com/tototoshi/helm-find-files-in-project
