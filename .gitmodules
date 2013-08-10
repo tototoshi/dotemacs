@@ -1,9 +1,6 @@
 [submodule "zlc"]
 	path = zlc
 	url = git://github.com/mooz/emacs-zlc.git
-[submodule "auto-highlight-symbol-mode"]
-	path = auto-highlight-symbol-mode
-	url = git://github.com/mitsuo-saito/auto-highlight-symbol-mode.git
 [submodule "magit"]
 	path = magit
 	url = git://github.com/magit/magit.git
