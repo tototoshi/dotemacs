@@ -1,4 +1,8 @@
 # name: tmpfile
 # --
-tmpfile=$(mktemp /tmp/$(basename $0).XXXXXX) || exit 1
-trap "rm -fv $tmpfile" EXIT
+export TMPDIR=${1:TMPDIR}
+TMPFILE=$(mktemp -t ${2:\$(basename \$0)}.XXXXXX) || exit 1
+cleanup () {
+    rm $TMPFILE
+}
+trap "cleanup" EXIT

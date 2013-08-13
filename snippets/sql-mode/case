@@ -1,4 +1,4 @@
 # name: case
 # key: case
 # --
-case when $1 then $0 end
+CASE WHEN $1 THEN $0 END
