@@ -9,6 +9,13 @@
                "\n"))
   (add-to-list 'load-path dir))
 
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(package-initialize)
+(unless (package-installed-p 'scala-mode2)
+  (package-refresh-contents) (package-install 'scala-mode2))
+
 (load "my-mac-swap-option-and-command.el")
 (load "my-window-config.el")
 (load "basic-config.el")
@@ -74,4 +81,3 @@
 
 ;; (require 'my-nxhtml-mumamo-config)
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")
-
