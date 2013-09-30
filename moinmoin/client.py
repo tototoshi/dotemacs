@@ -13,10 +13,19 @@ class MoinMoinError(Exception):
 class Client():
     """
     """
-    base_url = "http://ttoshi.me/wiki"
 
-    def __init__(self):
+
+    def __init__(self, base_url):
         rcfile = os.path.join(os.getenv("HOME"), ".moinrc")
+
+        self.base_url = base_url
+
+        p = re.compile('(https?://)(.*?):(.*?)@(.*?)$')
+        m = p.match(base_url)
+        if m:
+            basic_auth_user = m.group(2)
+            basic_auth_password = m.group(3)
+            self.base_url = m.group(1) + m.group(4)
 
         f = open(rcfile)
         self.username, self.password = f.read().strip().split(':')
@@ -24,7 +33,7 @@ class Client():
 
         # Basic Auth
         passman = urllib2.HTTPPasswordMgrWithDefaultRealm()
-        passman.add_password(None, self.base_url, self.username, self.password)
+        passman.add_password(None, self.base_url, basic_auth_user, basic_auth_password)
 
         # Cookie
         cj = cookielib.CookieJar()
@@ -72,7 +81,7 @@ class Client():
         """
         self.GET(pagename)
 
-    def login(self, user="toshi", password="password"):
+    def login(self):
         """login
 
         Arguments:

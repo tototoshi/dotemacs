@@ -2,7 +2,6 @@
 
 (defvar my-moinmoin-url nil)
 (defvar my-moinmoin-directory "~/.emacs.d/dotemacs/moinmoin/")
-(defvar my-moin-parse-command (concat my-moinmoin-directory "moin.sh"))
 (defvar my-moinmoin-script (concat my-moinmoin-directory "moin.py"))
 (defvar my-moinmoin-save-script (concat my-moinmoin-directory "moin-save.py"))
 
@@ -16,7 +15,7 @@
     (erase-buffer)
     (insert
      (shell-command-to-string
-      (format "python %s %s" my-moinmoin-script title)))
+       (format "python %s %s %s" my-moinmoin-script my-moinmoin-url title)))
     (goto-char (point-min))
     (moinmoin-mode)))
 
@@ -26,9 +25,8 @@
         (tmpfile "/tmp/my-moinmoin-tmpfile"))
     (my-file-put-contents tmpfile (buffer-substring-no-properties (point-min) (point-max)))
     (when page-name
-      (print
-       (shell-command-to-string
-       (format "python %s %s %s" my-moinmoin-save-script page-name tmpfile))))
+      (shell-command-to-string
+       (format "python %s %s %s %s" my-moinmoin-save-script my-moinmoin-url page-name tmpfile)))
     (delete-file tmpfile)
     (message (format "save %s" page-name))))
 
@@ -46,22 +44,22 @@
                                              (http-url-encode title 'utf-8))))
         (t (message "Please specify my-moinmoin-url"))))
 
-(defun anything-my-moin-page-list ()
+(defun helm-my-moin-page-list ()
   (split-string (shell-command-to-string
-                 (format "%s %s" my-moin-parse-command my-moinmoin-url)) "\n"))
+                 (format "curl '%s' 2> /dev/null" (concat my-moinmoin-url "?action=titleindex"))) "\r\n"))
 
-(defvar anything-c-source-my-moin-page
+(defvar helm-c-source-my-moin-page
       '((name . "Page list")
-        (candidates . anything-my-moin-page-list)
+        (candidates . helm-my-moin-page-list)
         (action
          . (("View" . wiki)
             ("Edit" . ewiki)
             ("Edit with emacs" . ewiki-with-emacs)
             ))))
 
-(defun anything-my-moin ()
+(defun helm-my-moin ()
   (interactive)
-  (anything '(anything-c-source-my-moin-page)))
+  (helm '(helm-c-source-my-moin-page)))
 
 (require 'screen-lines)
 (require 'moinmoin-mode)
