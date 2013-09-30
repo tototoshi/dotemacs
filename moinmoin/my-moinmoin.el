@@ -34,14 +34,21 @@
   (interactive "sTitle: ")
   (cond (my-moinmoin-url (browse-url (format "%s/%s?action=edit&editor=text"
                                              my-moinmoin-url
-                                             (http-url-encode title 'utf-8))))
+                                             (my-moinmoin-url-encode title))))
         (t (message "Please specify my-moinmoin-url"))))
+
+(defun my-moinmoin-join (xs)
+  (reduce '(lambda (x y) (concat x "/" y)) xs))
+
+(defun my-moinmoin-url-encode (s)
+  (my-moinmoin-join
+   (mapcar '(lambda (x) (http-url-encode x 'utf-8)) (split-string s "/"))))
 
 (defun wiki (title)
   (interactive "sTitle: ")
   (cond (my-moinmoin-url (browse-url (format "%s/%s"
                                              my-moinmoin-url
-                                             (http-url-encode title 'utf-8))))
+                                             (my-moinmoin-url-encode title))))
         (t (message "Please specify my-moinmoin-url"))))
 
 (defun helm-my-moin-page-list ()
