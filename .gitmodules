@@ -1,6 +1,3 @@
-[submodule "zlc"]
-	path = zlc
-	url = git://github.com/mooz/emacs-zlc.git
 [submodule "magit"]
 	path = magit
 	url = git://github.com/magit/magit.git
