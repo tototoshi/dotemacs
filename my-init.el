@@ -41,6 +41,8 @@
   (package-refresh-contents) (package-install 'gist))
 (unless (package-installed-p 'window-layout)
   (package-refresh-contents) (package-install 'window-layout))
+(unless (package-installed-p 'e2wm)
+  (package-refresh-contents) (package-install 'e2wm))
 
 (load "my-mac-swap-option-and-command.el")
 (load "my-window-config.el")
