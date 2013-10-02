@@ -1,6 +1,3 @@
-[submodule "magit"]
-	path = magit
-	url = git://github.com/magit/magit.git
 [submodule "bm"]
 	path = bm
 	url = git://github.com/emacsmirror/bm.git
