@@ -39,6 +39,8 @@
   (package-refresh-contents) (package-install 'yasnippet))
 (unless (package-installed-p 'gist)
   (package-refresh-contents) (package-install 'gist))
+(unless (package-installed-p 'window-layout)
+  (package-refresh-contents) (package-install 'window-layout))
 
 (load "my-mac-swap-option-and-command.el")
 (load "my-window-config.el")
