@@ -22,9 +22,6 @@
 [submodule "emacs-window-layout"]
 	path = emacs-window-layout
 	url = git://github.com/kiwanami/emacs-window-layout.git
-[submodule "markdown-mode"]
-	path = markdown-mode
-	url = git://github.com/defunkt/markdown-mode.git
 [submodule "yasnippet"]
 	path = yasnippet
 	url = https://github.com/capitaomorte/yasnippet.git
