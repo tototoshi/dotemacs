@@ -43,6 +43,8 @@
   (package-refresh-contents) (package-install 'window-layout))
 (unless (package-installed-p 'e2wm)
   (package-refresh-contents) (package-install 'e2wm))
+(unless (package-installed-p 'w3m)
+  (package-refresh-contents) (package-install 'w3m))
 
 (load "my-mac-swap-option-and-command.el")
 (load "my-window-config.el")
