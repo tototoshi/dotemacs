@@ -28,9 +28,6 @@
 [submodule "auto-complete"]
 	path = auto-complete
 	url = https://github.com/auto-complete/auto-complete.git
-[submodule "popup-el"]
-	path = popup-el
-	url = https://github.com/auto-complete/popup-el.git
 [submodule "yasnippet"]
 	path = yasnippet
 	url = https://github.com/capitaomorte/yasnippet.git
