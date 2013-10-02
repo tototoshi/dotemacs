@@ -35,6 +35,10 @@
   (package-refresh-contents) (package-install 'iedit))
 (unless (package-installed-p 'markdown-mode)
   (package-refresh-contents) (package-install 'markdown-mode))
+(unless (package-installed-p 'yasnippet)
+  (package-refresh-contents) (package-install 'yasnippet))
+(unless (package-installed-p 'gist)
+  (package-refresh-contents) (package-install 'gist))
 
 (load "my-mac-swap-option-and-command.el")
 (load "my-window-config.el")
