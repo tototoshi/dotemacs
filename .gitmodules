@@ -16,9 +16,6 @@
 [submodule "emacs-window-manager"]
 	path = emacs-window-manager
 	url = git://github.com/kiwanami/emacs-window-manager.git
-[submodule "emacs-window-layout"]
-	path = emacs-window-layout
-	url = git://github.com/kiwanami/emacs-window-layout.git
 [submodule "tt-el"]
 	path = tt-el
 	url = https://github.com/tototoshi/tt-el
