@@ -106,7 +106,8 @@
              (define-key php-mode-map (kbd "C-c v") 'my-php-toggle-var-dump)
              ))
 
-
+(add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.phpt$" . php-mode))
 ;(and
 ; (string= (my-php-format-func-name "abs()") "abs")
 ; (string= (my-php-format-func-name "aggregate_methods()") "aggregate-methods")
