@@ -17,6 +17,8 @@
   (package-refresh-contents) (package-install 'scala-mode2))
 (unless (package-installed-p 'helm)
   (package-refresh-contents) (package-install 'helm))
+(unless (package-installed-p 'helm-gtags)
+  (package-refresh-contents) (package-install 'helm-gtags))
 (unless (package-installed-p 'jaunte)
   (package-refresh-contents) (package-install 'jaunte))
 (unless (package-installed-p 'zlc)
