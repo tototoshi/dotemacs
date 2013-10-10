@@ -87,6 +87,7 @@
           '(lambda ()
              (setq php-mode-force-pear t)
              ;; (flymake-mode t)
+             (gtags-mode 1)
              (c-set-style "stroustrup")
              (c-set-offset 'comment-intro 0)
              (setq tab-width 4)

@@ -112,6 +112,7 @@
 (require 'my-grep-config)
 (require 'my-perl-config)
 (require 'my-face)
+(require 'my-gtags-config)
 (load "my-scala-config.el")
 
 ;; (require 'my-nxhtml-mumamo-config)

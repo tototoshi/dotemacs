@@ -1,5 +1,12 @@
+(require 'helm-config)
 (autoload 'gtags-mode' "gtags" "" t)
 (autoload 'gtags-mode' "helm-gtags" "" t)
+
+(setq helm-gtags-path-style 'relative)
+(setq helm-gtags-ignore-case t)
+(setq helm-gtags-read-only t)
+(setq helm-gtags-auto-update t)
+
 (setq gtags-mode-hook
       '(lambda ()
          (local-set-key "\M-t" 'helm-gtags-find-tag)
