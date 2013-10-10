@@ -125,3 +125,7 @@
 (set-face-background 'whitespace-space 'nil)
 (set-face-bold-p 'whitespace-space t)
 (global-whitespace-mode 1)
+
+;; Add /usr/local/bin to exec-path
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+(setq exec-path (append exec-path '("/usr/local/bin")))
