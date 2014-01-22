@@ -49,6 +49,8 @@
   (package-refresh-contents) (package-install 'w3m))
 (unless (package-installed-p 'zencoding-mode)
   (package-refresh-contents) (package-install 'zencoding-mode))
+(unless (package-installed-p 'go-mode)
+  (package-refresh-contents) (package-install 'go-mode))
 
 (load "my-mac-swap-option-and-command.el")
 (load "my-window-config.el")
