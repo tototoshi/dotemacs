@@ -1,6 +1,3 @@
-[submodule "emacs-skype"]
-	path = emacs-skype
-	url = git://github.com/kiwanami/emacs-skype.git
 [submodule "snippets-ext/AndreaCrotti"]
 	path = snippets-ext/AndreaCrotti
 	url = git://github.com/AndreaCrotti/yasnippet-snippets.git
