@@ -1,0 +1,4 @@
+# name: import
+# key: im
+# --
+import $0

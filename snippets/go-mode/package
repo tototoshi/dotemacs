@@ -1,0 +1,4 @@
+# name: package
+# key: pac
+# --
+package $0

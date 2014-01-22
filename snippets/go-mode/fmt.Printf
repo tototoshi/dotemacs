@@ -1,0 +1,4 @@
+# name: fmt.Printf
+# key: p
+# --
+fmt.Printf($0)

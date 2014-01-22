@@ -1,0 +1,5 @@
+# name: func
+# key: f
+# --
+func $0() {
+}
