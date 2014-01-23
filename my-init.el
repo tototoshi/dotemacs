@@ -9,48 +9,49 @@
                "\n"))
   (add-to-list 'load-path dir))
 
+
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
-(unless (package-installed-p 'scala-mode2)
-  (package-refresh-contents) (package-install 'scala-mode2))
-(unless (package-installed-p 'helm)
-  (package-refresh-contents) (package-install 'helm))
-(unless (package-installed-p 'helm-gtags)
-  (package-refresh-contents) (package-install 'helm-gtags))
-(unless (package-installed-p 'jaunte)
-  (package-refresh-contents) (package-install 'jaunte))
-(unless (package-installed-p 'zlc)
-  (package-refresh-contents) (package-install 'zlc))
-(unless (package-installed-p 'magit)
-  (package-refresh-contents) (package-install 'magit))
-(unless (package-installed-p 'bm)
-  (package-refresh-contents) (package-install 'bm))
-(unless (package-installed-p 'popup)
-  (package-refresh-contents) (package-install 'popup))
-(unless (package-installed-p 'popwin)
-  (package-refresh-contents) (package-install 'popwin))
-(unless (package-installed-p 'auto-complete)
-  (package-refresh-contents) (package-install 'auto-complete))
-(unless (package-installed-p 'iedit)
-  (package-refresh-contents) (package-install 'iedit))
-(unless (package-installed-p 'markdown-mode)
-  (package-refresh-contents) (package-install 'markdown-mode))
-(unless (package-installed-p 'yasnippet)
-  (package-refresh-contents) (package-install 'yasnippet))
-(unless (package-installed-p 'gist)
-  (package-refresh-contents) (package-install 'gist))
-(unless (package-installed-p 'window-layout)
-  (package-refresh-contents) (package-install 'window-layout))
-(unless (package-installed-p 'e2wm)
-  (package-refresh-contents) (package-install 'e2wm))
-(unless (package-installed-p 'w3m)
-  (package-refresh-contents) (package-install 'w3m))
-(unless (package-installed-p 'zencoding-mode)
-  (package-refresh-contents) (package-install 'zencoding-mode))
-(unless (package-installed-p 'go-mode)
-  (package-refresh-contents) (package-install 'go-mode))
+(dolist (p '(scala-mode2
+             helm
+             helm-gtags
+             jaunte
+             zlc
+             magit
+             bm
+             popup
+             popwin
+             auto-complete
+             iedit
+             markdown-mode
+             yasnippet
+             gist
+             window-layout
+             e2wm
+             w3m
+             zencoding-mode
+             go-mode
+             rpm-spec-mode
+             key-chord
+             htmlize
+             http-post-simple
+             open-junk-file
+             paredit
+             multi-term
+             ruby-electric
+             php-mode
+             shell-pop
+             sr-speedbar
+             sql-indent
+             haxe-mode
+             direx
+             apache-mode
+             ac-slime
+             ))
+  (unless (package-installed-p p)
+    (package-refresh-contents) (package-install p)))
 
 (load "my-mac-swap-option-and-command.el")
 (load "my-window-config.el")
