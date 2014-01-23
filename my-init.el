@@ -14,42 +14,42 @@
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
-(dolist (p '(scala-mode2
+(dolist (p '(ac-slime
+             apache-mode
+             auto-complete
+             bm
+             direx
+             e2wm
+             gist
+             go-mode
+             haxe-mode
              helm
              helm-gtags
-             jaunte
-             zlc
-             magit
-             bm
-             popup
-             popwin
-             auto-complete
-             iedit
-             markdown-mode
-             yasnippet
-             gist
-             window-layout
-             e2wm
-             w3m
-             zencoding-mode
-             go-mode
-             rpm-spec-mode
-             key-chord
              htmlize
              http-post-simple
+             iedit
+             jaunte
+             js2-mode
+             key-chord
+             magit
+             markdown-mode
+             multi-term
              open-junk-file
              paredit
-             multi-term
-             ruby-electric
              php-mode
+             popup
+             popwin
+             rpm-spec-mode
+             ruby-electric
+             scala-mode2
              shell-pop
-             sr-speedbar
              sql-indent
-             haxe-mode
-             direx
-             apache-mode
-             ac-slime
-             ))
+             sr-speedbar
+             w3m
+             window-layout
+             yasnippet
+             zencoding-mode
+             zlc))
   (unless (package-installed-p p)
     (package-refresh-contents) (package-install p)))
 
@@ -84,7 +84,7 @@
 (load "my-rpm-spec-mode-config.el")
 (load "my-stumpwmrc.el")
 (require 'htmlize)
-(load "my-php.el")
+(load "my-php-mode-config.el")
 (load "my-alias.el")
 (load "my-apache-config.el")
 (load "my-python-config.el")
