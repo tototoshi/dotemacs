@@ -42,7 +42,6 @@
              rpm-spec-mode
              ruby-electric
              scala-mode2
-             shell-pop
              sql-indent
              sr-speedbar
              w3m
