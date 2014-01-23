@@ -44,6 +44,7 @@
              scala-mode2
              sql-indent
              sr-speedbar
+             twittering-mode
              w3m
              window-layout
              yasnippet
@@ -59,15 +60,13 @@
 (load "dired-config.el")
 (load "my-twittering-mode.el")
 (load "alc.el")
-(load "my-zencoding-mode-config.el")
-(load "my-shell-config.el")
+(require 'my-zencoding-mode-config)
 (require 'my-helm-config)
 (require 'magit)
 (require 'my-slime-config)
 (require 'my-auto-complete-config)
 (require 'string)
 (require 'my-google)
-(require 'ack)
 (load "my-ack.el")
 (load "my-w3m-config.el")
 (require 'my-auto-highlight-symbol-mode-config)
@@ -107,7 +106,6 @@
 (require 'testswitch)
 (require 'my-ruby-config)
 (require 'my-iedit-config)
-(require 'run-current-file)
 (require 'my-haxe-mode-config)
 (require 'my-grep-config)
 (require 'my-perl-config)
