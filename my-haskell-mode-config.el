@@ -16,3 +16,4 @@
               (define-key haskell-mode-map "{" 'electric-pair)
               )))
 
+(provide 'my-haskell-mode-config)

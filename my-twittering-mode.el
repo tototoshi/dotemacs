@@ -11,6 +11,3 @@
   (define-key twittering-mode-map (kbd "R") 'twittering-native-retweet)
   (define-key twittering-mode-map (kbd "F") 'twittering-favorite)
   (define-key twittering-mode-map (kbd "Q") 'my-twittering-kill-buffers))
-
-
-

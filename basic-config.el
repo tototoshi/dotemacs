@@ -129,3 +129,13 @@
 ;; Add /usr/local/bin to exec-path
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
 (setq exec-path (append exec-path '("/usr/local/bin")))
+
+;; the current day and date are displayed as well.
+;; %Y: year
+;; %m: month
+;; %d: day
+;; %a: weekday
+;; %T: time
+(setq display-time-format "[%T]")
+(setq display-time-day-and-date t)
+(display-time)

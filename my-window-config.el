@@ -12,7 +12,6 @@
 
 (global-set-key (kbd "C-,") 'other-window-or-split)
 
-
 ;; enlarge & shrink
 (global-set-key [C-S-up] 'enlarge-window)
 (global-set-key [C-S-down] 'shrink-window)

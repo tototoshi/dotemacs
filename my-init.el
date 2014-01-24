@@ -1,9 +1,3 @@
-;; Requirement:
-;;  yasnippet
-;;  elib
-;;  helm
-;;  helm-find-files-in-project
-
 (dolist (dir (split-string
                (shell-command-to-string "find ~/.emacs.d/ -type d")
                "\n"))
@@ -34,7 +28,6 @@
              magit
              markdown-mode
              multi-term
-             open-junk-file
              paredit
              php-mode
              popup
@@ -58,17 +51,14 @@
 (load "basic-config.el")
 (load "delete-line.el")
 (load "dired-config.el")
-(load "my-twittering-mode.el")
 (load "alc.el")
 (require 'my-zencoding-mode-config)
 (require 'my-helm-config)
 (require 'magit)
-(require 'my-slime-config)
 (require 'my-auto-complete-config)
 (require 'string)
 (require 'my-google)
-(load "my-ack.el")
-(load "my-w3m-config.el")
+(require 'my-ack)
 (require 'my-auto-highlight-symbol-mode-config)
 (load "my-zlc-config.el")
 (load "my-bm-config.el")
@@ -79,39 +69,27 @@
 (load "my-c++-config.el")
 (load "my-c-config.el")
 (load "my-java-config.el")
-(load "my-rpm-spec-mode-config.el")
-(load "my-stumpwmrc.el")
 (require 'htmlize)
 (load "my-php-mode-config.el")
 (load "my-alias.el")
 (load "my-apache-config.el")
 (load "my-python-config.el")
-(load "my-speedbar-config.el")
-(load "my-phrase.el")
 (load "gist.el")
 (load "my-e2wm-config.el")
-(load "my-e-sink-config.el")
 (load "my-markdown-mode-config.el")
-(load "my-display-time-config.el")
-(load "my-hatena-config.el")
-(load "my-haskell-mode-config.el")
 (load "my-sql-mode-config.el")
 (require 'my-occur-config)
-(require 'open-junk-file)
-(load "my-html-mode-config.el")
+(require 'my-html-mode-config)
 (require 'my-sh-mode-config)
 (require 'helm-find-files-in-project)
-;;(load "my-auto-insert-config.el")
 (require 'my-java-config)
-(require 'testswitch)
 (require 'my-ruby-config)
 (require 'my-iedit-config)
-(require 'my-haxe-mode-config)
 (require 'my-grep-config)
 (require 'my-perl-config)
 (require 'my-face)
 (require 'my-gtags-config)
 (load "my-scala-config.el")
-
+;;(require 'my-haskell-mode-config)
 ;; (require 'my-nxhtml-mumamo-config)
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")
