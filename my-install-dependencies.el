@@ -68,7 +68,7 @@
     (dolist (p el-get-sources)
       (let ((package-name (plist-get p :name)))
         (unless (el-get-package-installed-p package-name)
-          (el-get-reinstall package-name))))))
+          (el-get-install package-name))))))
 
 (defun my-install-dependencies ()
   (interactive)
