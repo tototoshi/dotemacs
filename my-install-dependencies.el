@@ -63,6 +63,7 @@
            (:name memo :type github :pkgname "tototoshi/memo-el")
            (:name moinmoin-mode :type github :pkgname "tototoshi/moinmoin-mode")
            (:name python-mode :type github :pkgname "emacsmirror/python-mode")
+           (:name rfc-view :type github :pkgname "tototoshi/rfc-view-el")
            (:name tt-el :type github :pkgname "tototoshi/tt-el")
            (:name auto-highlight-symbol :type github :pkgname "emacsmirror/auto-highlight-symbol")
            (:name hideshowvis :type github :pkgname "emacsmirror/hideshowvis")
