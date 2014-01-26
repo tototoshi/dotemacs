@@ -17,7 +17,6 @@
 (require 'my-auto-highlight-symbol-mode-config)
 (require 'zlc)
 (load "my-bm-config.el")
-(load "my-jaunte-config.el")
 (load "my-emacs-lisp-mode-config.el")
 (load "my-yasnippet-config.el")
 (require 'my-memo)
