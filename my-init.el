@@ -31,7 +31,6 @@
 (require 'htmlize)
 (load "my-php-mode-config.el")
 (load "my-alias.el")
-(load "my-apache-config.el")
 (load "my-python-config.el")
 (load "my-e2wm-config.el")
 (load "my-sql-mode-config.el")
@@ -50,3 +49,4 @@
 ;;(require 'my-haskell-mode-config)
 ;; (require 'my-nxhtml-mumamo-config)
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")
+(require 'my-auto-mode-mapping)
