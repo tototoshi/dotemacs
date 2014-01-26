@@ -1,3 +1,5 @@
+(global-set-key "\C-h" 'delete-backward-char)
+(global-set-key "\M-h" 'help)
 (global-set-key (kbd "C-x r l") 'helm-bookmarks)
 (global-set-key (kbd "<f12>") 'shell-pop)
 (global-set-key (kbd "M-k") 'delete-line)
@@ -48,6 +50,9 @@
 (global-set-key (kbd "C-x D") 'helm-find-files-in-project)
 (global-set-key (kbd "C-c o") 'occur-current-word)
 (global-set-key (kbd "M-m") 'memo)
+(global-set-key (kbd "M-SPC") 'bm-toggle)
+(global-set-key (kbd "M-[") 'bm-previous)
+(global-set-key (kbd "M-]") 'bm-next)
 
 (when (require 'markdown-mode nil t)
   (add-hook 'markdown-mode-hook

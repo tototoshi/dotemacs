@@ -1,5 +1,7 @@
-(global-set-key "\C-h" 'delete-backward-char)
-(global-set-key "\M-h" 'help)
+;; Command-Key and Option-Key
+(when (eq window-system 'ns)
+  (setq ns-command-modifier (quote meta))
+  (setq ns-alternate-modifier (quote super)))
 
 ;; 終了時に確認を求める
 (setq confirm-kill-emacs 'y-or-n-p)

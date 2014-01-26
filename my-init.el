@@ -5,7 +5,6 @@
 
 (load "my-install-dependencies.el")
 
-(load "my-mac-swap-option-and-command.el")
 (load "my-window-config.el")
 (load "basic-config.el")
 (load "delete-line.el")
