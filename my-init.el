@@ -15,7 +15,6 @@
 (require 'magit)
 (require 'my-auto-complete-config)
 (require 'string)
-(require 'my-google)
 (require 'my-ack)
 (require 'my-auto-highlight-symbol-mode-config)
 (require 'zlc)

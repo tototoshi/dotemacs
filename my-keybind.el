@@ -22,7 +22,6 @@
 (global-set-key (kbd "C-c d") 'flymake-display-err-menu-for-current-line)
 (global-set-key (kbd "C-x t") 'twit)
 (global-set-key (kbd "C-x C-t") 'twittering-update-status-interactive)
-(global-set-key (kbd "C-x g") 'google)
 (global-set-key (kbd "S-<up>") 'windmove-up)
 (global-set-key (kbd "S-<down>") 'windmove-down)
 (global-set-key (kbd "S-<right>") 'windmove-right)
@@ -53,10 +52,10 @@
 (global-set-key (kbd "M-SPC") 'bm-toggle)
 (global-set-key (kbd "M-[") 'bm-previous)
 (global-set-key (kbd "M-]") 'bm-next)
-
+(when (require 'google-this nil t)
+  (global-set-key (kbd "C-x g") 'google-this-mode-submap))
 (when (require 'markdown-mode nil t)
   (add-hook 'markdown-mode-hook
             (lambda ()
               (define-key markdown-mode-map (kbd "<tab>") 'yas/expand))))
-
 (provide 'my-keybind)
