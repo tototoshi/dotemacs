@@ -57,38 +57,18 @@
   (require 'el-get)
 
   (let ((el-get-sources
-         '((:name screen-lines
-                  :type github
-                  :pkgname "emacsmirror/screen-lines")
-           (:name helm-find-files-in-project
-                  :type github
-                  :pkgname "tototoshi/helm-find-files-in-project")
-           (:name moinmoin-mode
-                  :type github
-                  :pkgname "tototoshi/moinmoin-mode")
-           (:name python-mode
-                  :type github
-                  :pkgname "emacsmirror/python-mode")
-           (:name tt-el
-                  :type github
-                  :pkgname "tototoshi/tt-el")
-           (:name auto-highlight-symbol
-                  :type github
-                  :pkgname "emacsmirror/auto-highlight-symbol")
-           (:name hideshowvis
-                  :type github
-                  :pkgname "emacsmirror/hideshowvis")
-           )))
-
-    (dolist (p '(screen-lines
-                 moinmoin-mode
-                 helm-find-files-in-project
-                 python-mode
-                 tt-el
-                 auto-highlight-symbol
-                 hideshowvis))
-      (unless  (el-get-package-installed-p p)
-        (el-get-install p))),))
+         '((:name screen-lines :type github :pkgname "emacsmirror/screen-lines")
+           (:name helm-find-files-in-project :type github :pkgname "tototoshi/helm-find-files-in-project")
+           (:name moinmoin-mode :type github :pkgname "tototoshi/moinmoin-mode")
+           (:name python-mode :type github :pkgname "emacsmirror/python-mode")
+           (:name tt-el :type github :pkgname "tototoshi/tt-el")
+           (:name auto-highlight-symbol :type github :pkgname "emacsmirror/auto-highlight-symbol")
+           (:name hideshowvis :type github :pkgname "emacsmirror/hideshowvis")
+           (:name java-mode-indent-annotations :type github :pkgname "emacsmirror/java-mode-indent-annotations"))))
+    (dolist (p el-get-sources)
+      (let ((package-name (plist-get p :name)))
+        (unless (el-get-package-installed-p package-name)
+          (el-get-reinstall package-name))))))
 
 (defun my-install-dependencies ()
   (interactive)
