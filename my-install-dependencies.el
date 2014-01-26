@@ -60,6 +60,7 @@
   (let ((el-get-sources
          '((:name screen-lines :type github :pkgname "emacsmirror/screen-lines")
            (:name helm-find-files-in-project :type github :pkgname "tototoshi/helm-find-files-in-project")
+           (:name memo :type github :pkgname "tototoshi/memo-el")
            (:name moinmoin-mode :type github :pkgname "tototoshi/moinmoin-mode")
            (:name python-mode :type github :pkgname "emacsmirror/python-mode")
            (:name tt-el :type github :pkgname "tototoshi/tt-el")
