@@ -71,15 +71,24 @@
                   :pkgname "emacsmirror/python-mode")
            (:name tt-el
                   :type github
-                  :pkgname "tototoshi/tt-el"))))
+                  :pkgname "tototoshi/tt-el")
+           (:name auto-highlight-symbol
+                  :type github
+                  :pkgname "emacsmirror/auto-highlight-symbol")
+           (:name hideshowvis
+                  :type github
+                  :pkgname "emacsmirror/hideshowvis")
+           )))
 
     (dolist (p '(screen-lines
                  moinmoin-mode
                  helm-find-files-in-project
                  python-mode
-                 tt-el))
+                 tt-el
+                 auto-highlight-symbol
+                 hideshowvis))
       (unless  (el-get-package-installed-p p)
-        (el-get-install p)))))
+        (el-get-install p))),))
 
 (defun my-install-dependencies ()
   (interactive)

@@ -3,7 +3,7 @@
               "\n"))
   (add-to-list 'load-path dir))
 
-;;(load "my-install-dependencies.el")
+(load "my-install-dependencies.el")
 
 (load "my-mac-swap-option-and-command.el")
 (load "my-window-config.el")
