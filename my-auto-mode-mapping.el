@@ -9,5 +9,6 @@
   (add-to-list 'auto-mode-alist '("srm\\.conf\\'"    . apache-mode))
   (add-to-list 'auto-mode-alist '("access\\.conf\\'" . apache-mode))
   (add-to-list 'auto-mode-alist '("sites-\\(available\\|enabled\\)/" . apache-mode)))
-
+(when (require 'yatex nil t)
+  (add-to-list 'auto-mode-alist '("\\.tex$" . yatex-mode)))
 (provide 'my-auto-mode-mapping)
