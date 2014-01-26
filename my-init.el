@@ -38,7 +38,7 @@
 (load "my-sql-mode-config.el")
 (require 'gist)
 (require 'my-occur-config)
-(require 'my-html-mode-config)
+(require 'my-sgml-mode-config)
 (require 'my-sh-mode-config)
 (require 'helm-find-files-in-project)
 (require 'my-java-config)
