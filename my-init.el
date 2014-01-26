@@ -43,7 +43,6 @@
 (require 'helm-find-files-in-project)
 (require 'my-java-config)
 (require 'my-ruby-config)
-(require 'my-iedit-config)
 (require 'my-grep-config)
 (require 'my-perl-config)
 (require 'my-face)
