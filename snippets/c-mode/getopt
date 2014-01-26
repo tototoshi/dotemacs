@@ -1,0 +1,6 @@
+# name: getopt
+# key: getopt
+# --
+static struct option longopts[] = {
+
+};

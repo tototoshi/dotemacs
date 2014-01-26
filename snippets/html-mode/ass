@@ -1,0 +1,4 @@
+# name: @routes.Assets.at("...")
+# key: ass
+# --
+@routes.Assets.at("${1:images}/$2")$0
