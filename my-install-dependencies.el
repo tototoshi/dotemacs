@@ -62,6 +62,7 @@
            (:name helm-find-files-in-project :type github :pkgname "tototoshi/helm-find-files-in-project")
            (:name memo :type github :pkgname "tototoshi/memo-el")
            (:name moinmoin-mode :type github :pkgname "tototoshi/moinmoin-mode")
+           (:name moomin :type github :pkgname "tototoshi/moomin-el")
            (:name python-mode :type github :pkgname "emacsmirror/python-mode")
            (:name rfc-view :type github :pkgname "tototoshi/rfc-view-el")
            (:name tt-el :type github :pkgname "tototoshi/tt-el")
