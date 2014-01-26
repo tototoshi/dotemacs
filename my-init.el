@@ -15,7 +15,6 @@
 (require 'magit)
 (require 'my-auto-complete-config)
 (require 'string)
-(require 'my-ack)
 (require 'my-auto-highlight-symbol-mode-config)
 (require 'zlc)
 (load "my-bm-config.el")
