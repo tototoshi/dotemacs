@@ -44,4 +44,5 @@
 ;;(require 'my-haskell-mode-config)
 ;; (require 'my-nxhtml-mumamo-config)
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")
+(autoload 'rpm-spec-mode "rpm-spec-mode.el" "RPM spec mode." t)
 (require 'my-auto-mode-mapping)
