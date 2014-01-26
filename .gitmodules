@@ -4,9 +4,6 @@
 [submodule "snippets-ext/polypus74/haskell-mode"]
 	path = snippets-ext/polypus74/haskell-mode
 	url = git://github.com/polypus74/HSnippets.git
-[submodule "python-mode"]
-	path = python-mode
-	url = git://github.com/emacsmirror/python-mode.git
 [submodule "tt-el"]
 	path = tt-el
 	url = https://github.com/tototoshi/tt-el
