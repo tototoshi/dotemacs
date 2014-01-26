@@ -1,9 +1,9 @@
 (dolist (dir (split-string
-               (shell-command-to-string "find ~/.emacs.d/ -type d")
-               "\n"))
+              (shell-command-to-string "find ~/.emacs.d/ -type d")
+              "\n"))
   (add-to-list 'load-path dir))
 
-
+;; Install dependencies with elpa
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
@@ -45,6 +45,32 @@
              zlc))
   (unless (package-installed-p p)
     (package-refresh-contents) (package-install p)))
+
+;; Install dependencies with el-get since some packages is not in melpa.
+(unless (require 'el-get nil t)
+  (let ((buf
+	 (url-retrieve-synchronously "https://raw.github.com/dimitri/el-get/master/el-get-install.el")))
+    (if buf
+	(with-current-buffer buf
+          (end-of-buffer)
+          (eval-print-last-sexp))
+      (error "could not retrieve el-get."))))
+
+(require 'el-get)
+
+(let ((el-get-sources
+       '((:name screen-lines
+               :type github
+               :pkgname "emacsmirror/screen-lines")
+        (:name helm-find-files-in-project
+               :type github
+               :pkgname "tototoshi/helm-find-files-in-project")
+        (:name moinmoin-mode
+               :type github
+               :pkgname "tototoshi/moinmoin-mode"))))
+  (dolist (p '(screen-lines moinmoin-mode helm-find-files-in-project))
+  (unless  (el-get-package-installed-p p)
+    (el-get-install p))))
 
 (load "my-mac-swap-option-and-command.el")
 (load "my-window-config.el")

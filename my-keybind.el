@@ -14,7 +14,7 @@
 (global-set-key (kbd "C-x C-d") 'helm-current-dir)
 (global-set-key (kbd "C-x C-i") 'helm-imenu)
 (global-set-key (kbd "C-x C-b") 'helm-buffers-list)
-(global-set-key (kbd "C-x w") 'helm-my-moin)
+(global-set-key (kbd "C-x w") 'helm-moomin)
 (global-set-key (kbd "M-s o") 'occur-by-moccur)
 (global-set-key (kbd "C-c v") 'magit-status)
 (global-set-key (kbd "C-c d") 'flymake-display-err-menu-for-current-line)
