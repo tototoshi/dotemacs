@@ -1,4 +1,3 @@
-(load "scroll-by-single-line.el")
 
 (require 'wdired)
 (add-hook 'dired-mode-hook
@@ -42,14 +41,14 @@
 
 (defun dired-next-line (arg)
   (interactive "p")
-  (sane-forward-line arg)
+  (forward-line arg)
   (dired-move-to-filename))
 
 (defun dired-previous-line (arg)
   "Move up lines then position at filename.
 Optional prefix ARG says how many lines to move; default is one line."
   (interactive "p")
-  (sane-forward-line (- arg))
+  (forward-line (- arg))
   (dired-move-to-filename))
 
 (defun dired-clean ()

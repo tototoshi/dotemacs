@@ -3,6 +3,8 @@
   (setq ns-command-modifier (quote meta))
   (setq ns-alternate-modifier (quote super)))
 
+(setq scroll-step            1
+      scroll-conservatively  10000)
 ;; 終了時に確認を求める
 (setq confirm-kill-emacs 'y-or-n-p)
 
