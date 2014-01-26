@@ -48,29 +48,32 @@
 
 ;; Install dependencies with el-get since some packages is not in melpa.
 (unless (require 'el-get nil t)
-  (let ((buf
-	 (url-retrieve-synchronously "https://raw.github.com/dimitri/el-get/master/el-get-install.el")))
-    (if buf
-	(with-current-buffer buf
-          (end-of-buffer)
-          (eval-print-last-sexp))
-      (error "could not retrieve el-get."))))
+  (with-curernt-buffer
+   (url-retrieve-synchronously "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
+   (goto-char (point-max))
+   (eval-print-last-sexp)))
 
 (require 'el-get)
 
 (let ((el-get-sources
        '((:name screen-lines
-               :type github
-               :pkgname "emacsmirror/screen-lines")
-        (:name helm-find-files-in-project
-               :type github
-               :pkgname "tototoshi/helm-find-files-in-project")
-        (:name moinmoin-mode
-               :type github
-               :pkgname "tototoshi/moinmoin-mode"))))
-  (dolist (p '(screen-lines moinmoin-mode helm-find-files-in-project))
-  (unless  (el-get-package-installed-p p)
-    (el-get-install p))))
+                :type github
+                :pkgname "emacsmirror/screen-lines")
+         (:name helm-find-files-in-project
+                :type github
+                :pkgname "tototoshi/helm-find-files-in-project")
+         (:name moinmoin-mode
+                :type github
+                :pkgname "tototoshi/moinmoin-mode")
+         (:name python-mode
+                :type github
+                :pkgname "emacsmirror/python-mode"))))
+  (dolist (p '(screen-lines
+               moinmoin-mode
+               helm-find-files-in-project
+               python-mode))
+    (unless  (el-get-package-installed-p p)
+      (el-get-install p))))
 
 (load "my-mac-swap-option-and-command.el")
 (load "my-window-config.el")
