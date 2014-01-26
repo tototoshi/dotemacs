@@ -1,2 +1,5 @@
 (add-to-list 'auto-mode-alist '("\\.erb$" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.stumpwmrc$" . lisp-mode))
+(when (require 'markdown-mode nil t)
+  (add-to-list 'auto-mode-alist '("\.md$" . markdown-mode))
+  (add-to-list 'auto-mode-alist '("\.markdown$" . markdown-mode)))

@@ -48,4 +48,10 @@
 (global-set-key (kbd "C-x D") 'helm-find-files-in-project)
 (global-set-key (kbd "C-c o") 'occur-current-word)
 (global-set-key (kbd "M-m") 'memo)
+
+(when (require 'markdown-mode nil t)
+  (add-hook 'markdown-mode-hook
+            (lambda ()
+              (define-key markdown-mode-map (kbd "<tab>") 'yas/expand))))
+
 (provide 'my-keybind)

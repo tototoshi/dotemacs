@@ -34,7 +34,6 @@
 (load "my-apache-config.el")
 (load "my-python-config.el")
 (load "my-e2wm-config.el")
-(load "my-markdown-mode-config.el")
 (load "my-sql-mode-config.el")
 (require 'gist)
 (require 'my-occur-config)
