@@ -19,7 +19,7 @@
 (require 'my-google)
 (require 'my-ack)
 (require 'my-auto-highlight-symbol-mode-config)
-(load "my-zlc-config.el")
+(require 'zlc)
 (load "my-bm-config.el")
 (load "my-jaunte-config.el")
 (load "my-emacs-lisp-mode-config.el")
