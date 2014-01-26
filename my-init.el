@@ -67,11 +67,15 @@
                 :pkgname "tototoshi/moinmoin-mode")
          (:name python-mode
                 :type github
-                :pkgname "emacsmirror/python-mode"))))
+                :pkgname "emacsmirror/python-mode")
+         (:name tt-el
+                :type github
+                :pkgname "tototoshi/tt-el"))))
   (dolist (p '(screen-lines
                moinmoin-mode
                helm-find-files-in-project
-               python-mode))
+               python-mode
+               tt-el))
     (unless  (el-get-package-installed-p p)
       (el-get-install p))))
 
