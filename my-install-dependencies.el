@@ -34,6 +34,7 @@
                php-mode
                popup
                popwin
+               request
                rpm-spec-mode
                ruby-electric
                scala-mode2
