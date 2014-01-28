@@ -55,4 +55,12 @@
   (add-hook 'markdown-mode-hook
             (lambda ()
               (define-key markdown-mode-map (kbd "<tab>") 'yas/expand))))
+(when (require 'moomin-mode nil t)
+  (add-hook 'moinmoin-mode-hook
+            (lambda ()
+              (define-key moinmoin-mode-map (kbd "C-c C-c") 'moomin-save-current-buffer)
+              (define-key moinmoin-mode-map (kbd "C-c C-o") 'moomin-browse-current-page)
+              (define-key moinmoin-mode-map (kbd "C-c C-r") 'moomin-reload-current-page))))
+
+
 (provide 'my-keybind)
