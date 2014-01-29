@@ -39,6 +39,7 @@
 (require 'my-perl-config)
 (require 'my-face)
 (require 'my-gtags-config)
+(require 'moomin)
 (load "my-scala-config.el")
 ;;(require 'my-haskell-mode-config)
 ;; (require 'my-nxhtml-mumamo-config)

@@ -55,7 +55,7 @@
   (add-hook 'markdown-mode-hook
             (lambda ()
               (define-key markdown-mode-map (kbd "<tab>") 'yas/expand))))
-(when (require 'moomin-mode nil t)
+(when (require 'moomin nil t)
   (add-hook 'moinmoin-mode-hook
             (lambda ()
               (define-key moinmoin-mode-map (kbd "C-c C-c") 'moomin-save-current-buffer)
