@@ -11,3 +11,4 @@
 
 (global-set-key "\M-k" 'delete-line)
 
+(provide 'delete-line)

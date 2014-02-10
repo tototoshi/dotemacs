@@ -1,12 +1,8 @@
 (require 'java-mode-indent-annotations)
 
-(add-to-list 'auto-mode-alist '("\\.java$" . java-mode))
-(add-to-list 'auto-mode-alist '("\\.aj$" . java-mode))
-(add-to-list 'auto-mode-alist '("\\.tag$" . html-mode))
-
 (add-hook 'java-mode-hook
           (lambda ()
-            (gtags-mode)
+            (gtags-mode 1)
             (define-key java-mode-map (kbd "C-S-o") 'helm-my-java-imports)
             (define-key java-mode-map (kbd "C-S-a") 'helm-my-java-annotations)
             (define-key java-mode-map (kbd "C-:") 'iedit-mode)

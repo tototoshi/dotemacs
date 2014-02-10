@@ -1,6 +1,0 @@
-[submodule "snippets-ext/AndreaCrotti"]
-	path = snippets-ext/AndreaCrotti
-	url = git://github.com/AndreaCrotti/yasnippet-snippets.git
-[submodule "snippets-ext/polypus74/haskell-mode"]
-	path = snippets-ext/polypus74/haskell-mode
-	url = git://github.com/polypus74/HSnippets.git

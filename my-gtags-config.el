@@ -1,3 +1,4 @@
+(require 'gtags)
 (require 'helm-config)
 (autoload 'gtags-mode' "gtags" "" t)
 (autoload 'gtags-mode' "helm-gtags" "" t)

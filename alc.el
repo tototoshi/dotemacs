@@ -26,3 +26,5 @@
   (browse-url (alc-make-url
                (cond ((string= arg "") (or (current-word) ""))
                      (t arg)))))
+
+(provide 'alc)

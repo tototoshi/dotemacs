@@ -61,5 +61,3 @@ Optional prefix ARG says how many lines to move; default is one line."
                                     (string-ends-with x "~"))))
                  (directory-files (dired-current-directory))))
     (delete-file f)))
-
-

@@ -12,24 +12,6 @@
 (autoload 'pymacs-exec "pymacs" nil t)
 (autoload 'pymacs-load "pymacs" nil t)
 
-(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
-(add-to-list 'interpreter-mode-alist '("python" . python-mode))
-
-(defvar my-py-docs-python-org-url "http://docs.python.org")
-
-(defun my-py-search-documentation-interactive (word)
-  (interactive "sSEARCH: ")
-  (my-py-search-documentation word))
-
-(defun my-py-search-documentation-at-point ()
-  (interactive)
-  (let ((word (current-word)))
-    (when word
-      (my-py-search-documentation word))))
-
-(defun my-py-search-documentation (word)
-  (browse-url (format "%s/search.html?q=%s" my-py-docs-python-org-url word)))
-
 (defun my-py-indent-region (begin end)
   (interactive "r")
   (save-excursion

@@ -4,13 +4,7 @@
 
 ;; Develop in ~/emacs.d/mysnippets, but also
 ;; try out snippets in ~/Downloads/interesting-snippets
-(setq yas/root-directory '("~/.emacs.d/dotemacs/snippets/"
-                           "~/.emacs.d/dotemacs/snippets-jquery/"
-                           "~/.emacs.d/dotemacs/snippets-ext/yasnippet-php-mode/"
-                           ))
-
-;; Map `yas/load-directory' to every element
-(mapc 'yas/load-directory yas/root-directory)
+(setq yas/root-directory '("~/.emacs.d/dotemacs/snippets/"))
 
 (when (require 'dropdown-list nil t)
   (setq yas/prompt-functions '(yas/dropdown-prompt)))
@@ -21,7 +15,6 @@
 
 (add-hook 'snippet-mode-hook
           (lambda ()
+            ;; Map `yas/load-directory' to every element
+            (mapc 'yas/load-directory yas/root-directory)
             (yas/minor-mode-on)))
-
-(add-to-list 'auto-mode-alist '("\\.snippet$" . snippet-mode))
-(add-to-list 'auto-mode-alist '("\\.emacs.d/dotemacs/snippets/" . snippet-mode))

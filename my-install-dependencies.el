@@ -1,8 +1,3 @@
-(dolist (dir (split-string
-              (shell-command-to-string "find ~/.emacs.d/ -type d")
-              "\n"))
-  (add-to-list 'load-path dir))
-
 (defun my-install-dependencies-from-elpa ()
   ;; Install dependencies with elpa
   (require 'package)
@@ -21,7 +16,6 @@
                haxe-mode
                helm
                helm-gtags
-               htmlize
                http-post-simple
                iedit
                jaunte
@@ -44,8 +38,7 @@
                w3m
                window-layout
                yasnippet
-               zencoding-mode
-               zlc))
+               zencoding-mode))
     (unless (package-installed-p p)
       (package-refresh-contents) (package-install p))))
 

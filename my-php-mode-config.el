@@ -1,5 +1,4 @@
 (require 'php-mode)
-(require 'file-utils)
 
 (defun my-php-toggle-var-dump ()
   (interactive)
@@ -39,6 +38,3 @@
              (define-key php-mode-map "{" 'electric-pair)
              (define-key php-mode-map (kbd "C-c v") 'my-php-toggle-var-dump)
              ))
-
-(add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
-(add-to-list 'auto-mode-alist '("\\.phpt$" . php-mode))

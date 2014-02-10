@@ -1,9 +1,14 @@
 (when (and (require 'ruby-mode nil t )
            (require 'ruby-electric nil t))
-  (require 'ruby-mode)
-  (require 'ruby-electric)
 
   (setq ruby-deep-indent-paren-style nil)
+
+  (defun ruby-insert-end ()
+    "Insert \"end\" at point and reindent current line."
+    (interactive)
+    (insert "end")
+    (ruby-indent-line t)
+    (end-of-line))
 
   (defadvice ruby-indent-line (after unindent-closing-paren activate)
     (let ((column (current-column))

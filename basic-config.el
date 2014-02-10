@@ -143,3 +143,23 @@
 (setq display-time-format "[%T]")
 (setq display-time-day-and-date t)
 (display-time)
+
+;; auto-highlight-symbol-mode
+(require 'auto-highlight-symbol)
+(require 'auto-highlight-symbol-config)
+(global-auto-highlight-symbol-mode t)
+
+;; bm
+(require 'bm)
+(setq-default bm-buffer-persistence nil)
+(setq bm-restore-repository-on-load t)
+(add-hook 'find-file-hook 'bm-buffer-restore)
+(add-hook 'kill-buffer-hook 'bm-buffer-save)
+(add-hook 'after-save-hook 'bm-buffer-save)
+(add-hook 'after-revert-hook 'bm-buffer-restore)
+
+
+;; occur
+(defun occur-current-word ()
+  (interactive)
+  (occur (current-word)))
