@@ -55,6 +55,7 @@
          '((:name screen-lines :type github :pkgname "emacsmirror/screen-lines")
            (:name helm-find-files-in-project :type github :pkgname "tototoshi/helm-find-files-in-project")
            (:name memo :type github :pkgname "tototoshi/memo-el")
+           (:name git-grep :type github :pkgname "tototoshi/git-grep-el")
            (:name moinmoin-mode :type github :pkgname "tototoshi/moinmoin-mode")
            (:name moomin :type github :pkgname "tototoshi/moomin-el")
            (:name python-mode :type github :pkgname "emacsmirror/python-mode")

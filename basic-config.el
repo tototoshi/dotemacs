@@ -158,8 +158,12 @@
 (add-hook 'after-save-hook 'bm-buffer-save)
 (add-hook 'after-revert-hook 'bm-buffer-restore)
 
-
 ;; occur
 (defun occur-current-word ()
   (interactive)
   (occur (current-word)))
+
+;; grep
+;; https://twitter.com/#!/higepon/status/201804128425480193
+(require 'grep)
+(grep-apply-setting 'grep-find-command "~/bin/ack --nocolor --nogroup ")
