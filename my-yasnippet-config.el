@@ -6,6 +6,8 @@
 ;; try out snippets in ~/Downloads/interesting-snippets
 (setq yas/root-directory '("~/.emacs.d/dotemacs/snippets/"))
 
+(mapc 'yas/load-directory yas/root-directory)
+
 (when (require 'dropdown-list nil t)
   (setq yas/prompt-functions '(yas/dropdown-prompt)))
 
@@ -15,6 +17,4 @@
 
 (add-hook 'snippet-mode-hook
           (lambda ()
-            ;; Map `yas/load-directory' to every element
-            (mapc 'yas/load-directory yas/root-directory)
             (yas/minor-mode-on)))

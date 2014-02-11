@@ -9,6 +9,7 @@
                auto-complete
                bm
                direx
+               dropdown-list
                e2wm
                gist
                google-this

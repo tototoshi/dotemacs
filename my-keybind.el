@@ -61,6 +61,13 @@
               (define-key moinmoin-mode-map (kbd "C-c C-c") 'moomin-save-current-buffer)
               (define-key moinmoin-mode-map (kbd "C-c C-o") 'moomin-browse-current-page)
               (define-key moinmoin-mode-map (kbd "C-c C-r") 'moomin-reload-current-page))))
+(add-hook 'sh-mode-hook
+           (lambda ()
+             (define-key sh-mode-map "\"" 'electric-pair)
+             (define-key sh-mode-map "\'" 'electric-pair)
+             (define-key sh-mode-map "(" 'electric-pair)
+             (define-key sh-mode-map "[" 'electric-pair)
+             (define-key sh-mode-map "{" 'electric-pair)))
 
 
 (defalias 'o 'occur)

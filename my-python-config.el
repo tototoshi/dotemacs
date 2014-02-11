@@ -35,6 +35,7 @@
 
 (add-hook 'python-mode-hook
            (lambda ()
+             (yas/minor-mode-on)
              (define-key py-mode-map (kbd "C-c C-f") 'my-py-search-documentation-at-point)
              (define-key py-mode-map (kbd "C-<right>") 'my-py-indent-region)
              (define-key py-mode-map (kbd "C-<left>") 'my-py-dedent-region)

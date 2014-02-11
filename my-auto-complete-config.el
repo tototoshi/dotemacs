@@ -25,8 +25,8 @@
 
 (setq ac-cursor-color "White")
 
-(setq ac-auto-start nil)
-(ac-set-trigger-key "TAB")
+(setq ac-auto-start t)
+;;(ac-set-trigger-key "TAB")
 
 (define-key ac-complete-mode-map (kbd "C-p") 'ac-previous)
 (define-key ac-complete-mode-map (kbd "C-n") 'ac-next)
