@@ -11,8 +11,7 @@
              (define-key dired-mode-map "n" 'dired-advertised-find-file)
              (define-key dired-mode-map "j" 'dired-next-line)
              (define-key dired-mode-map "k" 'dired-previous-line)
-             (define-key dired-mode-map "o" 'dired-open-file)
-             (define-key dired-mode-map "v" 'dired-open-with-evince)))
+             (define-key dired-mode-map "o" 'dired-open-file)))
 
 (defun my-eshell-move-to-dir (dir)
   "Change directory in eshell"
@@ -50,14 +49,3 @@ Optional prefix ARG says how many lines to move; default is one line."
   (interactive "p")
   (forward-line (- arg))
   (dired-move-to-filename))
-
-(defun dired-clean ()
-  "Delete temporary files in current directory"
-  (interactive)
-  (dolist (f (remove-if-not '(lambda (x)
-                               (and
-                                (file-regular-p x)
-                                (or (and (string-starts-with x "#") (string-ends-with x "#"))
-                                    (string-ends-with x "~"))))
-                 (directory-files (dired-current-directory))))
-    (delete-file f)))
