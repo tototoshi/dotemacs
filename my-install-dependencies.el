@@ -34,7 +34,6 @@
                ruby-electric
                scala-mode2
                sql-indent
-               sr-speedbar
                twittering-mode
                w3m
                window-layout
