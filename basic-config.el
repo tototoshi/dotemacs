@@ -178,3 +178,14 @@
     (end-of-line)
     (setq end (point))
     (delete-region beg (min (1+ end) (point-max)))))
+
+;; 直前の単語の大文字/小文字切り替え
+(defun upcase-previous-word ()
+  (interactive)
+  (upcase-word -1)
+  (backward-word))
+
+(defun downcase-previous-word ()
+  (interactive)
+  (downcase-word -1)
+  (backward-word))
