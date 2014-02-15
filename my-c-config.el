@@ -1,5 +1,6 @@
 (add-hook 'c-mode-hook
           (lambda()
+            (gtags-mode 1)
             (define-key c-mode-map "\"" 'electric-pair)
             (define-key c-mode-map "\'" 'electric-pair)
             (define-key c-mode-map "(" 'electric-pair)
@@ -18,6 +19,7 @@
 
 (add-hook 'c++-mode-hook
           (lambda ()
+            (gtags-mode 1)
             (define-key c++-mode-map (kbd "C-c C-c") 'compile)
             (setq c-default-style "linux"
                   c-basic-offset 4)
