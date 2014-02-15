@@ -15,7 +15,6 @@
 (load "my-java-config.el")
 (load "my-php-mode-config.el")
 (autoload 'yas/minor-mode-on "my-yasnippet-config.el" nil t)
-(autoload 'delete-line "delete-line" nil t)
 (autoload 'sql-mode "my-sql-mode-config" nil t)
 (autoload 'ruby-mode "my-ruby-config" nil t)
 (autoload 'python-mode "my-python-config.el" nil t)

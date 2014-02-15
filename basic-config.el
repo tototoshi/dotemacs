@@ -167,3 +167,14 @@
 ;; https://twitter.com/#!/higepon/status/201804128425480193
 (require 'grep)
 (grep-apply-setting 'grep-find-command "~/bin/ack --nocolor --nogroup ")
+
+;; M-kで行全体を削除する。削除するだけでkill-ringには入れない。
+(defun delete-line ()
+  (interactive)
+  (let ((beg 0)
+        (end 0))
+    (beginning-of-line)
+    (setq beg (point))
+    (end-of-line)
+    (setq end (point))
+    (delete-region beg (min (1+ end) (point-max)))))
