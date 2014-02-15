@@ -6,7 +6,7 @@
 ;;(load "my-install-dependencies.el")
 (load "my-window-config.el")
 (load "basic-config.el")
-(load "dired-config.el")
+(require 'my-dired-config)
 (require 'my-auto-complete-config)
 (require 'my-c-config)
 (require 'my-sgml-mode-config)

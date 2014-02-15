@@ -49,3 +49,5 @@ Optional prefix ARG says how many lines to move; default is one line."
   (interactive "p")
   (forward-line (- arg))
   (dired-move-to-filename))
+
+(provide 'my-dired-config)
