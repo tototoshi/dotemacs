@@ -49,6 +49,8 @@
 (global-set-key (kbd "M-SPC") 'bm-toggle)
 (global-set-key (kbd "M-[") 'bm-previous)
 (global-set-key (kbd "M-]") 'bm-next)
+(global-set-key (kbd "C-c C-o") 'browse-url-at-point)
+
 (when (require 'google-this nil t)
   (global-set-key (kbd "C-x g") 'google-this-mode-submap))
 (when (require 'markdown-mode nil t)
