@@ -49,6 +49,11 @@
 (global-set-key (kbd "M-[") 'bm-previous)
 (global-set-key (kbd "M-]") 'bm-next)
 (global-set-key (kbd "C-c C-o") 'browse-url-at-point)
+(global-set-key (kbd "C-,") 'other-window-or-split)
+(global-set-key [C-S-up] 'enlarge-window)
+(global-set-key [C-S-down] 'shrink-window)
+(global-set-key [C-S-right] 'enlarge-window-horizontally)
+(global-set-key [C-S-left] 'shrink-window-horizontally)
 
 (when (require 'google-this nil t)
   (global-set-key (kbd "C-x g") 'google-this-mode-submap))

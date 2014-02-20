@@ -1,3 +1,8 @@
+(when window-system
+  (tool-bar-mode 0)
+  (menu-bar-mode 0)
+  (scroll-bar-mode 0))
+
 ;; Command-Key and Option-Key
 (when (eq window-system 'ns)
   (setq ns-command-modifier (quote meta))
@@ -211,3 +216,10 @@
     (when url-region
      (browse-url (buffer-substring-no-properties (car url-region)
   (cdr url-region))))))
+
+;;http://d.hatena.ne.jp/rubikitch/20100210/emacs
+(defun other-window-or-split ()
+  (interactive)
+  (when (one-window-p)
+    (split-window-horizontally))
+  (other-window 1))
