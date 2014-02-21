@@ -22,5 +22,6 @@
 (add-to-list 'auto-mode-alist '("\\.snippet$" . snippet-mode))
 (add-to-list 'auto-mode-alist '("\\.emacs.d/dotemacs/snippets/" . snippet-mode))
 (add-to-list 'auto-mode-alist '("\\.zshrc" . sh-mode))
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
 (provide 'my-auto-mode-mapping)
