@@ -8,6 +8,7 @@
                apache-mode
                auto-complete
                bm
+               coffee-mode
                direx
                dropdown-list
                e2wm
