@@ -53,7 +53,7 @@
                              (setq view-read-only t)
                              (define-key view-mode-map "i" 'view-mode)
                              (define-key view-mode-map "w" 'forward-word)
-                             (define-key view-mode-map "b" 'backward--word)
+                             (define-key view-mode-map "b" 'backward-word)
                              (define-key view-mode-map "h" 'backward-char)
                              (define-key view-mode-map "j" 'next-line)
                              (define-key view-mode-map "J" 'forward-paragraph)
