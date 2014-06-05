@@ -27,7 +27,7 @@
     (my-eshell-move-to-dir current-dir)))
 
 (defun dired-open-command ()
-  (cond ((eq window-system 'ns) "open")
+  (cond ((eq system-type 'darwin) "open")
         ((eq system-type 'gnu/linux) "xdg-open")))
 
 (defun dired-open-file ()
