@@ -6,6 +6,7 @@
   (package-initialize)
   (dolist (p '(ac-slime
                apache-mode
+               auto-highlight-symbol
                auto-complete
                bm
                coffee-mode
