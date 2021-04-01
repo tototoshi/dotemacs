@@ -18,7 +18,6 @@
 (global-set-key (kbd "C-c v") 'magit-status)
 (global-set-key (kbd "C-c d") 'flymake-display-err-menu-for-current-line)
 (global-set-key (kbd "C-x t") 'twit)
-(global-set-key (kbd "C-x C-t") 'twittering-update-status-interactive)
 (global-set-key (kbd "S-<up>") 'windmove-up)
 (global-set-key (kbd "S-<down>") 'windmove-down)
 (global-set-key (kbd "S-<right>") 'windmove-right)

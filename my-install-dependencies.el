@@ -35,7 +35,6 @@
                ruby-electric
                scala-mode2
                sql-indent
-               twittering-mode
                w3m
                window-layout
                yasnippet
