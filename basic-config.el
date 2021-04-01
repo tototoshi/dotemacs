@@ -185,7 +185,7 @@
 ;; grep
 ;; https://twitter.com/#!/higepon/status/201804128425480193
 (require 'grep)
-(grep-apply-setting 'grep-find-command "~/bin/ack --nocolor --nogroup ")
+(grep-apply-setting 'grep-find-command "ag --nocolor --nogroup ")
 
 ;; M-kで行全体を削除する。削除するだけでkill-ringには入れない。
 (defun delete-line ()
