@@ -165,7 +165,7 @@
 
 ;; auto-highlight-symbol-mode
 (require 'auto-highlight-symbol)
-(require 'auto-highlight-symbol-config)
+;;(require 'auto-highlight-symbol-config)
 (global-auto-highlight-symbol-mode t)
 
 ;; bm
