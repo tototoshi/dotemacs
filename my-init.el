@@ -10,7 +10,6 @@
 
 (load "basic-config.el")
 (require 'my-dired-config)
-(require 'my-auto-complete-config)
 (require 'my-c-config)
 (require 'my-sgml-mode-config)
 (require 'my-emacs-lisp-mode-config)
