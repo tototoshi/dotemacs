@@ -8,7 +8,6 @@
 (require 'my-c-config)
 (require 'my-sgml-mode-config)
 (require 'my-emacs-lisp-mode-config)
-(load "my-vterm-config.el")
 (load "my-java-config.el")
 (load "my-php-mode-config.el")
 (use-package vterm
