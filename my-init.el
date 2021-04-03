@@ -19,11 +19,6 @@
 (eval-after-load "gtags"
   '(progn
      (load "my-gtags-config.el")))
-(eval-after-load "scala-mode2"
-  '(progn
-     (load "my-scala-config.el")))
-(autoload 'gist-list "gist" nil t)
-(autoload 'gist-buffer "gist" nil t)
 (autoload 'helm-current-dir "my-helm-config" nil t)
 (autoload 'helm-find-files-in-project "helm-find-files-in-project" nil t)
 (autoload 'memo "memo" nil t)
