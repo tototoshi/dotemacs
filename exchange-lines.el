@@ -50,11 +50,3 @@
 (global-set-key [(meta down)] 'exchange-lines-down)
 (global-set-key [(control up)] 'move-region-up)
 (global-set-key [(control down)] 'move-region-down)
-
-
-
-
-
-
-
-
