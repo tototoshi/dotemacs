@@ -1,8 +1,3 @@
-(dolist (dir (split-string
-              (shell-command-to-string "find ~/.emacs.d/ -type d")
-              "\n"))
-  (add-to-list 'load-path dir))
-
 ;;(load "my-install-dependencies.el")
 
 ;; https://github.com/bbatsov/zenburn-emacs
