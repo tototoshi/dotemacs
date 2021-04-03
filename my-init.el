@@ -11,6 +11,10 @@
 (load "my-vterm-config.el")
 (load "my-java-config.el")
 (load "my-php-mode-config.el")
+(use-package diff-hl
+  :init
+  (add-hook 'after-init-hook 'global-diff-hl-mode))
+
 (autoload 'yas/minor-mode-on "my-yasnippet-config.el" nil t)
 (autoload 'sql-mode "my-sql-mode-config" nil t)
 (autoload 'ruby-mode "my-ruby-config" nil t)
