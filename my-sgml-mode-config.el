@@ -4,7 +4,6 @@
                               (zencoding-mode)
                               (define-key zencoding-mode-keymap (kbd "C-c C-m") 'zencoding-expand-line)
                               (define-key zencoding-preview-keymap (kbd "C-c C-m") 'zencoding-preview-accept))
-                            (define-key html-mode-map (kbd "C-c C-j") 'jaunte)
                             (define-key sgml-mode-map "<" 'electric-pair)
                             (define-key sgml-mode-map "'" 'electric-pair)
                             (define-key sgml-mode-map "\"" 'electric-pair)

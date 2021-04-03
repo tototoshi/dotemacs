@@ -18,7 +18,6 @@
 (global-set-key (kbd "M-[") 'bm-previous)
 (global-set-key (kbd "M-]") 'bm-next)
 (global-set-key (kbd "C-M-_") 'redo)
-(global-set-key (kbd "C-c C-j") 'jaunte)
 (global-set-key (kbd "M-S-u") 'upcase-previous-word)
 (global-set-key (kbd "C-S-q") 'bury-buffer)
 (global-set-key (kbd "C-c C-w") 'alc)
@@ -70,6 +69,5 @@
 (defalias 'yn 'yas/new-snippet)
 (defalias 'yl 'yas/load-directory)
 (defalias 'fnd 'find-name-dired)
-(defalias 'j 'jaunte)
 
 (provide 'my-keybind)
