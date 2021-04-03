@@ -1,17 +1,19 @@
-
-(require 'wdired)
-(add-hook 'dired-mode-hook
-          '(lambda ()
-             (define-key dired-mode-map [tab] 'dired-hide-subdir)
-             (define-key dired-mode-map "\M-o" 'gtags-find-file)
-             (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
-             (define-key dired-mode-map "q" 'kill-buffer)
-             (define-key dired-mode-map "e" 'dired-open-eshell)
-             (define-key dired-mode-map "p" 'dired-up-directory)
-             (define-key dired-mode-map "n" 'dired-advertised-find-file)
-             (define-key dired-mode-map "j" 'dired-next-line)
-             (define-key dired-mode-map "k" 'dired-previous-line)
-             (define-key dired-mode-map "o" 'dired-open-file)))
+(use-package dired-mode
+  :ensure nil
+  :config
+  (require 'wdired)
+  :bind
+  (:map dired-mode-map
+        ([tab]  . dired-hide-subdir)
+        ("\M-o" . gtags-find-file)
+        ("r" . wdired-change-to-wdired-mode)
+        ("q" . kill-buffer)
+        ("e" . dired-open-eshell)
+        ("p" . dired-up-directory)
+        ("n" . dired-advertised-find-file)
+        ("j" . dired-next-line)
+        ("k" . dired-previous-line)
+        ("o" . dired-open-file)))
 
 (defun my-eshell-move-to-dir (dir)
   "Change directory in eshell"
@@ -49,5 +51,3 @@ Optional prefix ARG says how many lines to move; default is one line."
   (interactive "p")
   (forward-line (- arg))
   (dired-move-to-filename))
-
-(provide 'my-dired-config)
