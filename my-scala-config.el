@@ -50,9 +50,4 @@
   (pop-to-buffer scala-inf-buffer-name)
   (goto-char (point-max)))
 
-(when (require 'ensime nil t)
-  nil
-  ;;     (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
-  )
-
 (provide 'my-scala-config)
