@@ -8,9 +8,6 @@
 
 (mapc 'yas/load-directory yas/root-directory)
 
-(when (require 'dropdown-list nil t)
-  (setq yas/prompt-functions '(yas/dropdown-prompt)))
-
 ;; 2011-07-29 yasnippet. Make the “yas/minor-mode”'s expansion behavior to take input word including hyphen.
 ; default is '("w" "w_" "w_." "^ ") as of 2011-07-29
 (setq yas/key-syntaxes '("w_" "w_." "^ "))
