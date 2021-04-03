@@ -24,7 +24,6 @@
               (gtags-mode))
             (define-key scala-mode-map (kbd "C-<tab>") 'hs-toggle-hiding)
             (define-key scala-mode-map (kbd "S-<tab>") 'scala-undent-line)
-            (define-key scala-mode-map (kbd "C-c t") 'testswitch)
             (setq imenu-generic-expression
                   '(
                     ("var" "\\(var +\\)\\([^(): ]+\\)" 2)
