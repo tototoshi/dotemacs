@@ -1,7 +1,6 @@
 (global-set-key "\C-h" 'delete-backward-char)
 (global-set-key "\M-h" 'help)
 (global-set-key (kbd "C-x r l") 'helm-bookmarks)
-(global-set-key (kbd "<f12>") 'shell-pop)
 (global-set-key (kbd "M-k") 'delete-line)
 (global-set-key (kbd "C-h") 'my-delete-backward-char)
 (global-set-key (kbd "M-h") 'help)
@@ -20,7 +19,6 @@
 (global-set-key (kbd "S-<down>") 'windmove-down)
 (global-set-key (kbd "S-<right>") 'windmove-right)
 (global-set-key (kbd "S-<left>") 'windmove-left)
-(global-set-key (kbd "<f12>") 'shell-pop)
 (global-set-key (kbd "C-<tab>") 'hs-toggle-hiding)
 (global-set-key (kbd "M-SPC") 'bm-toggle)
 (global-set-key (kbd "M-[") 'bm-previous)
@@ -80,7 +78,6 @@
 (defalias 'ev 'eval-current-buffer)
 (defalias 'yn 'yas/new-snippet)
 (defalias 'yl 'yas/load-directory)
-(defalias 'momomo 'moinmoin-mode)
 (defalias 'fnd 'find-name-dired)
 (defalias 'j 'jaunte)
 
