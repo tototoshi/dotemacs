@@ -1,46 +1,3 @@
-(defun my-install-dependencies-from-elpa ()
-  ;; Install dependencies with elpa
-  (require 'package)
-  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-
-  ;; (package-initialize)
-  (dolist (p '(
-               apache-mode
-               auto-highlight-symbol
-               bm
-               coffee-mode
-               diff-hl
-               direx
-               emojify
-               go-mode
-               helm
-               helm-ls-git
-               iedit
-               jade-mode
-               js2-mode
-               key-chord
-               macrostep
-               magit
-               markdown-mode
-               neotree
-               paredit
-               php-mode
-               protobuf-mode
-               python-mode
-               rpm-spec-mode
-               ruby-electric
-               scala-mode
-               sql-indent
-               tide
-               vterm
-               w3m
-               yaml-mode
-               yasnippet
-               zencoding-mode
-               ))
-    (unless (package-installed-p p)
-      (package-refresh-contents) (package-install p))))
-
 (defun my-install-dependencies-with-el-get ()
   (unless (require 'el-get nil t)
     (with-current-buffer
@@ -62,9 +19,4 @@
         (unless (el-get-package-installed-p package-name)
           (el-get-install package-name))))))
 
-(defun my-install-dependencies ()
-  (interactive)
-  (my-install-dependencies-from-elpa)
-  (my-install-dependencies-with-el-get))
-
-(my-install-dependencies)
+(my-install-dependencies-with-el-get)
