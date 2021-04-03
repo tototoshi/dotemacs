@@ -3,7 +3,7 @@
 ;;;;;;;;;;;;;;
 (require 'helm-config)
 (require 'helm-files)
-(require 'helm-match-plugin)
+(require 'helm-ls-git)
 
 (defun helm-current-dir ()
   (interactive)

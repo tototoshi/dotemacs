@@ -52,8 +52,7 @@
   (require 'el-get)
 
   (let ((el-get-sources
-         '((:name helm-find-files-in-project :type github :pkgname "tototoshi/helm-find-files-in-project")
-           (:name memo :type github :pkgname "tototoshi/memo-el")
+         '((:name memo :type github :pkgname "tototoshi/memo-el")
            (:name git-grep :type github :pkgname "tototoshi/git-grep-el")
            (:name rfc-view :type github :pkgname "tototoshi/rfc-view-el")
            (:name tt-el :type github :pkgname "tototoshi/tt-el")
