@@ -4,12 +4,15 @@
   (add-to-list 'load-path dir))
 
 ;;(load "my-install-dependencies.el")
+
+;; https://github.com/bbatsov/zenburn-emacs
+(load-theme 'zenburn t)
+
 (load "basic-config.el")
 (require 'my-dired-config)
 (require 'my-auto-complete-config)
 (require 'my-c-config)
 (require 'my-sgml-mode-config)
-(require 'my-face)
 (require 'my-emacs-lisp-mode-config)
 (load "my-vterm-config.el")
 (load "my-java-config.el")
