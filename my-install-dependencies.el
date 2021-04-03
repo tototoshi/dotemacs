@@ -14,7 +14,6 @@
                dropdown-list
                e2wm
                gist
-               google-this
                go-mode
                haxe-mode
                helm

@@ -52,8 +52,6 @@
 (global-set-key [C-S-right] 'enlarge-window-horizontally)
 (global-set-key [C-S-left] 'shrink-window-horizontally)
 
-(when (require 'google-this nil t)
-  (global-set-key (kbd "C-x g") 'google-this-mode-submap))
 (when (require 'markdown-mode nil t)
   (add-hook 'markdown-mode-hook
             (lambda ()
