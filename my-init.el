@@ -26,7 +26,6 @@
 (autoload 'gist-buffer "gist" nil t)
 (autoload 'helm-current-dir "my-helm-config" nil t)
 (autoload 'helm-find-files-in-project "helm-find-files-in-project" nil t)
-(autoload 'jaunte "jaunte" nil t)
 (autoload 'memo "memo" nil t)
 (autoload 'alc "alc" nil t)
 (autoload 'git-grep "git-grep" nil t)
