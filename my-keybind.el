@@ -13,7 +13,6 @@
 (global-set-key (kbd "C-x C-d") 'helm-current-dir)
 (global-set-key (kbd "C-x C-i") 'helm-imenu)
 (global-set-key (kbd "C-x C-b") 'helm-buffers-list)
-(global-set-key (kbd "C-x w") 'helm-moomin)
 (global-set-key (kbd "M-s o") 'occur-by-moccur)
 (global-set-key (kbd "C-c v") 'magit-status)
 (global-set-key (kbd "C-c d") 'flymake-display-err-menu-for-current-line)
@@ -59,12 +58,7 @@
   (add-hook 'markdown-mode-hook
             (lambda ()
               (define-key markdown-mode-map (kbd "<tab>") 'yas/expand))))
-(when (require 'moomin nil t)
-  (add-hook 'moinmoin-mode-hook
-            (lambda ()
-              (define-key moinmoin-mode-map (kbd "C-c C-c") 'moomin-save-current-buffer)
-              (define-key moinmoin-mode-map (kbd "C-c C-o") 'moomin-browse-current-page)
-              (define-key moinmoin-mode-map (kbd "C-c C-r") 'moomin-reload-current-page))))
+
 (add-hook 'sh-mode-hook
            (lambda ()
              (define-key sh-mode-map "\"" 'electric-pair)

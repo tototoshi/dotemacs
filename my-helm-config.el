@@ -62,20 +62,6 @@
                             'help-echo file-name))
         size mode
         (and details (propertize (format "(in `%s')" dir) 'face 'helm-buffer-process))))
-      ;; Patch for moomin
-      ((string= mode "moinmoin-mode")
-       (list
-          (concat (when proc name-prefix)
-                  (propertize name 'help-echo buffer 'face '(foreground-color . "cyan")))
-          size mode
-          (and details
-               (propertize
-                (if proc
-                    (format "(%s %s in `%s')"
-                            (process-name proc)
-                            (process-status proc) dir)
-                    (format "(in `%s')" dir))
-                'face 'helm-buffer-process))))
       ;; Any non--file buffer.=>grey italic
       (t
        (list
