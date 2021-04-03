@@ -14,7 +14,6 @@
                emojify
                go-mode
                helm
-               helm-gtags
                helm-ls-git
                iedit
                jade-mode

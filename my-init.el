@@ -25,6 +25,12 @@
   :init
   (add-hook 'after-init-hook 'global-diff-hl-mode))
 
+(use-package helm
+  :bind
+  ("M-x" . helm-M-x)
+  ("M-y" . helm-show-kill-ring)
+  ("C-x C-d" . helm-browse-project))
+
 (autoload 'yas/minor-mode-on "my-yasnippet-config.el" nil t)
 (autoload 'sql-mode "my-sql-mode-config" nil t)
 (autoload 'ruby-mode "my-ruby-config" nil t)
@@ -33,7 +39,6 @@
 (eval-after-load "gtags"
   '(progn
      (load "my-gtags-config.el")))
-(autoload 'helm-current-dir "my-helm-config" nil t)
 (autoload 'memo "memo" nil t)
 (autoload 'alc "alc" nil t)
 (autoload 'git-grep "git-grep" nil t)
