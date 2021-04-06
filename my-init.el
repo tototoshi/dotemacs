@@ -47,7 +47,9 @@
   :bind
   ("M-x" . helm-M-x)
   ("M-y" . helm-show-kill-ring)
-  ("C-x C-d" . helm-browse-project))
+  ("C-x C-b" . helm-buffers-list)
+  ("C-x C-d" . helm-browse-project)
+  ("C-x C-i" . helm-imenu))
 
 (use-package emojify)
 (use-package apache-mode)
@@ -78,6 +80,7 @@
 (use-package yaml-mode)
 (use-package yasnippet)
 (use-package zencoding-mode)
+(use-package helm-ghq)
 
 (autoload 'yas/minor-mode-on "my-yasnippet-config.el" nil t)
 (autoload 'memo "memo" nil t)
