@@ -82,6 +82,10 @@
 (use-package zencoding-mode)
 (use-package helm-ghq)
 
+(use-package move-text
+  :config
+  (move-text-default-bindings))
+
 (use-package git-grep
   :commands (git-grep git-grep-repo))
 
