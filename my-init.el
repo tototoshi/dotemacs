@@ -82,10 +82,12 @@
 (use-package zencoding-mode)
 (use-package helm-ghq)
 
+(use-package git-grep
+  :commands (git-grep git-grep-repo))
+
 (autoload 'yas/minor-mode-on "my-yasnippet-config.el" nil t)
 (autoload 'memo "memo" nil t)
 (autoload 'alc "alc" nil t)
-(autoload 'git-grep "git-grep" nil t)
 (autoload 'magit-status "magit" nil t)
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")
 (autoload 'rpm-spec-mode "rpm-spec-mode.el" "RPM spec mode." t)
