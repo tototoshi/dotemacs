@@ -39,11 +39,6 @@
 (global-set-key [C-S-right] 'enlarge-window-horizontally)
 (global-set-key [C-S-left] 'shrink-window-horizontally)
 
-(when (require 'markdown-mode nil t)
-  (add-hook 'markdown-mode-hook
-            (lambda ()
-              (define-key markdown-mode-map (kbd "<tab>") 'yas/expand))))
-
 (add-hook 'sh-mode-hook
            (lambda ()
              (define-key sh-mode-map "\"" 'electric-pair)
