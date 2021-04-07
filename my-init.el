@@ -77,7 +77,6 @@
 (use-package python-mode)
 (use-package rpm-spec-mode)
 (use-package ruby-electric)
-(use-package scala-mode)
 (use-package sql-indent)
 (use-package tide)
 (use-package w3m)
@@ -85,6 +84,10 @@
 (use-package yasnippet)
 (use-package zencoding-mode)
 (use-package helm-ghq)
+
+(use-package scala-mode
+  :interpreter
+  ("scala" . scala-mode))
 
 (use-package move-text
   :config
