@@ -51,6 +51,10 @@
   ("C-x C-d" . helm-browse-project)
   ("C-x C-i" . helm-imenu))
 
+(use-package avy
+  :bind
+  ("C-c j" . avy-goto-word-0))
+
 (use-package emojify)
 (use-package apache-mode)
 (use-package auto-highlight-symbol)
