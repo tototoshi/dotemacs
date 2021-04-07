@@ -215,9 +215,9 @@
   "カーソルのある位置のURLをブラウザで開く"
   (interactive)
   (let ((url-region (bounds-of-thing-at-point 'url)))
-    (when url-region
-     (browse-url (buffer-substring-no-properties (car url-region)
-  (cdr url-region))))))
+    (cond (url-region (browse-url (buffer-substring-no-properties (car url-region)
+                                                          (cdr url-region))))
+          (t (call-process "open" nil 0 nil "-a" "Google Chrome")))))
 
 ;;http://d.hatena.ne.jp/rubikitch/20100210/emacs
 (defun other-window-or-split ()
