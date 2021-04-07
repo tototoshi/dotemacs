@@ -1,5 +1,3 @@
-(global-set-key "\C-h" 'delete-backward-char)
-(global-set-key "\M-h" 'help)
 (global-set-key (kbd "M-k") 'delete-line)
 (global-set-key (kbd "C-h") 'my-delete-backward-char)
 (global-set-key (kbd "M-h") 'help)
