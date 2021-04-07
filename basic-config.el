@@ -106,18 +106,12 @@
       (delete-char 1))))
 
 ;; 現在のディレクトリ以下のバッファをすべて閉じる
-(require 'tt-directory)
-(require 'tt-buffer)
-
-(defun my-close-buffers-under-current-directory ()
+(defun my-close-all-files()
   (interactive)
-  (mapc
-   #'kill-buffer
-   (remove-if-not
-    #'(lambda (x)
-        (tt:string-starts-with (tt:buffer-file-name-or-directory x)
-                               (tt:dirname (tt:buffer-file-name-or-directory (current-buffer)))))
-    (remove-if-not #'(lambda (x) (tt:buffer-file-name-or-directory x)) (buffer-list)))))
+  (dolist (buf (buffer-list))
+    (let ((file-name (buffer-file-name buf)))
+      (when file-name
+        (kill-buffer buf)))))
 
 ;; backup file を作成しない
 (setq backup-inhibited t)
