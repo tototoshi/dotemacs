@@ -121,6 +121,8 @@
 
 ;; backup file を作成しない
 (setq backup-inhibited t)
+;; lockfile (.#) を作成しない
+(setq create-lockfiles nil)
 
 ;; 日本語対応
 (set-default-coding-systems 'utf-8)
