@@ -93,6 +93,12 @@
   :config
   (move-text-default-bindings))
 
+(use-package org
+  :commands (org-capture org-mode)
+  :config
+  (setq org-default-notes-file (concat org-directory "/notes.org"))
+  (use-package ox-gfm))
+
 (use-package git-grep
   :commands (git-grep git-grep-repo))
 
