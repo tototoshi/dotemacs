@@ -105,13 +105,17 @@
                   (or (cadr (assoc deleted-char insert-pair-alist)) 0)))
       (delete-char 1))))
 
-;; 現在のディレクトリ以下のバッファをすべて閉じる
-(defun my-close-all-files()
+;; Clean buffers
+(defun my-close-all-buffers()
   (interactive)
   (dolist (buf (buffer-list))
-    (let ((file-name (buffer-file-name buf)))
-      (when file-name
-        (kill-buffer buf)))))
+    (with-current-buffer buf
+      (let ((file-name (buffer-file-name buf)))
+        (when (or file-name
+                  (string= major-mode "dired-mode")
+                  (string= major-mode "special-mode"))
+          (kill-buffer buf)))))
+  (switch-to-buffer "*scratch*"))
 
 ;; backup file を作成しない
 (setq backup-inhibited t)
