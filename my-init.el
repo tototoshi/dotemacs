@@ -30,6 +30,13 @@
 
 (load "basic-config.el")
 (load "my-dired-config.el")
+(use-package smart-mode-line
+  :demand t
+  :config
+  (setq sml/no-confirm-load-theme t)
+  (setq sml/theme 'light)
+  (sml/setup))
+
 (use-package vterm
   :bind (("C-t" . vterm)
          :map vterm-mode-map
