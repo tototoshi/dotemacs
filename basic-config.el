@@ -159,7 +159,7 @@
 ;; %d: day
 ;; %a: weekday
 ;; %T: time
-(setq display-time-format "[%T]")
+(setq display-time-format "%Y/%m/%d(%a)[%T]")
 (setq display-time-day-and-date t)
 (display-time)
 
