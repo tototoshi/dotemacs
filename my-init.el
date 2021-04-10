@@ -38,6 +38,7 @@
   (sml/setup))
 
 (use-package vterm
+  :commands (vterm)
   :bind (("C-t" . vterm)
          :map vterm-mode-map
          ("C-h" . (lambda () (interactive) (vterm-send-key (kbd "C-h"))))
