@@ -138,5 +138,4 @@
 (autoload 'yas/minor-mode-on "my-yasnippet-config.el" nil t)
 (autoload 'memo "memo" nil t)
 (autoload 'alc "alc" nil t)
-(autoload 'magit-status "magit" nil t)
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")
