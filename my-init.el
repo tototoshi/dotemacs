@@ -114,6 +114,8 @@
   :config
   (move-text-default-bindings))
 
+(use-package ag)
+
 (use-package org
   :commands (org-capture org-mode)
   :bind
