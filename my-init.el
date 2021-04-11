@@ -66,6 +66,7 @@
 (use-package company
   :hook
   (scala-mode . company-mode)
+  (rust-mode . company-mode)
   :bind
   (:map company-active-map
         ("C-n" . company-select-next)
@@ -75,6 +76,15 @@
   (setq lsp-completion-provider :capf)
   (setq lsp-prefer-capf t)
   (setq company-minimum-prefix-length 1))
+
+(use-package rust-mode
+  :init
+  (add-to-list 'exec-path (expand-file-name "~/.cargo/bin"))
+  :hook
+  (rust-mode . lsp)
+  (rust-mode . yas-minor-mode)
+  :custom
+  (rust-format-on-save t))
 
 (use-package emojify)
 (use-package apache-mode)
