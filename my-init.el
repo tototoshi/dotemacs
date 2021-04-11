@@ -63,6 +63,19 @@
   :bind
   ("C-c j" . avy-goto-word-0))
 
+(use-package company
+  :hook
+  (scala-mode . company-mode)
+  :bind
+  (:map company-active-map
+        ("C-n" . company-select-next)
+        ("C-p" . company-select-previous)
+        ("C-h" . delete-backward-char))
+  :config
+  (setq lsp-completion-provider :capf)
+  (setq lsp-prefer-capf t)
+  (setq company-minimum-prefix-length 1))
+
 (use-package emojify)
 (use-package apache-mode)
 (use-package auto-highlight-symbol)
