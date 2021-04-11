@@ -26,7 +26,7 @@
 (load "my-install-dependencies.el")
 
 ;; https://github.com/bbatsov/zenburn-emacs
-(load-theme 'zenburn t)
+;;(load-theme 'zenburn t)
 
 (load "basic-config.el")
 (load "my-dired-config.el")
