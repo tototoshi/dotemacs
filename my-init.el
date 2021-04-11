@@ -116,6 +116,8 @@
 
 (use-package org
   :commands (org-capture org-mode)
+  :bind
+  ("C-c c" . org-capture)
   :config
   (setq org-default-notes-file (concat org-directory "/notes.org"))
   (use-package ox-gfm))
