@@ -140,6 +140,15 @@
 (use-package git-grep
   :commands (git-grep git-grep-repo))
 
+(use-package hl-line
+  :ensure nil
+  :hook
+  (emacs-lisp-mode . hl-line-mode)
+  (scala-mode . hl-line-mode)
+  (rust-mode . hl-line-mode)
+  :config
+  (global-hl-line-mode 0))
+
 (autoload 'memo "memo" nil t)
 (autoload 'alc "alc" nil t)
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")
