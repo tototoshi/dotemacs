@@ -63,6 +63,12 @@
   :bind
   ("C-c j" . avy-goto-word-0))
 
+(use-package yasnippet
+  :init
+  (setq yas-snippet-dirs '("~/work/github.com/tototoshi/dotemacs/snippets"))
+  (setq yas/key-syntaxes '("w_" "w_." "^ "))
+  (yas-global-mode t))
+
 (use-package company
   :hook
   (scala-mode . company-mode)
@@ -82,7 +88,6 @@
   (add-to-list 'exec-path (expand-file-name "~/.cargo/bin"))
   :hook
   (rust-mode . lsp)
-  (rust-mode . yas-minor-mode)
   :custom
   (rust-format-on-save t))
 
@@ -110,7 +115,6 @@
 (use-package tide)
 (use-package w3m)
 (use-package yaml-mode)
-(use-package yasnippet)
 (use-package zencoding-mode)
 (use-package helm-ghq)
 
@@ -135,7 +139,6 @@
 (use-package git-grep
   :commands (git-grep git-grep-repo))
 
-(autoload 'yas/minor-mode-on "my-yasnippet-config.el" nil t)
 (autoload 'memo "memo" nil t)
 (autoload 'alc "alc" nil t)
 (autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")

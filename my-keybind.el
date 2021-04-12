@@ -58,8 +58,6 @@
 (defalias 'pym 'python-mode)
 (defalias 'tm 'text-mode)
 (defalias 'ev 'eval-current-buffer)
-(defalias 'yn 'yas/new-snippet)
-(defalias 'yl 'yas/load-directory)
 (defalias 'fnd 'find-name-dired)
 
 (provide 'my-keybind)
