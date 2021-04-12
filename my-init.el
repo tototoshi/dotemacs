@@ -66,7 +66,7 @@
 (use-package yasnippet
   :init
   (setq yas-snippet-dirs '("~/work/github.com/tototoshi/dotemacs/snippets"))
-  (setq yas/key-syntaxes '("w_" "w_." "^ "))
+  (setq yas-key-syntaxes '("w_" "w_." "^ "))
   (yas-global-mode t))
 
 (use-package company
