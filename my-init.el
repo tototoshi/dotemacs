@@ -131,8 +131,9 @@
 
 (use-package org
   :commands (org-capture org-mode)
-  :bind
-  ("C-c c" . org-capture)
+  :bind (("C-c c" . org-capture)
+         :map org-mode-map
+         ("C-," . other-window))
   :config
   (setq org-default-notes-file (concat org-directory "/notes.org"))
   (use-package ox-gfm))
