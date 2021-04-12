@@ -37,15 +37,6 @@
 (global-set-key [C-S-right] 'enlarge-window-horizontally)
 (global-set-key [C-S-left] 'shrink-window-horizontally)
 
-(add-hook 'sh-mode-hook
-           (lambda ()
-             (define-key sh-mode-map "\"" 'electric-pair)
-             (define-key sh-mode-map "\'" 'electric-pair)
-             (define-key sh-mode-map "(" 'electric-pair)
-             (define-key sh-mode-map "[" 'electric-pair)
-             (define-key sh-mode-map "{" 'electric-pair)))
-
-
 (defalias 'o 'occur)
 (defalias 'fg 'find-grep)
 (defalias 'nf 'new-frame)
