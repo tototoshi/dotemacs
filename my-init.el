@@ -91,6 +91,7 @@
   :custom
   (rust-format-on-save t))
 
+(use-package browse-at-remote)
 (use-package emojify)
 (use-package apache-mode)
 (use-package auto-highlight-symbol)
