@@ -68,9 +68,6 @@
 ;; auto-revert
 (global-auto-revert-mode t)
 
-;; highlight line
-(global-hl-line-mode 0)
-
 ;; make text-mode default
 (setq default-major-mode 'text-mode)
 
