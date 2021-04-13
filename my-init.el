@@ -152,4 +152,4 @@
 
 (autoload 'memo "memo" nil t)
 (autoload 'alc "alc" nil t)
-(autoload 'hideshowvis-enable "hideshowvis" "Highlight foldable regions")
+

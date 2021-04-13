@@ -11,7 +11,6 @@
          '((:name memo :type github :pkgname "tototoshi/memo-el")
            (:name rfc-view :type github :pkgname "tototoshi/rfc-view-el")
            (:name tt-el :type github :pkgname "tototoshi/tt-el")
-           (:name hideshowvis :type github :pkgname "emacsmirror/hideshowvis")
            (:name java-mode-indent-annotations :type github :pkgname "emacsmirror/java-mode-indent-annotations"))))
     (dolist (p el-get-sources)
       (let ((package-name (plist-get p :name)))
