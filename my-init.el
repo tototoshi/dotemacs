@@ -150,6 +150,36 @@
   :config
   (global-hl-line-mode 0))
 
+(use-package flycheck)
+
+(use-package lsp-mode
+  :hook
+  (lsp-mode . lsp-lens-mode)
+  (lsp-mode . flycheck-mode)
+  (scala-mode . lsp)
+  :config
+  (setq my-enable-format-on-save t)
+
+  (defcustom my-enable-format-on-save
+  :type 'boolean
+  :safe 'booleanp)
+
+  (defun my-format-on-save()
+    (when my-enable-format-on-save
+      (lsp-format-buffer)))
+
+  (add-hook 'before-save-hook 'my-format-on-save)
+
+  (setq lsp-enable-file-watchers nil)
+  (setq lsp-prefer-flymake nil)
+  (setq lsp-keep-workspace-alive nil)
+
+  (use-package lsp-ui)
+  (use-package lsp-metals)
+  (use-package helm-lsp
+    :bind (:map lsp-mode-map
+                ("<s-return>" . helm-lsp-code-actions)
+                ("s-l a a" . helm-lsp-code-actions))))
+
 (autoload 'memo "memo" nil t)
 (autoload 'alc "alc" nil t)
-
