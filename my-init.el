@@ -25,6 +25,7 @@
 
 (load "my-install-dependencies.el")
 
+(set-frame-font "Cica-16")
 ;; https://github.com/bbatsov/zenburn-emacs
 ;;(load-theme 'zenburn t)
 
