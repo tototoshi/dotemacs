@@ -137,6 +137,8 @@
          ("C-," . other-window))
   :config
   (setq org-default-notes-file (concat org-directory "/notes.org"))
+  (setq org-plantuml-jar-path (concat org-directory "/plantuml.jar"))
+  (org-babel-do-load-languages 'org-babel-load-languages '((plantuml . t)))
   (use-package ox-gfm))
 
 (use-package git-grep
