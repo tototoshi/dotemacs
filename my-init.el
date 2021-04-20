@@ -184,5 +184,11 @@
                 ("<s-return>" . helm-lsp-code-actions)
                 ("s-l a a" . helm-lsp-code-actions))))
 
+
+(use-package hideshow
+  :ensure nil
+  :commands (hs-minor-mode)
+  :hook
+  (scala-mode . hs-minor-mode))
 (autoload 'memo "memo" nil t)
 (autoload 'alc "alc" nil t)
