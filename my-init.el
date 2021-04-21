@@ -141,8 +141,6 @@
   (org-babel-do-load-languages 'org-babel-load-languages '((plantuml . t)))
   (use-package ox-gfm))
 
-(use-package git-grep
-  :commands (git-grep git-grep-repo))
 
 (use-package hl-line
   :ensure nil
