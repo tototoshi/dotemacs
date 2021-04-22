@@ -136,6 +136,7 @@
          :map org-mode-map
          ("C-," . other-window))
   :config
+  (setq org-use-speed-commands t)
   (setq org-default-notes-file (concat org-directory "/notes.org"))
   (setq org-plantuml-jar-path (concat org-directory "/plantuml.jar"))
   (org-babel-do-load-languages 'org-babel-load-languages '((plantuml . t)))
