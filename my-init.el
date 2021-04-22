@@ -114,6 +114,7 @@
 (use-package python-mode)
 (use-package ruby-electric)
 (use-package sql-indent)
+(use-package terraform-mode)
 (use-package tide)
 (use-package w3m)
 (use-package yaml-mode)
