@@ -190,5 +190,6 @@
   :commands (hs-minor-mode)
   :hook
   (scala-mode . hs-minor-mode))
+(load "my-functions.el")
 (autoload 'memo "memo" nil t)
 (autoload 'alc "alc" nil t)
