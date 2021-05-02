@@ -174,11 +174,6 @@
 (add-hook 'after-save-hook 'bm-buffer-save)
 (add-hook 'after-revert-hook 'bm-buffer-restore)
 
-;; occur
-(defun occur-current-word ()
-  (interactive)
-  (occur (current-word)))
-
 ;; grep
 (require 'grep)
 (grep-apply-setting 'grep-find-command "git --no-pager grep --no-color --line-number ")
