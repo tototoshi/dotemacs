@@ -4,3 +4,6 @@
       (shell-command
        (concat "idea " filename))))
 
+(defun my-occur-current-word ()
+  (interactive)
+  (occur (current-word)))
