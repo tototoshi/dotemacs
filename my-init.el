@@ -116,7 +116,6 @@
 (use-package sql-indent)
 (use-package terraform-mode)
 (use-package tide)
-(use-package w3m)
 (use-package yaml-mode)
 (use-package zencoding-mode)
 (use-package helm-ghq)
