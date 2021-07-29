@@ -158,7 +158,7 @@
   :hook
   (lsp-mode . lsp-lens-mode)
   (lsp-mode . flycheck-mode)
-  (scala-mode . lsp)
+  ;;(scala-mode . lsp)
   :config
   (setq my-enable-format-on-save t)
 
