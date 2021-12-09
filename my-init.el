@@ -24,8 +24,8 @@
   (auto-package-update-maybe))
 
 (load "my-install-dependencies.el")
+(set-frame-font "Inconsolata-14")
 
-(set-frame-font "Cica-16")
 ;; https://github.com/bbatsov/zenburn-emacs
 ;;(load-theme 'zenburn t)
 
@@ -37,16 +37,6 @@
   (setq sml/no-confirm-load-theme t)
   (setq sml/theme 'light)
   (sml/setup))
-
-(use-package vterm
-  :commands (vterm)
-  :bind (("C-t" . vterm)
-         :map vterm-mode-map
-         ("C-h" . (lambda () (interactive) (vterm-send-key (kbd "C-h"))))
-         ("C-t" . (lambda () (interactive) (switch-to-buffer (other-buffer))))
-         ("C-u" . (lambda () (interactive) (vterm-send-key (kbd "C-u"))))
-         :map dired-mode-map
-         ("C-t" . vterm)))
 
 (use-package diff-hl
   :init
