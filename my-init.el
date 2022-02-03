@@ -144,6 +144,13 @@
 
 (use-package flycheck)
 
+;;
+;; To enable lsp.
+;; Put .dir-locals.el into the project root
+;;
+;; ((nil . ((my-enable-lsp . t)
+;;          (my-enable-lsp . t))))
+;; 
 (use-package lsp-mode
   :hook
   (lsp-mode . lsp-lens-mode)
