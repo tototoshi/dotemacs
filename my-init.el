@@ -148,13 +148,17 @@
   :hook
   (lsp-mode . lsp-lens-mode)
   (lsp-mode . flycheck-mode)
-  ;;(scala-mode . lsp)
+  (scala-mode . lsp)
   :config
   (setq my-enable-format-on-save t)
 
   (defcustom my-enable-format-on-save
-  :type 'boolean
-  :safe 'booleanp)
+    :type 'boolean
+    :safe 'booleanp)
+
+  (defcustom my-enable-lsp
+    :type 'boolean
+    :safe 'booleanp)
 
   (defun my-format-on-save()
     (when my-enable-format-on-save
