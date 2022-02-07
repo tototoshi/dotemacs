@@ -1,3 +1,5 @@
+(require 'dired)
+
 (use-package dired-mode
   :ensure nil
   :config

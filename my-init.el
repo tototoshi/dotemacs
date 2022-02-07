@@ -149,23 +149,23 @@
 ;; Put .dir-locals.el into the project root
 ;;
 ;; ((nil . ((my-enable-lsp . t)
-;;          (my-enable-lsp . t))))
+;;          (my-enable-format-on-save . t))))
 ;; 
+(defcustom my-enable-format-on-save
+  :type 'boolean
+  :safe 'booleanp)
+
+(defcustom my-enable-lsp
+  :type 'boolean
+  :safe 'booleanp)
+
 (use-package lsp-mode
   :hook
   (lsp-mode . lsp-lens-mode)
   (lsp-mode . flycheck-mode)
-  (scala-mode . lsp)
+  (scala-mode . (lambda () (when my-enable-lsp (lsp))))
   :config
   (setq my-enable-format-on-save t)
-
-  (defcustom my-enable-format-on-save
-    :type 'boolean
-    :safe 'booleanp)
-
-  (defcustom my-enable-lsp
-    :type 'boolean
-    :safe 'booleanp)
 
   (defun my-format-on-save()
     (when my-enable-format-on-save
