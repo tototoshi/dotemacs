@@ -176,7 +176,7 @@
 
 ;; grep
 (require 'grep)
-(grep-apply-setting 'grep-find-command "git --no-pager grep --no-color --line-number ")
+(grep-apply-setting 'grep-find-command '("git --no-pager grep --line-number --color --full-name  -- :/" . 55))
 
 ;; M-kで行全体を削除する。削除するだけでkill-ringには入れない。
 (defun delete-line ()
