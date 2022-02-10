@@ -145,17 +145,12 @@
 (use-package flycheck)
 
 ;;
-;; To enable lsp.
+;; To enable auto reformat.
 ;; Put .dir-locals.el into the project root
 ;;
-;; ((nil . ((my-enable-lsp . t)
-;;          (my-enable-format-on-save . t))))
+;; ((nil . ((my-enable-format-on-save . t))))
 ;; 
 (defcustom my-enable-format-on-save
-  :type 'boolean
-  :safe 'booleanp)
-
-(defcustom my-enable-lsp
   :type 'boolean
   :safe 'booleanp)
 
@@ -163,7 +158,7 @@
   :hook
   (lsp-mode . lsp-lens-mode)
   (lsp-mode . flycheck-mode)
-  (scala-mode . (lambda () (when my-enable-lsp (lsp))))
+  (scala-mode . lsp)
   :config
   (setq my-enable-format-on-save t)
 
