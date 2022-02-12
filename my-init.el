@@ -42,6 +42,10 @@
   :init
   (add-hook 'after-init-hook 'global-diff-hl-mode))
 
+(use-package zlc
+  :init
+  (zlc-mode t))
+
 (use-package helm
   :bind
   ("M-x" . helm-M-x)
