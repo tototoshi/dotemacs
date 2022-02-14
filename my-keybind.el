@@ -6,6 +6,7 @@
 (global-set-key (kbd "C-S-q") 'bury-buffer)
 (global-set-key (kbd "C-c C-o") 'my-browse-at-point)
 (global-set-key (kbd "C-c C-w") 'alc)
+(global-set-key (kbd "C-c f") 'grep-find)
 (global-set-key (kbd "C-c o") 'my-occur-current-word)
 (global-set-key (kbd "C-c v") 'magit-status)
 (global-set-key (kbd "C-h") 'my-delete-backward-char)
