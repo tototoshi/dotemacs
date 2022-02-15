@@ -178,6 +178,20 @@
 (require 'grep)
 (grep-apply-setting 'grep-find-command '("git --no-pager grep --line-number --color  -- :/" . 43))
 
+(defun my-grep-find ()
+  (interactive)
+  (let* ((orig grep-find-command)
+         (cw (current-word))
+         (cw-length (length cw))
+         (template (format "git --no-pager grep --line-number --color %s -- :/" cw))
+         (position (+ 43 cw-length)))
+    (unwind-protect
+      (progn
+        (when cw
+          (grep-apply-setting 'grep-find-command `(,template . ,position)))
+        (call-interactively 'grep-find))
+      (grep-apply-setting 'grep-find-command orig))))
+
 ;; M-kで行全体を削除する。削除するだけでkill-ringには入れない。
 (defun delete-line ()
   (interactive)
