@@ -68,6 +68,7 @@
   :hook
   (scala-mode . company-mode)
   (rust-mode . company-mode)
+  (php-mode . company-mode)
   :bind
   (:map company-active-map
         ("C-n" . company-select-next)
@@ -103,7 +104,6 @@
 (use-package markdown-mode)
 (use-package neotree)
 (use-package paredit)
-(use-package php-mode)
 (use-package protobuf-mode)
 (use-package python-mode)
 (use-package ruby-electric)
@@ -163,6 +163,7 @@
   (lsp-mode . lsp-lens-mode)
   (lsp-mode . flycheck-mode)
   (scala-mode . lsp)
+  :bind (:map lsp-mode-map ("M-r" . lsp-find-references))
   :config
   (setq my-enable-format-on-save t)
 
