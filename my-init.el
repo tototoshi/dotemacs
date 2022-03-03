@@ -42,17 +42,38 @@
   :init
   (add-hook 'after-init-hook 'global-diff-hl-mode))
 
+
+;; query-replace のキーバインド（space）などと相性が悪い
+;;(use-package auto-highlight-symbol
+;;  :hook
+;;  (php-mode . auto-highlight-symbol-mode)
+;;  (scala-mode . auto-highlight-symbol-mode))
+
 (use-package zlc
   :init
   (zlc-mode t))
 
-(use-package helm
+(use-package counsel)
+
+(use-package ivy
+  :config
+  (ivy-mode 1)
+  (setq ivy-use-virtual-buffers t)
+  (setq enable-recursive-minibuffers t)
   :bind
-  ("M-x" . helm-M-x)
-  ("M-y" . helm-show-kill-ring)
-  ("C-x C-b" . helm-buffers-list)
-  ("C-x C-d" . helm-browse-project)
-  ("C-x C-i" . helm-imenu))
+  ("M-x" . counsel-M-x)
+  ("M-y" . counsel-yank-pop)
+  ("C-x C-b" . counsel-switch-buffer)
+  ("C-x C-d" . counsel-git)
+  ("C-x C-f" . counsel-find-file)
+  ("C-x C-i" . counsel-imenu))
+
+(use-package swiper
+  :bind
+  ("C-s" . swiper-isearch)
+  ("C-r" . swiper-isearch-backward)
+  ("C-r" . swiper-isearch-backward)
+  (:map swiper-map ("C-w" . ivy-yank-symbol)))
 
 (use-package avy
   :bind
@@ -69,6 +90,7 @@
   (scala-mode . company-mode)
   (rust-mode . company-mode)
   (php-mode . company-mode)
+  (emacs-lisp-mode . company-mode)
   :bind
   (:map company-active-map
         ("C-n" . company-select-next)
@@ -90,7 +112,6 @@
 (use-package browse-at-remote)
 (use-package emojify)
 (use-package apache-mode)
-(use-package auto-highlight-symbol)
 (use-package bm)
 (use-package coffee-mode)
 (use-package direx)
@@ -116,7 +137,9 @@
 
 (use-package scala-mode
   :interpreter
-  ("scala" . scala-mode))
+  ("scala" . scala-mode)
+  :config
+  (electric-indent-mode -1))
 
 (use-package move-text
   :config
@@ -153,8 +176,9 @@
 ;; Put .dir-locals.el into the project root
 ;;
 ;; ((nil . ((my-enable-format-on-save . t))))
-;; 
-(defcustom my-enable-format-on-save
+;;
+(defcustom my-enable-format-on-save nil
+  ""
   :type 'boolean
   :safe 'booleanp)
 
@@ -162,10 +186,10 @@
   :hook
   (lsp-mode . lsp-lens-mode)
   (lsp-mode . flycheck-mode)
+  (php-mode . lsp)
   (scala-mode . lsp)
   :bind (:map lsp-mode-map ("M-r" . lsp-find-references))
   :config
-  (setq my-enable-format-on-save t)
 
   (defun my-format-on-save()
     (when my-enable-format-on-save

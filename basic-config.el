@@ -160,11 +160,6 @@
 (setq display-time-day-and-date t)
 (display-time)
 
-;; auto-highlight-symbol-mode
-(require 'auto-highlight-symbol)
-;;(require 'auto-highlight-symbol-config)
-(global-auto-highlight-symbol-mode t)
-
 ;; bm
 (require 'bm)
 (setq-default bm-buffer-persistence nil)
