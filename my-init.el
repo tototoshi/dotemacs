@@ -87,9 +87,11 @@
 
 (use-package company
   :hook
+  (python-mode . company-mode)
   (scala-mode . company-mode)
   (rust-mode . company-mode)
   (php-mode . company-mode)
+  (typescript-mode . company-mode)
   (emacs-lisp-mode . company-mode)
   :bind
   (:map company-active-map
@@ -109,6 +111,10 @@
   :custom
   (rust-format-on-save t))
 
+(use-package php-mode
+  :hook
+  (php-mode . php-enable-psr2-coding-style)
+  )
 (use-package browse-at-remote)
 (use-package emojify)
 (use-package apache-mode)
