@@ -115,6 +115,13 @@
   :hook
   (php-mode . php-enable-psr2-coding-style)
   )
+
+(use-package treemacs
+  :config
+  (setq treemacs-width 75)
+  :bind
+  ("C-t" . treemacs))
+
 (use-package browse-at-remote)
 (use-package emojify)
 (use-package apache-mode)
