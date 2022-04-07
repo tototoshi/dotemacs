@@ -23,7 +23,6 @@
   (setq auto-package-update-hide-results t)
   (auto-package-update-maybe))
 
-(load "my-install-dependencies.el")
 (set-frame-font "Inconsolata-14")
 
 ;; https://github.com/bbatsov/zenburn-emacs
@@ -63,6 +62,7 @@
   :bind
   ("M-x" . counsel-M-x)
   ("M-y" . counsel-yank-pop)
+  ("C-x r l" . counsel-bookmark)
   ("C-x C-b" . counsel-switch-buffer)
   ("C-x C-d" . counsel-git)
   ("C-x C-f" . counsel-find-file)
