@@ -230,3 +230,8 @@
 (load "my-functions.el")
 (autoload 'memo "memo" nil t)
 (autoload 'alc "alc" nil t)
+(use-package edit-server
+  :init
+  (edit-server-start)
+  :config
+  (setq edit-server-new-frame nil))
