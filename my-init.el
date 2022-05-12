@@ -135,7 +135,6 @@
 (use-package js2-mode)
 (use-package macrostep)
 (use-package magit)
-(use-package markdown-mode)
 (use-package neotree)
 (use-package paredit)
 (use-package protobuf-mode)
@@ -235,3 +234,21 @@
   (edit-server-start)
   :config
   (setq edit-server-new-frame nil))
+
+(use-package markdown-mode
+  :init
+  (setq markdown-max-image-size '(640 . 640)))
+
+(defun my-markdown-insert-clipboard-image ()
+  (interactive)
+  (let* ((prog-name "pngpaste")
+         (default-file-name (format-time-string "image_%Y%m%d%H%M%S.png" (time-stamp)))
+         (alt (read-from-minibuffer "ALT: " ""))
+         (file-name (read-from-minibuffer "FILENAME: " default-file-name)))
+    (condition-case nil
+        (let ((status (call-process prog-name nil nil nil file-name)))
+          (cond ((= 0 status)
+                 (insert (format "![%s](%s)\n" alt file-name))
+                 (markdown-display-inline-images))
+                (t (message (format "%s returned %s" prog-name status)))))
+      (file-missing () (message (format "%s is not installed" prog-name))))))
